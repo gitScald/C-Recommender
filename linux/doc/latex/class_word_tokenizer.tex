@@ -1,0 +1,81 @@
+\hypertarget{class_word_tokenizer}{}\section{Word\+Tokenizer Class Reference}
+\label{class_word_tokenizer}\index{Word\+Tokenizer@{Word\+Tokenizer}}
+
+
+\hyperlink{class_word_tokenizer}{Word\+Tokenizer} class.  
+
+
+
+
+{\ttfamily \#include $<$word\+\_\+tokenizer.\+h$>$}
+
+Inheritance diagram for Word\+Tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_word_tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_word_tokenizer_a78cfc8455e2b0d99ae070a9d9ef647c8}\label{class_word_tokenizer_a78cfc8455e2b0d99ae070a9d9ef647c8}} 
+\hyperlink{class_word_tokenizer_a78cfc8455e2b0d99ae070a9d9ef647c8}{Word\+Tokenizer} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_word_tokenizer_ad118d5de7f4e954b691f95aa5f8d514d}{Word\+Tokenizer} (const std\+::string \&bad)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{class_word_tokenizer_a1148e1e01de56a7529a39a81a712e04c}{tokenize} (std\+::stringstream \&ss) override
+\begin{DoxyCompactList}\small\item\em Tokenizer Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_word_tokenizer}{Word\+Tokenizer} class. 
+
+\mbox{[}D\+E\+R\+I\+V\+ED C\+L\+A\+SS\mbox{]}
+
+This class is responsible for breaking an input stream of characters into individual word tokens, by splitting it at white space and punctuation characters 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_word_tokenizer_ad118d5de7f4e954b691f95aa5f8d514d}\label{class_word_tokenizer_ad118d5de7f4e954b691f95aa5f8d514d}} 
+\index{Word\+Tokenizer@{Word\+Tokenizer}!Word\+Tokenizer@{Word\+Tokenizer}}
+\index{Word\+Tokenizer@{Word\+Tokenizer}!Word\+Tokenizer@{Word\+Tokenizer}}
+\subsubsection{\texorpdfstring{Word\+Tokenizer()}{WordTokenizer()}}
+{\footnotesize\ttfamily Word\+Tokenizer\+::\+Word\+Tokenizer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+This Constructor assigns member variable \char`\"{}bad\+\_\+chars\char`\"{} a String value, corresponding to characters that will be used to split all input streams into individual tokens. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_word_tokenizer_a1148e1e01de56a7529a39a81a712e04c}\label{class_word_tokenizer_a1148e1e01de56a7529a39a81a712e04c}} 
+\index{Word\+Tokenizer@{Word\+Tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!Word\+Tokenizer@{Word\+Tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ \& Word\+Tokenizer\+::tokenize (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tokenizer Method. 
+
+Tokenize input stream with specified delimiters. Return vector of tokens.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ss} & is a String Stream Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String (Token) Vector 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_abstract_tokenizer_a566f425fc415ed1dfefc13706868a3ff}{Abstract\+Tokenizer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/word\+\_\+tokenizer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/word\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}

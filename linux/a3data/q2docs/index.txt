@@ -1,0 +1,10 @@
+../a3data/q2docs/APW19991006.0166
+../a3data/q2docs/NYT19981120.0383
+../a3data/q2docs/NYT19990606.0082
+../a3data/q2docs/NYT19990613.0086
+../a3data/q2docs/NYT19991105.0200
+../a3data/q2docs/NYT19991105.0418
+../a3data/q2docs/NYT19991105.0420
+../a3data/q2docs/NYT20000201.0360
+../a3data/q2docs/NYT20000222.0189
+../a3data/q2docs/NYT20000608.0311

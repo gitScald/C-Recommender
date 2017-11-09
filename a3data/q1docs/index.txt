@@ -1,0 +1,10 @@
+../a3data/q1docs/FT923-5715
+../a3data/q1docs/FT923-10880
+../a3data/q1docs/FT932-15560
+../a3data/q1docs/FT934-5313
+../a3data/q1docs/FT941-12953
+../a3data/q1docs/FT941-14180
+../a3data/q1docs/FT943-12561
+../a3data/q1docs/FT944-8867
+../a3data/q1docs/FT944-9398
+../a3data/q1docs/FT944-11244

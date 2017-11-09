@@ -1,0 +1,198 @@
+\hypertarget{class_index_item}{}\section{Index\+Item Class Reference}
+\label{class_index_item}\index{Index\+Item@{Index\+Item}}
+
+
+\hyperlink{class_index_item}{Index\+Item} class.  
+
+
+
+
+{\ttfamily \#include $<$index\+\_\+item.\+h$>$}
+
+Inheritance diagram for Index\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_index_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_index_item_aa37a5377a9cdd5993b09baad3d842a6f}\label{class_index_item_aa37a5377a9cdd5993b09baad3d842a6f}} 
+\hyperlink{class_index_item_aa37a5377a9cdd5993b09baad3d842a6f}{Index\+Item} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_index_item_a9fcaaa46fb93a873ad73dc1ebdec8163}{Index\+Item} (const std\+::string \&\hyperlink{class_index_item_a059cbae312c51ae7d02050f8f325bf93}{name}, const std\+::string \&\hyperlink{class_index_item_aab7965cbd4a573ebf120ee6bad9a7fbf}{content}=std\+::string())
+\begin{DoxyCompactList}\small\item\em Explicit Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_index_item_a38ee85d9f855b56d7bc591e3b3555f4c}\label{class_index_item_a38ee85d9f855b56d7bc591e3b3555f4c}} 
+virtual \hyperlink{class_index_item_a38ee85d9f855b56d7bc591e3b3555f4c}{$\sim$\+Index\+Item} ()
+\begin{DoxyCompactList}\small\item\em Virtual Deconstructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_index_item_a38ccc46639b8d0b066024bad728c1bfa}{operator()} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Override Operator() \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_index_item_a534d96bf041a485ed124663b9cded2fb}{contains} (const std\+::string \&s) const =0
+\begin{DoxyCompactList}\small\item\em Contains Method. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{class_index_item_aab7965cbd4a573ebf120ee6bad9a7fbf}{content} () const
+\begin{DoxyCompactList}\small\item\em Contains Method. \end{DoxyCompactList}\item 
+virtual const std\+::string \& \hyperlink{class_index_item_a059cbae312c51ae7d02050f8f325bf93}{name} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\item 
+const size\+\_\+t \hyperlink{class_index_item_a55afe0a327fe0497bf24acf6215acd34}{size} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_index_item_a803a48d6e32976f6c9c42e83b10f61c5}{name\+\_\+}
+\begin{DoxyCompactList}\small\item\em String Member Variable. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_index_item_a5d2cd643f9b1749810b4f5ea479925ed}{content\+\_\+}
+\begin{DoxyCompactList}\small\item\em String Member Variable. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \hyperlink{class_index_item_a819728205ae50085a6bd2456ce8c556b}{dict}
+\begin{DoxyCompactList}\small\item\em Map Member Variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_index_item_a449b7563be6606a689d4417c940b3b39}\label{class_index_item_a449b7563be6606a689d4417c940b3b39}} 
+class {\bfseries Document\+Indexer}
+\item 
+\mbox{\Hypertarget{class_index_item_abf4e586c2270fcc2c7ef8253a33d6a8f}\label{class_index_item_abf4e586c2270fcc2c7ef8253a33d6a8f}} 
+class {\bfseries Sentence\+Indexer}
+\item 
+std\+::ostream \& \hyperlink{class_index_item_a09373f25959741150437b95f15ae11e2}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_document_indexer}{Document\+Indexer} \&i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_index_item}{Index\+Item} class. 
+
+\mbox{[}B\+A\+SE C\+L\+A\+SS\mbox{]} \hyperlink{class_index_item}{Index\+Item} class corresponds to container object that contains data derived from documents, which are tokenized. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_index_item_a9fcaaa46fb93a873ad73dc1ebdec8163}\label{class_index_item_a9fcaaa46fb93a873ad73dc1ebdec8163}} 
+\index{Index\+Item@{Index\+Item}!Index\+Item@{Index\+Item}}
+\index{Index\+Item@{Index\+Item}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{Index\+Item()}{IndexItem()}}
+{\footnotesize\ttfamily Index\+Item\+::\+Index\+Item (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{content = {\ttfamily std\+:\+:string()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Explicit Constructor. 
+
+Specify \hyperlink{class_index_item}{Index\+Item} data to be stored within container object. name\+\_\+ = name of document, content\+\_\+ = content of Item 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_index_item_a534d96bf041a485ed124663b9cded2fb}\label{class_index_item_a534d96bf041a485ed124663b9cded2fb}} 
+\index{Index\+Item@{Index\+Item}!contains@{contains}}
+\index{contains@{contains}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily virtual bool Index\+Item\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Contains Method. 
+
+Pure Virtual Function. Return true if dictionary contains string input string parameter 
+
+Implemented in \hyperlink{class_sentence_a867c17dbf3ef55c8708faa120ffad162}{Sentence}, and \hyperlink{class_document_a68e12b27c40699cd3c2fff66a6161473}{Document}.
+
+\mbox{\Hypertarget{class_index_item_aab7965cbd4a573ebf120ee6bad9a7fbf}\label{class_index_item_aab7965cbd4a573ebf120ee6bad9a7fbf}} 
+\index{Index\+Item@{Index\+Item}!content@{content}}
+\index{content@{content}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{content()}{content()}}
+{\footnotesize\ttfamily const std\+::string\& Index\+Item\+::content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Contains Method. 
+
+Pure Virtual Function. Return true if dictionary contains string input string parameter \mbox{\Hypertarget{class_index_item_a059cbae312c51ae7d02050f8f325bf93}\label{class_index_item_a059cbae312c51ae7d02050f8f325bf93}} 
+\index{Index\+Item@{Index\+Item}!name@{name}}
+\index{name@{name}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily virtual const std\+::string\& Index\+Item\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accessor Method. 
+
+Virtual Method. Returns member variable name\+\_\+ 
+
+Reimplemented in \hyperlink{class_document_a68936706468433f1bbba813797e32bd5}{Document}.
+
+\mbox{\Hypertarget{class_index_item_a38ccc46639b8d0b066024bad728c1bfa}\label{class_index_item_a38ccc46639b8d0b066024bad728c1bfa}} 
+\index{Index\+Item@{Index\+Item}!operator()@{operator()}}
+\index{operator()@{operator()}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual bool Index\+Item\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Override Operator() 
+
+Virtual Function. Override operator operator(). Return value from member function \hyperlink{class_index_item_a534d96bf041a485ed124663b9cded2fb}{contains()} 
+
+Reimplemented in \hyperlink{class_document_a44b8141f08f57f9122b3dba4a59bf7e4}{Document}, and \hyperlink{class_sentence_aacbd8da0eeadd6a544f00c7ea4169c79}{Sentence}.
+
+\mbox{\Hypertarget{class_index_item_a55afe0a327fe0497bf24acf6215acd34}\label{class_index_item_a55afe0a327fe0497bf24acf6215acd34}} 
+\index{Index\+Item@{Index\+Item}!size@{size}}
+\index{size@{size}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily const size\+\_\+t Index\+Item\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor Method. 
+
+Returns member variable content\+\_\+ 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_index_item_a09373f25959741150437b95f15ae11e2}\label{class_index_item_a09373f25959741150437b95f15ae11e2}} 
+\index{Index\+Item@{Index\+Item}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_document_indexer}{Document\+Indexer} \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream object \\
+\hline
+{\em i} & is a \hyperlink{class_indexer}{Indexer} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output Stream object os (parameter) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_index_item_a5d2cd643f9b1749810b4f5ea479925ed}\label{class_index_item_a5d2cd643f9b1749810b4f5ea479925ed}} 
+\index{Index\+Item@{Index\+Item}!content\+\_\+@{content\+\_\+}}
+\index{content\+\_\+@{content\+\_\+}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{content\+\_\+}{content\_}}
+{\footnotesize\ttfamily std\+::string Index\+Item\+::content\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+String Member Variable. 
+
+Corressponding to content of \hyperlink{class_index_item}{Index\+Item} \mbox{\Hypertarget{class_index_item_a819728205ae50085a6bd2456ce8c556b}\label{class_index_item_a819728205ae50085a6bd2456ce8c556b}} 
+\index{Index\+Item@{Index\+Item}!dict@{dict}}
+\index{dict@{dict}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{dict}{dict}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Index\+Item\+::dict\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map Member Variable. 
+
+Corresponding to map containing String values as key, which represent the content of \hyperlink{class_index_item}{Index\+Item}. \mbox{\Hypertarget{class_index_item_a803a48d6e32976f6c9c42e83b10f61c5}\label{class_index_item_a803a48d6e32976f6c9c42e83b10f61c5}} 
+\index{Index\+Item@{Index\+Item}!name\+\_\+@{name\+\_\+}}
+\index{name\+\_\+@{name\+\_\+}!Index\+Item@{Index\+Item}}
+\subsubsection{\texorpdfstring{name\+\_\+}{name\_}}
+{\footnotesize\ttfamily std\+::string Index\+Item\+::name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+String Member Variable. 
+
+Corressponding to name of \hyperlink{class_document}{Document} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/index\+\_\+item.\+h\end{DoxyCompactItemize}

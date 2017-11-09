@@ -1,0 +1,106 @@
+\hypertarget{class_abstract_tokenizer}{}\section{Abstract\+Tokenizer Class Reference}
+\label{class_abstract_tokenizer}\index{Abstract\+Tokenizer@{Abstract\+Tokenizer}}
+
+
+\hyperlink{class_abstract_tokenizer}{Abstract\+Tokenizer} Class.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+tokenizer.\+h$>$}
+
+Inheritance diagram for Abstract\+Tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstract_tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_tokenizer_ad5dd529f11552a1bb522f97077148270}\label{class_abstract_tokenizer_ad5dd529f11552a1bb522f97077148270}} 
+\hyperlink{class_abstract_tokenizer_ad5dd529f11552a1bb522f97077148270}{Abstract\+Tokenizer} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_abstract_tokenizer_aef53a337d291e7ae1553511419d31190}{Abstract\+Tokenizer} (const std\+::string \&bad)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ std\+::string $>$ \& \hyperlink{class_abstract_tokenizer_a566f425fc415ed1dfefc13706868a3ff}{tokenize} (std\+::stringstream \&ss)=0
+\begin{DoxyCompactList}\small\item\em Tokenize Input Stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_tokenizer_a0edd17a67a3d7b9042a5817dc05ba32e}\label{class_abstract_tokenizer_a0edd17a67a3d7b9042a5817dc05ba32e}} 
+std\+::string \hyperlink{class_abstract_tokenizer_a0edd17a67a3d7b9042a5817dc05ba32e}{bad\+\_\+chars}
+\begin{DoxyCompactList}\small\item\em String contains delimiters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_tokenizer_a76c3d1105c591f92f1036c327acd36f3}\label{class_abstract_tokenizer_a76c3d1105c591f92f1036c327acd36f3}} 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_abstract_tokenizer_a76c3d1105c591f92f1036c327acd36f3}{tokens}
+\begin{DoxyCompactList}\small\item\em String Vector containing split tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_abstract_tokenizer_a5e19d812ca20914a070862e6336c1432}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_abstract_tokenizer}{Abstract\+Tokenizer} \&t)
+\begin{DoxyCompactList}\small\item\em Overload Operator$<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_abstract_tokenizer}{Abstract\+Tokenizer} Class. 
+
+\mbox{[}B\+A\+SE C\+L\+A\+SS\mbox{]} This class is responsible for breaking an input stream of characters into individual \hyperlink{class_index_item}{Index\+Item} objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_abstract_tokenizer_aef53a337d291e7ae1553511419d31190}\label{class_abstract_tokenizer_aef53a337d291e7ae1553511419d31190}} 
+\index{Abstract\+Tokenizer@{Abstract\+Tokenizer}!Abstract\+Tokenizer@{Abstract\+Tokenizer}}
+\index{Abstract\+Tokenizer@{Abstract\+Tokenizer}!Abstract\+Tokenizer@{Abstract\+Tokenizer}}
+\subsubsection{\texorpdfstring{Abstract\+Tokenizer()}{AbstractTokenizer()}}
+{\footnotesize\ttfamily Abstract\+Tokenizer\+::\+Abstract\+Tokenizer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+This Constructor assigns member variable \char`\"{}bad\+\_\+chars\char`\"{} a String value, corresponding to characters that will be used to split all input streams into individual tokens. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_tokenizer_a566f425fc415ed1dfefc13706868a3ff}\label{class_abstract_tokenizer_a566f425fc415ed1dfefc13706868a3ff}} 
+\index{Abstract\+Tokenizer@{Abstract\+Tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!Abstract\+Tokenizer@{Abstract\+Tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$std\+::string$>$\& Abstract\+Tokenizer\+::tokenize (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tokenize Input Stream. 
+
+Tokenize input stream with specified delimiters. Return vector of tokens. 
+
+Implemented in \hyperlink{class_sentence_tokenizer_a43c1d3f33855c3e5c80cab538cea9224}{Sentence\+Tokenizer}, and \hyperlink{class_word_tokenizer_a1148e1e01de56a7529a39a81a712e04c}{Word\+Tokenizer}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_abstract_tokenizer_a5e19d812ca20914a070862e6336c1432}\label{class_abstract_tokenizer_a5e19d812ca20914a070862e6336c1432}} 
+\index{Abstract\+Tokenizer@{Abstract\+Tokenizer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Abstract\+Tokenizer@{Abstract\+Tokenizer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_abstract_tokenizer}{Abstract\+Tokenizer} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload Operator$<$$<$. 
+
+Output Delimiters using Output Stream
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream Object \\
+\hline
+{\em t} & is a Tokenizer Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output Stream Object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/abstract\+\_\+tokenizer.\+h\end{DoxyCompactItemize}

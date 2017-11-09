@@ -1,0 +1,3 @@
+files/doc1.txt
+files/doc2.txt
+files/doc3.txt

@@ -1,0 +1,6 @@
+# Ignore debug folder
+Debug/
+
+# Ignore VS-specific project files
+*.vcxproj
+*.vcxproj.filters

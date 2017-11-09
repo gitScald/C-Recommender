@@ -1,0 +1,1150 @@
+***  START INDEXER PROGRAM  ***
+Processing index file '../files/index.txt'... done.
+Processing stopwords file '../files/stopwords.txt'... done.
+Generating unfiltered index... done.
+Normalizing unfiltered index... done.
+Press [Enter] to display unfiltered index:
+ DOCUMENT-TERM MATRIX       doc1.txt   doc2.txt   doc3.txt   doc_freq
+ --------------------------------------------------------------------
+ a                                 6         12          5          3
+ able                              0          1          0          1
+ about                             1          1          0          2
+ above                             0          1          0          1
+ achieve                           0          0          2          1
+ advised                           1          0          0          1
+ allpowerful                       1          0          0          1
+ almost                            1          0          0          1
+ alphabet                          1          0          0          1
+ although                          0          1          0          1
+ an                                1          1          1          3
+ and                               5          6          7          3
+ any                               0          1          0          1
+ arches                            0          1          0          1
+ are                               0          0          2          1
+ arm                               0          1          0          1
+ armourlike                        0          1          0          1
+ as                                0          1          3          2
+ at                                1          1          0          2
+ away                              1          0          0          1
+ back                              1          1          0          2
+ bad                               1          0          0          1
+ be                                0          1          7          2
+ because                           1          0          0          1
+ bed                               0          1          0          1
+ bedding                           0          1          0          1
+ behind                            1          0          0          1
+ belly                             0          1          0          1
+ belt                              1          0          0          1
+ between                           0          1          0          1
+ big                               1          0          0          1
+ blind                             4          0          0          1
+ boa                               0          1          0          1
+ bookmarksgrove                    2          0          0          1
+ brown                             0          1          0          1
+ but                               1          0          0          1
+ by                                2          1          0          2
+ cambridge                         0          0          1          1
+ cheek                             1          0          0          1
+ coalesce                          0          0          2          1
+ coast                             1          0          0          1
+ collection                        0          1          0          1
+ commas                            1          0          0          1
+ common                            0          0          7          1
+ compared                          0          1          0          1
+ consonantia                       1          0          0          1
+ continued                         1          0          0          1
+ control                           1          0          0          1
+ could                             0          2          2          2
+ countries                         1          0          0          1
+ country                           1          0          0          1
+ cover                             0          1          0          1
+ covered                           0          1          0          1
+ cut                               0          1          0          1
+ day                               1          0          0          1
+ decided                           1          0          0          1
+ desirable                         0          0          2          1
+ devious                           1          0          0          1
+ didnt                             1          0          0          1
+ differ                            0          0          2          1
+ divided                           0          1          0          1
+ do                                1          0          0          1
+ domed                             0          1          0          1
+ dream                             0          1          0          1
+ dreams                            0          1          0          1
+ drops                             0          1          0          1
+ duden                             1          0          0          1
+ dull                              0          1          0          1
+ english                           0          0          2          1
+ etc                               0          0          2          1
+ europe                            0          0          2          1
+ european                          0          0          3          1
+ even                              1          0          0          1
+ everyone                          0          0          2          1
+ existence                         0          0          2          1
+ existing                          0          0          1          1
+ expensive                         0          0          2          1
+ fact                              0          0          1          1
+ familiar                          0          1          0          1
+ family                            0          0          2          1
+ far                               4          0          0          1
+ feel                              0          1          0          1
+ first                             1          0          0          1
+ fitted                            0          1          0          1
+ flows                             1          0          0          1
+ fly                               1          0          0          1
+ for                               1          0          2          2
+ found                             0          1          0          1
+ four                              0          1          0          1
+ frame                             0          1          0          1
+ friend                            0          0          1          1
+ from                              1          1          0          2
+ fur                               0          3          0          1
+ gilded                            0          1          0          1
+ grammar                           1          0          6          2
+ gregor                            0          2          0          1
+ had                               1          1          0          2
+ happened                          0          1          0          1
+ hardly                            0          1          0          1
+ has                               1          0          0          1
+ hat                               0          1          0          1
+ have                              0          0          2          1
+ he                                0          7          0          1
+ head                              0          1          0          1
+ headline                          1          0          0          1
+ heard                             0          1          0          1
+ heavy                             0          1          0          1
+ helplessly                        0          1          0          1
+ her                               7          1          0          2
+ herself                           1          0          0          1
+ hills                             1          0          0          1
+ him                               0          2          0          1
+ himself                           0          1          0          1
+ his                               0          6          0          1
+ hitting                           0          1          0          1
+ hometown                          1          0          0          1
+ horrible                          0          1          0          1
+ housed                            0          1          0          1
+ however                           1          0          0          1
+ human                             0          1          0          1
+ hung                              0          1          0          1
+ if                                0          1          2          2
+ illustrated                       0          1          0          1
+ in                                2          2          3          3
+ individual                        0          0          2          1
+ initial                           1          0          0          1
+ into                              2          2          0          2
+ ipsum                             1          0          0          1
+ is                                2          0          4          2
+ isthe                             0          0          1          1
+ it                                3          4          5          3
+ italic                            1          0          0          1
+ its                               0          1          0          1
+ lady                              0          1          0          1
+ lane                              1          0          0          1
+ language                          1          0          5          2
+ languages                         0          0          9          1
+ large                             1          0          0          1
+ last                              1          0          0          1
+ lay                               0          3          0          1
+ leave                             1          0          0          1
+ legs                              0          1          0          1
+ life                              1          0          0          1
+ lifted                            0          1          0          1
+ like                              0          0          1          1
+ line                              2          0          0          1
+ listen                            1          0          0          1
+ little                            1          2          0          2
+ live                              2          0          0          1
+ look                              0          1          0          1
+ looked                            0          1          0          1
+ lorem                             1          0          0          1
+ lower                             0          1          0          1
+ made                              1          1          0          2
+ magazine                          0          1          0          1
+ many                              0          1          0          1
+ marks                             1          0          0          1
+ me                                0          1          1          2
+ members                           0          0          2          1
+ mine                              0          0          1          1
+ moment                            0          1          0          1
+ more                              0          0          5          1
+ morning                           0          1          0          1
+ most                              0          0          2          1
+ mountains                         2          0          0          1
+ mouth                             1          0          0          1
+ muff                              0          1          0          1
+ music                             0          0          2          1
+ myth                              0          0          2          1
+ name                              1          0          0          1
+ named                             1          0          0          1
+ necessary                         1          0          2          2
+ new                               0          0          3          1
+ nice                              0          1          0          1
+ no                                1          0          0          1
+ not                               1          0          0          1
+ occidental                        0          0          3          1
+ ocean                             1          0          0          1
+ of                               10          6          7          3
+ off                               0          1          0          1
+ on                                2          2          0          2
+ one                               1          1          2          3
+ only                              0          0          2          1
+ out                               0          4          0          1
+ over                              1          0          0          1
+ own                               1          0          0          1
+ oxmox                             1          0          0          1
+ packed                            1          0          0          1
+ pane                              0          1          0          1
+ paradisematic                     1          0          0          1
+ parts                             1          0          0          1
+ pay                               0          0          2          1
+ peacefully                        0          1          0          1
+ person                            0          0          1          1
+ picture                           0          1          0          1
+ pitifully                         0          1          0          1
+ pityful                           1          0          0          1
+ place                             1          0          0          1
+ pointing                          1          0          0          1
+ pronunciation                     0          0          4          1
+ proper                            0          1          0          1
+ put                               1          0          0          1
+ question                          2          0          0          1
+ quite                             0          1          0          1
+ rain                              0          1          0          1
+ raising                           0          1          0          1
+ ran                               1          0          0          1
+ reached                           1          0          0          1
+ ready                             0          1          0          1
+ realizes                          0          0          2          1
+ recently                          0          1          0          1
+ refuse                            0          0          2          1
+ regelialia                        1          0          0          1
+ regular                           0          0          3          1
+ rest                              0          1          0          1
+ resulting                         0          0          2          1
+ rethoric                          1          0          0          1
+ right                             1          0          0          1
+ river                             1          0          0          1
+ road                              1          0          0          1
+ roasted                           1          0          0          1
+ room                              0          2          0          1
+ sad                               0          1          0          1
+ salesman                          0          1          0          1
+ same                              0          0          4          1
+ samples                           0          1          0          1
+ samsa                             0          2          0          1
+ sat                               0          1          0          1
+ science                           0          0          2          1
+ sections                          0          1          0          1
+ see                               0          1          0          1
+ seem                              0          0          1          1
+ seemed                            0          1          0          1
+ semantics                         1          0          0          1
+ semikoli                          1          0          0          1
+ sentences                         1          0          0          1
+ separate                          0          0          2          1
+ separated                         1          0          0          1
+ seven                             1          0          0          1
+ several                           0          0          2          1
+ she                               4          0          0          1
+ showed                            0          1          0          1
+ simple                            0          0          4          1
+ simplified                        0          0          1          1
+ size                              0          1          0          1
+ skeptical                         0          0          1          1
+ skyline                           1          0          0          1
+ slide                             0          1          0          1
+ slightly                          0          1          0          1
+ small                             2          1          0          2
+ so                                1          0          0          1
+ sport                             0          0          2          1
+ spread                            0          1          0          1
+ stiff                             0          1          0          1
+ subline                           1          0          0          1
+ supplies                          1          0          0          1
+ table                             0          1          0          1
+ text                              2          0          0          1
+ textile                           0          1          0          1
+ texts                             2          0          0          1
+ than                              0          0          3          1
+ that                              0          2          2          2
+ the                              20          9         15          3
+ their                             1          0          8          2
+ then                              1          1          0          2
+ there                             2          1          0          2
+ they                              1          0          0          1
+ thin                              0          1          0          1
+ this                              0          0          2          1
+ thought                           0          1          0          1
+ thousands                         1          0          0          1
+ to                                2          4          7          3
+ told                              0          0          1          1
+ too                               0          1          0          1
+ towards                           0          1          0          1
+ transformed                       0          1          0          1
+ translators                       0          0          2          1
+ travelling                        0          1          0          1
+ troubled                          0          1          0          1
+ turned                            0          1          0          1
+ uniform                           0          0          2          1
+ unorthographic                    1          0          0          1
+ upright                           0          1          0          1
+ uses                              0          0          2          1
+ vermin                            0          1          0          1
+ versalia                          1          0          0          1
+ view                              1          0          0          1
+ viewer                            0          1          0          1
+ village                           1          0          0          1
+ vocabulary                        0          0          2          1
+ vokalia                           1          0          0          1
+ walls                             0          1          0          1
+ was                               0          2          0          1
+ wasnt                             0          1          0          1
+ waved                             0          1          0          1
+ way                               2          0          0          1
+ weather                           0          1          0          1
+ were                              1          0          0          1
+ what                              0          0          1          1
+ whats                             0          1          0          1
+ when                              1          1          0          2
+ which                             1          1          0          2
+ who                               0          1          0          1
+ whole                             0          1          0          1
+ why                               0          0          2          1
+ wild                              1          0          0          1
+ will                              0          0          4          1
+ window                            0          1          0          1
+ with                              1          2          0          2
+ woke                              0          1          0          1
+ word                              1          0          0          1
+ words                             0          0          4          1
+ world                             1          0          0          1
+ would                             0          0          4          1
+ your                              1          0          0          1
+ --------------------------------------------------------------------
+                    TOTAL        204        212        235
+ --------------------------------------------------------------------
+
+ WEIGHT MATRIX              doc1.txt   doc2.txt   doc3.txt
+ ---------------------------------------------------------
+ a                             0.000      0.000      0.000
+ able                          0.000      1.099      0.000
+ about                         0.405      0.405      0.000
+ above                         0.000      1.099      0.000
+ achieve                       0.000      0.000      1.860
+ advised                       1.099      0.000      0.000
+ allpowerful                   1.099      0.000      0.000
+ almost                        1.099      0.000      0.000
+ alphabet                      1.099      0.000      0.000
+ although                      0.000      1.099      0.000
+ an                            0.000      0.000      0.000
+ and                           0.000      0.000      0.000
+ any                           0.000      1.099      0.000
+ arches                        0.000      1.099      0.000
+ are                           0.000      0.000      1.860
+ arm                           0.000      1.099      0.000
+ armourlike                    0.000      1.099      0.000
+ as                            0.000      0.405      0.851
+ at                            0.405      0.405      0.000
+ away                          1.099      0.000      0.000
+ back                          0.405      0.405      0.000
+ bad                           1.099      0.000      0.000
+ be                            0.000      0.405      1.194
+ because                       1.099      0.000      0.000
+ bed                           0.000      1.099      0.000
+ bedding                       0.000      1.099      0.000
+ behind                        1.099      0.000      0.000
+ belly                         0.000      1.099      0.000
+ belt                          1.099      0.000      0.000
+ between                       0.000      1.099      0.000
+ big                           1.099      0.000      0.000
+ blind                         2.622      0.000      0.000
+ boa                           0.000      1.099      0.000
+ bookmarksgrove                1.860      0.000      0.000
+ brown                         0.000      1.099      0.000
+ but                           1.099      0.000      0.000
+ by                            0.687      0.405      0.000
+ cambridge                     0.000      0.000      1.099
+ cheek                         1.099      0.000      0.000
+ coalesce                      0.000      0.000      1.860
+ coast                         1.099      0.000      0.000
+ collection                    0.000      1.099      0.000
+ commas                        1.099      0.000      0.000
+ common                        0.000      0.000      3.236
+ compared                      0.000      1.099      0.000
+ consonantia                   1.099      0.000      0.000
+ continued                     1.099      0.000      0.000
+ control                       1.099      0.000      0.000
+ could                         0.000      0.687      0.687
+ countries                     1.099      0.000      0.000
+ country                       1.099      0.000      0.000
+ cover                         0.000      1.099      0.000
+ covered                       0.000      1.099      0.000
+ cut                           0.000      1.099      0.000
+ day                           1.099      0.000      0.000
+ decided                       1.099      0.000      0.000
+ desirable                     0.000      0.000      1.860
+ devious                       1.099      0.000      0.000
+ didnt                         1.099      0.000      0.000
+ differ                        0.000      0.000      1.860
+ divided                       0.000      1.099      0.000
+ do                            1.099      0.000      0.000
+ domed                         0.000      1.099      0.000
+ dream                         0.000      1.099      0.000
+ dreams                        0.000      1.099      0.000
+ drops                         0.000      1.099      0.000
+ duden                         1.099      0.000      0.000
+ dull                          0.000      1.099      0.000
+ english                       0.000      0.000      1.860
+ etc                           0.000      0.000      1.860
+ europe                        0.000      0.000      1.860
+ european                      0.000      0.000      2.306
+ even                          1.099      0.000      0.000
+ everyone                      0.000      0.000      1.860
+ existence                     0.000      0.000      1.860
+ existing                      0.000      0.000      1.099
+ expensive                     0.000      0.000      1.860
+ fact                          0.000      0.000      1.099
+ familiar                      0.000      1.099      0.000
+ family                        0.000      0.000      1.860
+ far                           2.622      0.000      0.000
+ feel                          0.000      1.099      0.000
+ first                         1.099      0.000      0.000
+ fitted                        0.000      1.099      0.000
+ flows                         1.099      0.000      0.000
+ fly                           1.099      0.000      0.000
+ for                           0.405      0.000      0.687
+ found                         0.000      1.099      0.000
+ four                          0.000      1.099      0.000
+ frame                         0.000      1.099      0.000
+ friend                        0.000      0.000      1.099
+ from                          0.405      0.405      0.000
+ fur                           0.000      2.306      0.000
+ gilded                        0.000      1.099      0.000
+ grammar                       0.405      0.000      1.132
+ gregor                        0.000      1.860      0.000
+ had                           0.405      0.405      0.000
+ happened                      0.000      1.099      0.000
+ hardly                        0.000      1.099      0.000
+ has                           1.099      0.000      0.000
+ hat                           0.000      1.099      0.000
+ have                          0.000      0.000      1.860
+ he                            0.000      3.236      0.000
+ head                          0.000      1.099      0.000
+ headline                      1.099      0.000      0.000
+ heard                         0.000      1.099      0.000
+ heavy                         0.000      1.099      0.000
+ helplessly                    0.000      1.099      0.000
+ her                           1.194      0.405      0.000
+ herself                       1.099      0.000      0.000
+ hills                         1.099      0.000      0.000
+ him                           0.000      1.860      0.000
+ himself                       0.000      1.099      0.000
+ his                           0.000      3.067      0.000
+ hitting                       0.000      1.099      0.000
+ hometown                      1.099      0.000      0.000
+ horrible                      0.000      1.099      0.000
+ housed                        0.000      1.099      0.000
+ however                       1.099      0.000      0.000
+ human                         0.000      1.099      0.000
+ hung                          0.000      1.099      0.000
+ if                            0.000      0.405      0.687
+ illustrated                   0.000      1.099      0.000
+ in                            0.000      0.000      0.000
+ individual                    0.000      0.000      1.860
+ initial                       1.099      0.000      0.000
+ into                          0.687      0.687      0.000
+ ipsum                         1.099      0.000      0.000
+ is                            0.687      0.000      0.968
+ isthe                         0.000      0.000      1.099
+ it                            0.000      0.000      0.000
+ italic                        1.099      0.000      0.000
+ its                           0.000      1.099      0.000
+ lady                          0.000      1.099      0.000
+ lane                          1.099      0.000      0.000
+ language                      0.405      0.000      1.058
+ languages                     0.000      0.000      3.513
+ large                         1.099      0.000      0.000
+ last                          1.099      0.000      0.000
+ lay                           0.000      2.306      0.000
+ leave                         1.099      0.000      0.000
+ legs                          0.000      1.099      0.000
+ life                          1.099      0.000      0.000
+ lifted                        0.000      1.099      0.000
+ like                          0.000      0.000      1.099
+ line                          1.860      0.000      0.000
+ listen                        1.099      0.000      0.000
+ little                        0.405      0.687      0.000
+ live                          1.860      0.000      0.000
+ look                          0.000      1.099      0.000
+ looked                        0.000      1.099      0.000
+ lorem                         1.099      0.000      0.000
+ lower                         0.000      1.099      0.000
+ made                          0.405      0.405      0.000
+ magazine                      0.000      1.099      0.000
+ many                          0.000      1.099      0.000
+ marks                         1.099      0.000      0.000
+ me                            0.000      0.405      0.405
+ members                       0.000      0.000      1.860
+ mine                          0.000      0.000      1.099
+ moment                        0.000      1.099      0.000
+ more                          0.000      0.000      2.867
+ morning                       0.000      1.099      0.000
+ most                          0.000      0.000      1.860
+ mountains                     1.860      0.000      0.000
+ mouth                         1.099      0.000      0.000
+ muff                          0.000      1.099      0.000
+ music                         0.000      0.000      1.860
+ myth                          0.000      0.000      1.860
+ name                          1.099      0.000      0.000
+ named                         1.099      0.000      0.000
+ necessary                     0.405      0.000      0.687
+ new                           0.000      0.000      2.306
+ nice                          0.000      1.099      0.000
+ no                            1.099      0.000      0.000
+ not                           1.099      0.000      0.000
+ occidental                    0.000      0.000      2.306
+ ocean                         1.099      0.000      0.000
+ of                            0.000      0.000      0.000
+ off                           0.000      1.099      0.000
+ on                            0.687      0.687      0.000
+ one                           0.000      0.000      0.000
+ only                          0.000      0.000      1.860
+ out                           0.000      2.622      0.000
+ over                          1.099      0.000      0.000
+ own                           1.099      0.000      0.000
+ oxmox                         1.099      0.000      0.000
+ packed                        1.099      0.000      0.000
+ pane                          0.000      1.099      0.000
+ paradisematic                 1.099      0.000      0.000
+ parts                         1.099      0.000      0.000
+ pay                           0.000      0.000      1.860
+ peacefully                    0.000      1.099      0.000
+ person                        0.000      0.000      1.099
+ picture                       0.000      1.099      0.000
+ pitifully                     0.000      1.099      0.000
+ pityful                       1.099      0.000      0.000
+ place                         1.099      0.000      0.000
+ pointing                      1.099      0.000      0.000
+ pronunciation                 0.000      0.000      2.622
+ proper                        0.000      1.099      0.000
+ put                           1.099      0.000      0.000
+ question                      1.860      0.000      0.000
+ quite                         0.000      1.099      0.000
+ rain                          0.000      1.099      0.000
+ raising                       0.000      1.099      0.000
+ ran                           1.099      0.000      0.000
+ reached                       1.099      0.000      0.000
+ ready                         0.000      1.099      0.000
+ realizes                      0.000      0.000      1.860
+ recently                      0.000      1.099      0.000
+ refuse                        0.000      0.000      1.860
+ regelialia                    1.099      0.000      0.000
+ regular                       0.000      0.000      2.306
+ rest                          0.000      1.099      0.000
+ resulting                     0.000      0.000      1.860
+ rethoric                      1.099      0.000      0.000
+ right                         1.099      0.000      0.000
+ river                         1.099      0.000      0.000
+ road                          1.099      0.000      0.000
+ roasted                       1.099      0.000      0.000
+ room                          0.000      1.860      0.000
+ sad                           0.000      1.099      0.000
+ salesman                      0.000      1.099      0.000
+ same                          0.000      0.000      2.622
+ samples                       0.000      1.099      0.000
+ samsa                         0.000      1.860      0.000
+ sat                           0.000      1.099      0.000
+ science                       0.000      0.000      1.860
+ sections                      0.000      1.099      0.000
+ see                           0.000      1.099      0.000
+ seem                          0.000      0.000      1.099
+ seemed                        0.000      1.099      0.000
+ semantics                     1.099      0.000      0.000
+ semikoli                      1.099      0.000      0.000
+ sentences                     1.099      0.000      0.000
+ separate                      0.000      0.000      1.860
+ separated                     1.099      0.000      0.000
+ seven                         1.099      0.000      0.000
+ several                       0.000      0.000      1.860
+ she                           2.622      0.000      0.000
+ showed                        0.000      1.099      0.000
+ simple                        0.000      0.000      2.622
+ simplified                    0.000      0.000      1.099
+ size                          0.000      1.099      0.000
+ skeptical                     0.000      0.000      1.099
+ skyline                       1.099      0.000      0.000
+ slide                         0.000      1.099      0.000
+ slightly                      0.000      1.099      0.000
+ small                         0.687      0.405      0.000
+ so                            1.099      0.000      0.000
+ sport                         0.000      0.000      1.860
+ spread                        0.000      1.099      0.000
+ stiff                         0.000      1.099      0.000
+ subline                       1.099      0.000      0.000
+ supplies                      1.099      0.000      0.000
+ table                         0.000      1.099      0.000
+ text                          1.860      0.000      0.000
+ textile                       0.000      1.099      0.000
+ texts                         1.860      0.000      0.000
+ than                          0.000      0.000      2.306
+ that                          0.000      0.687      0.687
+ the                           0.000      0.000      0.000
+ their                         0.405      0.000      1.249
+ then                          0.405      0.405      0.000
+ there                         0.687      0.405      0.000
+ they                          1.099      0.000      0.000
+ thin                          0.000      1.099      0.000
+ this                          0.000      0.000      1.860
+ thought                       0.000      1.099      0.000
+ thousands                     1.099      0.000      0.000
+ to                            0.000      0.000      0.000
+ told                          0.000      0.000      1.099
+ too                           0.000      1.099      0.000
+ towards                       0.000      1.099      0.000
+ transformed                   0.000      1.099      0.000
+ translators                   0.000      0.000      1.860
+ travelling                    0.000      1.099      0.000
+ troubled                      0.000      1.099      0.000
+ turned                        0.000      1.099      0.000
+ uniform                       0.000      0.000      1.860
+ unorthographic                1.099      0.000      0.000
+ upright                       0.000      1.099      0.000
+ uses                          0.000      0.000      1.860
+ vermin                        0.000      1.099      0.000
+ versalia                      1.099      0.000      0.000
+ view                          1.099      0.000      0.000
+ viewer                        0.000      1.099      0.000
+ village                       1.099      0.000      0.000
+ vocabulary                    0.000      0.000      1.860
+ vokalia                       1.099      0.000      0.000
+ walls                         0.000      1.099      0.000
+ was                           0.000      1.860      0.000
+ wasnt                         0.000      1.099      0.000
+ waved                         0.000      1.099      0.000
+ way                           1.860      0.000      0.000
+ weather                       0.000      1.099      0.000
+ were                          1.099      0.000      0.000
+ what                          0.000      0.000      1.099
+ whats                         0.000      1.099      0.000
+ when                          0.405      0.405      0.000
+ which                         0.405      0.405      0.000
+ who                           0.000      1.099      0.000
+ whole                         0.000      1.099      0.000
+ why                           0.000      0.000      1.860
+ wild                          1.099      0.000      0.000
+ will                          0.000      0.000      2.622
+ window                        0.000      1.099      0.000
+ with                          0.405      0.687      0.000
+ woke                          0.000      1.099      0.000
+ word                          1.099      0.000      0.000
+ words                         0.000      0.000      2.622
+ world                         1.099      0.000      0.000
+ would                         0.000      0.000      2.622
+ your                          1.099      0.000      0.000
+ ---------------------------------------------------------
+
+***  END UNFILTERED INDEX  ***
+Generating filtered index... done.
+Normalizing filtered index... done.
+Press [Enter] to display filtered index:
+ DOCUMENT-TERM MATRIX       doc1.txt   doc2.txt   doc3.txt   doc_freq
+ --------------------------------------------------------------------
+ able                              0          1          0          1
+ achieve                           0          0          2          1
+ advised                           1          0          0          1
+ allpowerful                       1          0          0          1
+ almost                            1          0          0          1
+ alphabet                          1          0          0          1
+ although                          0          1          0          1
+ arches                            0          1          0          1
+ arm                               0          1          0          1
+ armourlike                        0          1          0          1
+ away                              1          0          0          1
+ back                              1          1          0          2
+ bad                               1          0          0          1
+ bed                               0          1          0          1
+ bedding                           0          1          0          1
+ behind                            1          0          0          1
+ belly                             0          1          0          1
+ belt                              1          0          0          1
+ big                               1          0          0          1
+ blind                             4          0          0          1
+ boa                               0          1          0          1
+ bookmarksgrove                    2          0          0          1
+ brown                             0          1          0          1
+ cambridge                         0          0          1          1
+ cheek                             1          0          0          1
+ coalesce                          0          0          2          1
+ coast                             1          0          0          1
+ collection                        0          1          0          1
+ commas                            1          0          0          1
+ common                            0          0          7          1
+ compared                          0          1          0          1
+ consonantia                       1          0          0          1
+ continued                         1          0          0          1
+ control                           1          0          0          1
+ countries                         1          0          0          1
+ country                           1          0          0          1
+ cover                             0          1          0          1
+ covered                           0          1          0          1
+ cut                               0          1          0          1
+ day                               1          0          0          1
+ decided                           1          0          0          1
+ desirable                         0          0          2          1
+ devious                           1          0          0          1
+ differ                            0          0          2          1
+ divided                           0          1          0          1
+ domed                             0          1          0          1
+ dream                             0          1          0          1
+ dreams                            0          1          0          1
+ drops                             0          1          0          1
+ duden                             1          0          0          1
+ dull                              0          1          0          1
+ english                           0          0          2          1
+ etc                               0          0          2          1
+ europe                            0          0          2          1
+ european                          0          0          3          1
+ even                              1          0          0          1
+ everyone                          0          0          2          1
+ existence                         0          0          2          1
+ existing                          0          0          1          1
+ expensive                         0          0          2          1
+ fact                              0          0          1          1
+ familiar                          0          1          0          1
+ family                            0          0          2          1
+ far                               4          0          0          1
+ feel                              0          1          0          1
+ first                             1          0          0          1
+ fitted                            0          1          0          1
+ flows                             1          0          0          1
+ fly                               1          0          0          1
+ found                             0          1          0          1
+ four                              0          1          0          1
+ frame                             0          1          0          1
+ friend                            0          0          1          1
+ fur                               0          3          0          1
+ gilded                            0          1          0          1
+ grammar                           1          0          6          2
+ gregor                            0          2          0          1
+ happened                          0          1          0          1
+ hardly                            0          1          0          1
+ hat                               0          1          0          1
+ head                              0          1          0          1
+ headline                          1          0          0          1
+ heard                             0          1          0          1
+ heavy                             0          1          0          1
+ helplessly                        0          1          0          1
+ hills                             1          0          0          1
+ hitting                           0          1          0          1
+ hometown                          1          0          0          1
+ horrible                          0          1          0          1
+ housed                            0          1          0          1
+ however                           1          0          0          1
+ human                             0          1          0          1
+ hung                              0          1          0          1
+ illustrated                       0          1          0          1
+ individual                        0          0          2          1
+ initial                           1          0          0          1
+ ipsum                             1          0          0          1
+ isthe                             0          0          1          1
+ italic                            1          0          0          1
+ lady                              0          1          0          1
+ lane                              1          0          0          1
+ language                          1          0          5          2
+ languages                         0          0          9          1
+ large                             1          0          0          1
+ last                              1          0          0          1
+ lay                               0          3          0          1
+ leave                             1          0          0          1
+ legs                              0          1          0          1
+ life                              1          0          0          1
+ lifted                            0          1          0          1
+ like                              0          0          1          1
+ line                              2          0          0          1
+ listen                            1          0          0          1
+ little                            1          2          0          2
+ live                              2          0          0          1
+ look                              0          1          0          1
+ looked                            0          1          0          1
+ lorem                             1          0          0          1
+ lower                             0          1          0          1
+ made                              1          1          0          2
+ magazine                          0          1          0          1
+ many                              0          1          0          1
+ marks                             1          0          0          1
+ members                           0          0          2          1
+ mine                              0          0          1          1
+ moment                            0          1          0          1
+ morning                           0          1          0          1
+ mountains                         2          0          0          1
+ mouth                             1          0          0          1
+ muff                              0          1          0          1
+ music                             0          0          2          1
+ myth                              0          0          2          1
+ name                              1          0          0          1
+ named                             1          0          0          1
+ necessary                         1          0          2          2
+ new                               0          0          3          1
+ nice                              0          1          0          1
+ occidental                        0          0          3          1
+ ocean                             1          0          0          1
+ one                               1          1          2          3
+ oxmox                             1          0          0          1
+ packed                            1          0          0          1
+ pane                              0          1          0          1
+ paradisematic                     1          0          0          1
+ parts                             1          0          0          1
+ pay                               0          0          2          1
+ peacefully                        0          1          0          1
+ person                            0          0          1          1
+ picture                           0          1          0          1
+ pitifully                         0          1          0          1
+ pityful                           1          0          0          1
+ place                             1          0          0          1
+ pointing                          1          0          0          1
+ pronunciation                     0          0          4          1
+ proper                            0          1          0          1
+ put                               1          0          0          1
+ question                          2          0          0          1
+ quite                             0          1          0          1
+ rain                              0          1          0          1
+ raising                           0          1          0          1
+ ran                               1          0          0          1
+ reached                           1          0          0          1
+ ready                             0          1          0          1
+ realizes                          0          0          2          1
+ recently                          0          1          0          1
+ refuse                            0          0          2          1
+ regelialia                        1          0          0          1
+ regular                           0          0          3          1
+ rest                              0          1          0          1
+ resulting                         0          0          2          1
+ rethoric                          1          0          0          1
+ right                             1          0          0          1
+ river                             1          0          0          1
+ road                              1          0          0          1
+ roasted                           1          0          0          1
+ room                              0          2          0          1
+ sad                               0          1          0          1
+ salesman                          0          1          0          1
+ samples                           0          1          0          1
+ samsa                             0          2          0          1
+ sat                               0          1          0          1
+ science                           0          0          2          1
+ sections                          0          1          0          1
+ see                               0          1          0          1
+ seem                              0          0          1          1
+ seemed                            0          1          0          1
+ semantics                         1          0          0          1
+ semikoli                          1          0          0          1
+ sentences                         1          0          0          1
+ separate                          0          0          2          1
+ separated                         1          0          0          1
+ seven                             1          0          0          1
+ several                           0          0          2          1
+ showed                            0          1          0          1
+ simple                            0          0          4          1
+ simplified                        0          0          1          1
+ size                              0          1          0          1
+ skeptical                         0          0          1          1
+ skyline                           1          0          0          1
+ slide                             0          1          0          1
+ slightly                          0          1          0          1
+ small                             2          1          0          2
+ sport                             0          0          2          1
+ spread                            0          1          0          1
+ stiff                             0          1          0          1
+ subline                           1          0          0          1
+ supplies                          1          0          0          1
+ table                             0          1          0          1
+ text                              2          0          0          1
+ textile                           0          1          0          1
+ texts                             2          0          0          1
+ thin                              0          1          0          1
+ thought                           0          1          0          1
+ thousands                         1          0          0          1
+ told                              0          0          1          1
+ towards                           0          1          0          1
+ transformed                       0          1          0          1
+ translators                       0          0          2          1
+ travelling                        0          1          0          1
+ troubled                          0          1          0          1
+ turned                            0          1          0          1
+ uniform                           0          0          2          1
+ unorthographic                    1          0          0          1
+ upright                           0          1          0          1
+ uses                              0          0          2          1
+ vermin                            0          1          0          1
+ versalia                          1          0          0          1
+ view                              1          0          0          1
+ viewer                            0          1          0          1
+ village                           1          0          0          1
+ vocabulary                        0          0          2          1
+ vokalia                           1          0          0          1
+ walls                             0          1          0          1
+ waved                             0          1          0          1
+ way                               2          0          0          1
+ weather                           0          1          0          1
+ whole                             0          1          0          1
+ wild                              1          0          0          1
+ will                              0          0          4          1
+ window                            0          1          0          1
+ woke                              0          1          0          1
+ word                              1          0          0          1
+ words                             0          0          4          1
+ world                             1          0          0          1
+ --------------------------------------------------------------------
+                    TOTAL        110        113        125
+ --------------------------------------------------------------------
+
+ WEIGHT MATRIX              doc1.txt   doc2.txt   doc3.txt
+ ---------------------------------------------------------
+ able                          0.000      1.099      0.000
+ achieve                       0.000      0.000      1.860
+ advised                       1.099      0.000      0.000
+ allpowerful                   1.099      0.000      0.000
+ almost                        1.099      0.000      0.000
+ alphabet                      1.099      0.000      0.000
+ although                      0.000      1.099      0.000
+ arches                        0.000      1.099      0.000
+ arm                           0.000      1.099      0.000
+ armourlike                    0.000      1.099      0.000
+ away                          1.099      0.000      0.000
+ back                          0.405      0.405      0.000
+ bad                           1.099      0.000      0.000
+ bed                           0.000      1.099      0.000
+ bedding                       0.000      1.099      0.000
+ behind                        1.099      0.000      0.000
+ belly                         0.000      1.099      0.000
+ belt                          1.099      0.000      0.000
+ big                           1.099      0.000      0.000
+ blind                         2.622      0.000      0.000
+ boa                           0.000      1.099      0.000
+ bookmarksgrove                1.860      0.000      0.000
+ brown                         0.000      1.099      0.000
+ cambridge                     0.000      0.000      1.099
+ cheek                         1.099      0.000      0.000
+ coalesce                      0.000      0.000      1.860
+ coast                         1.099      0.000      0.000
+ collection                    0.000      1.099      0.000
+ commas                        1.099      0.000      0.000
+ common                        0.000      0.000      3.236
+ compared                      0.000      1.099      0.000
+ consonantia                   1.099      0.000      0.000
+ continued                     1.099      0.000      0.000
+ control                       1.099      0.000      0.000
+ countries                     1.099      0.000      0.000
+ country                       1.099      0.000      0.000
+ cover                         0.000      1.099      0.000
+ covered                       0.000      1.099      0.000
+ cut                           0.000      1.099      0.000
+ day                           1.099      0.000      0.000
+ decided                       1.099      0.000      0.000
+ desirable                     0.000      0.000      1.860
+ devious                       1.099      0.000      0.000
+ differ                        0.000      0.000      1.860
+ divided                       0.000      1.099      0.000
+ domed                         0.000      1.099      0.000
+ dream                         0.000      1.099      0.000
+ dreams                        0.000      1.099      0.000
+ drops                         0.000      1.099      0.000
+ duden                         1.099      0.000      0.000
+ dull                          0.000      1.099      0.000
+ english                       0.000      0.000      1.860
+ etc                           0.000      0.000      1.860
+ europe                        0.000      0.000      1.860
+ european                      0.000      0.000      2.306
+ even                          1.099      0.000      0.000
+ everyone                      0.000      0.000      1.860
+ existence                     0.000      0.000      1.860
+ existing                      0.000      0.000      1.099
+ expensive                     0.000      0.000      1.860
+ fact                          0.000      0.000      1.099
+ familiar                      0.000      1.099      0.000
+ family                        0.000      0.000      1.860
+ far                           2.622      0.000      0.000
+ feel                          0.000      1.099      0.000
+ first                         1.099      0.000      0.000
+ fitted                        0.000      1.099      0.000
+ flows                         1.099      0.000      0.000
+ fly                           1.099      0.000      0.000
+ found                         0.000      1.099      0.000
+ four                          0.000      1.099      0.000
+ frame                         0.000      1.099      0.000
+ friend                        0.000      0.000      1.099
+ fur                           0.000      2.306      0.000
+ gilded                        0.000      1.099      0.000
+ grammar                       0.405      0.000      1.132
+ gregor                        0.000      1.860      0.000
+ happened                      0.000      1.099      0.000
+ hardly                        0.000      1.099      0.000
+ hat                           0.000      1.099      0.000
+ head                          0.000      1.099      0.000
+ headline                      1.099      0.000      0.000
+ heard                         0.000      1.099      0.000
+ heavy                         0.000      1.099      0.000
+ helplessly                    0.000      1.099      0.000
+ hills                         1.099      0.000      0.000
+ hitting                       0.000      1.099      0.000
+ hometown                      1.099      0.000      0.000
+ horrible                      0.000      1.099      0.000
+ housed                        0.000      1.099      0.000
+ however                       1.099      0.000      0.000
+ human                         0.000      1.099      0.000
+ hung                          0.000      1.099      0.000
+ illustrated                   0.000      1.099      0.000
+ individual                    0.000      0.000      1.860
+ initial                       1.099      0.000      0.000
+ ipsum                         1.099      0.000      0.000
+ isthe                         0.000      0.000      1.099
+ italic                        1.099      0.000      0.000
+ lady                          0.000      1.099      0.000
+ lane                          1.099      0.000      0.000
+ language                      0.405      0.000      1.058
+ languages                     0.000      0.000      3.513
+ large                         1.099      0.000      0.000
+ last                          1.099      0.000      0.000
+ lay                           0.000      2.306      0.000
+ leave                         1.099      0.000      0.000
+ legs                          0.000      1.099      0.000
+ life                          1.099      0.000      0.000
+ lifted                        0.000      1.099      0.000
+ like                          0.000      0.000      1.099
+ line                          1.860      0.000      0.000
+ listen                        1.099      0.000      0.000
+ little                        0.405      0.687      0.000
+ live                          1.860      0.000      0.000
+ look                          0.000      1.099      0.000
+ looked                        0.000      1.099      0.000
+ lorem                         1.099      0.000      0.000
+ lower                         0.000      1.099      0.000
+ made                          0.405      0.405      0.000
+ magazine                      0.000      1.099      0.000
+ many                          0.000      1.099      0.000
+ marks                         1.099      0.000      0.000
+ members                       0.000      0.000      1.860
+ mine                          0.000      0.000      1.099
+ moment                        0.000      1.099      0.000
+ morning                       0.000      1.099      0.000
+ mountains                     1.860      0.000      0.000
+ mouth                         1.099      0.000      0.000
+ muff                          0.000      1.099      0.000
+ music                         0.000      0.000      1.860
+ myth                          0.000      0.000      1.860
+ name                          1.099      0.000      0.000
+ named                         1.099      0.000      0.000
+ necessary                     0.405      0.000      0.687
+ new                           0.000      0.000      2.306
+ nice                          0.000      1.099      0.000
+ occidental                    0.000      0.000      2.306
+ ocean                         1.099      0.000      0.000
+ one                           0.000      0.000      0.000
+ oxmox                         1.099      0.000      0.000
+ packed                        1.099      0.000      0.000
+ pane                          0.000      1.099      0.000
+ paradisematic                 1.099      0.000      0.000
+ parts                         1.099      0.000      0.000
+ pay                           0.000      0.000      1.860
+ peacefully                    0.000      1.099      0.000
+ person                        0.000      0.000      1.099
+ picture                       0.000      1.099      0.000
+ pitifully                     0.000      1.099      0.000
+ pityful                       1.099      0.000      0.000
+ place                         1.099      0.000      0.000
+ pointing                      1.099      0.000      0.000
+ pronunciation                 0.000      0.000      2.622
+ proper                        0.000      1.099      0.000
+ put                           1.099      0.000      0.000
+ question                      1.860      0.000      0.000
+ quite                         0.000      1.099      0.000
+ rain                          0.000      1.099      0.000
+ raising                       0.000      1.099      0.000
+ ran                           1.099      0.000      0.000
+ reached                       1.099      0.000      0.000
+ ready                         0.000      1.099      0.000
+ realizes                      0.000      0.000      1.860
+ recently                      0.000      1.099      0.000
+ refuse                        0.000      0.000      1.860
+ regelialia                    1.099      0.000      0.000
+ regular                       0.000      0.000      2.306
+ rest                          0.000      1.099      0.000
+ resulting                     0.000      0.000      1.860
+ rethoric                      1.099      0.000      0.000
+ right                         1.099      0.000      0.000
+ river                         1.099      0.000      0.000
+ road                          1.099      0.000      0.000
+ roasted                       1.099      0.000      0.000
+ room                          0.000      1.860      0.000
+ sad                           0.000      1.099      0.000
+ salesman                      0.000      1.099      0.000
+ samples                       0.000      1.099      0.000
+ samsa                         0.000      1.860      0.000
+ sat                           0.000      1.099      0.000
+ science                       0.000      0.000      1.860
+ sections                      0.000      1.099      0.000
+ see                           0.000      1.099      0.000
+ seem                          0.000      0.000      1.099
+ seemed                        0.000      1.099      0.000
+ semantics                     1.099      0.000      0.000
+ semikoli                      1.099      0.000      0.000
+ sentences                     1.099      0.000      0.000
+ separate                      0.000      0.000      1.860
+ separated                     1.099      0.000      0.000
+ seven                         1.099      0.000      0.000
+ several                       0.000      0.000      1.860
+ showed                        0.000      1.099      0.000
+ simple                        0.000      0.000      2.622
+ simplified                    0.000      0.000      1.099
+ size                          0.000      1.099      0.000
+ skeptical                     0.000      0.000      1.099
+ skyline                       1.099      0.000      0.000
+ slide                         0.000      1.099      0.000
+ slightly                      0.000      1.099      0.000
+ small                         0.687      0.405      0.000
+ sport                         0.000      0.000      1.860
+ spread                        0.000      1.099      0.000
+ stiff                         0.000      1.099      0.000
+ subline                       1.099      0.000      0.000
+ supplies                      1.099      0.000      0.000
+ table                         0.000      1.099      0.000
+ text                          1.860      0.000      0.000
+ textile                       0.000      1.099      0.000
+ texts                         1.860      0.000      0.000
+ thin                          0.000      1.099      0.000
+ thought                       0.000      1.099      0.000
+ thousands                     1.099      0.000      0.000
+ told                          0.000      0.000      1.099
+ towards                       0.000      1.099      0.000
+ transformed                   0.000      1.099      0.000
+ translators                   0.000      0.000      1.860
+ travelling                    0.000      1.099      0.000
+ troubled                      0.000      1.099      0.000
+ turned                        0.000      1.099      0.000
+ uniform                       0.000      0.000      1.860
+ unorthographic                1.099      0.000      0.000
+ upright                       0.000      1.099      0.000
+ uses                          0.000      0.000      1.860
+ vermin                        0.000      1.099      0.000
+ versalia                      1.099      0.000      0.000
+ view                          1.099      0.000      0.000
+ viewer                        0.000      1.099      0.000
+ village                       1.099      0.000      0.000
+ vocabulary                    0.000      0.000      1.860
+ vokalia                       1.099      0.000      0.000
+ walls                         0.000      1.099      0.000
+ waved                         0.000      1.099      0.000
+ way                           1.860      0.000      0.000
+ weather                       0.000      1.099      0.000
+ whole                         0.000      1.099      0.000
+ wild                          1.099      0.000      0.000
+ will                          0.000      0.000      2.622
+ window                        0.000      1.099      0.000
+ woke                          0.000      1.099      0.000
+ word                          1.099      0.000      0.000
+ words                         0.000      0.000      2.622
+ world                         1.099      0.000      0.000
+ ---------------------------------------------------------
+
+***  END FILTERED INDEX  ***
+***  END INDEXER PROGRAM  ***

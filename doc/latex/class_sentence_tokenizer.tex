@@ -1,0 +1,138 @@
+\hypertarget{class_sentence_tokenizer}{}\section{Sentence\+Tokenizer Class Reference}
+\label{class_sentence_tokenizer}\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+
+
+\hyperlink{class_sentence_tokenizer}{Sentence\+Tokenizer} class.  
+
+
+
+
+{\ttfamily \#include $<$sentence\+\_\+tokenizer.\+h$>$}
+
+Inheritance diagram for Sentence\+Tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sentence_tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sentence_tokenizer_a7ac4c0f31e4066808cb2f4e8f1aee545}{Sentence\+Tokenizer} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_sentence_tokenizer_a7788c34102dd503c2df5fd51987dedd8}{Sentence\+Tokenizer} (const std\+::string \&bad, const std\+::string \&abbrevs\+\_\+fp=std\+::string())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{class_sentence_tokenizer_a8779c5491a643a76cc7ce5ded0c28d07}{name} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{class_sentence_tokenizer_a43c1d3f33855c3e5c80cab538cea9224}{tokenize} (std\+::stringstream \&ss) override
+\begin{DoxyCompactList}\small\item\em Tokenizer Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sentence_tokenizer_aa9f63e2a3f706fff9b7d65aa31c5d4d1}\label{class_sentence_tokenizer_aa9f63e2a3f706fff9b7d65aa31c5d4d1}} 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_sentence_tokenizer_a7c3ce1b9636d33b34aedc21c1b9f552b}{name\+\_\+}
+\begin{DoxyCompactList}\small\item\em String Member Variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_sentence_tokenizer_a925161446748331a428a289e459c6e53}{abbrevs}
+\begin{DoxyCompactList}\small\item\em Vector of String Data Members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_sentence_tokenizer}{Sentence\+Tokenizer} class. 
+
+\mbox{[}D\+E\+R\+I\+V\+ED C\+L\+A\+SS\mbox{]}
+
+This class is responsible for breaking an input stream of characters into individual sentences, by splitting it at the end of a typical sentence punctuation, while altogether watching out for name abbreviations and prefixes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sentence_tokenizer_a7ac4c0f31e4066808cb2f4e8f1aee545}\label{class_sentence_tokenizer_a7ac4c0f31e4066808cb2f4e8f1aee545}} 
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\subsubsection{\texorpdfstring{Sentence\+Tokenizer()}{SentenceTokenizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sentence\+Tokenizer\+::\+Sentence\+Tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty Constructor. 
+
+Empty derived constructor referencing base class \hyperlink{class_abstract_tokenizer}{Abstract\+Tokenizer} \mbox{\Hypertarget{class_sentence_tokenizer_a7788c34102dd503c2df5fd51987dedd8}\label{class_sentence_tokenizer_a7788c34102dd503c2df5fd51987dedd8}} 
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\subsubsection{\texorpdfstring{Sentence\+Tokenizer()}{SentenceTokenizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sentence\+Tokenizer\+::\+Sentence\+Tokenizer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bad,  }\item[{const std\+::string \&}]{abbrevs\+\_\+fp = {\ttfamily std\+:\+:string()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+This Constructor assigns member variable \char`\"{}bad\char`\"{} a String value, corresponding to characters that will be used to split all input streams into individual sentence tokens. Member variable \char`\"{}abbrevs\+\_\+fp\char`\"{} is also specified, referring to a file path that contains a text file with predetermined abbreviates and prefixes that the routine should not split at. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sentence_tokenizer_a8779c5491a643a76cc7ce5ded0c28d07}\label{class_sentence_tokenizer_a8779c5491a643a76cc7ce5ded0c28d07}} 
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!name@{name}}
+\index{name@{name}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string\& Sentence\+Tokenizer\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor Method. 
+
+Accessor Method to return name, corresponding to document name. \mbox{\Hypertarget{class_sentence_tokenizer_a43c1d3f33855c3e5c80cab538cea9224}\label{class_sentence_tokenizer_a43c1d3f33855c3e5c80cab538cea9224}} 
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\subsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ \& Sentence\+Tokenizer\+::tokenize (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Tokenizer Method. 
+
+Splits String\+Stream reference into vector of string sentences
+
+
+\begin{DoxyParams}{Parameters}
+{\em ss} & is a String Stream Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String (Token) Vector 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_abstract_tokenizer_a566f425fc415ed1dfefc13706868a3ff}{Abstract\+Tokenizer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sentence_tokenizer_a925161446748331a428a289e459c6e53}\label{class_sentence_tokenizer_a925161446748331a428a289e459c6e53}} 
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!abbrevs@{abbrevs}}
+\index{abbrevs@{abbrevs}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\subsubsection{\texorpdfstring{abbrevs}{abbrevs}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Sentence\+Tokenizer\+::abbrevs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of String Data Members. 
+
+Corresponds to vector of Abbreviations using during tokenization \mbox{\Hypertarget{class_sentence_tokenizer_a7c3ce1b9636d33b34aedc21c1b9f552b}\label{class_sentence_tokenizer_a7c3ce1b9636d33b34aedc21c1b9f552b}} 
+\index{Sentence\+Tokenizer@{Sentence\+Tokenizer}!name\+\_\+@{name\+\_\+}}
+\index{name\+\_\+@{name\+\_\+}!Sentence\+Tokenizer@{Sentence\+Tokenizer}}
+\subsubsection{\texorpdfstring{name\+\_\+}{name\_}}
+{\footnotesize\ttfamily std\+::string Sentence\+Tokenizer\+::name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+String Member Variable. 
+
+Corresponds to name of \hyperlink{class_document}{Document} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence\+\_\+tokenizer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,339 @@
+\hypertarget{class_indexer}{}\section{Indexer Class Reference}
+\label{class_indexer}\index{Indexer@{Indexer}}
+
+
+\hyperlink{class_indexer}{Indexer} class.  
+
+
+
+
+{\ttfamily \#include $<$indexer.\+h$>$}
+
+Inheritance diagram for Indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_indexer_a22640e826daa9ff32e9c78dbb08ec042}\label{class_indexer_a22640e826daa9ff32e9c78dbb08ec042}} 
+typedef std\+::pair$<$ int, double $>$ {\bfseries query\+\_\+pair}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_indexer_ac4c8c21c68d62185ceddbad8781e3b67}\label{class_indexer_ac4c8c21c68d62185ceddbad8781e3b67}} 
+\hyperlink{class_indexer_ac4c8c21c68d62185ceddbad8781e3b67}{Indexer} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_indexer_a0fd33d8c08067e6042d189fdf343af01}\label{class_indexer_a0fd33d8c08067e6042d189fdf343af01}} 
+virtual \hyperlink{class_indexer_a0fd33d8c08067e6042d189fdf343af01}{$\sim$\+Indexer} ()
+\begin{DoxyCompactList}\small\item\em Virtual Deconstructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_indexer_a3396f2205b557f583d0dfc756942244e}\label{class_indexer_a3396f2205b557f583d0dfc756942244e}} 
+virtual const \hyperlink{class_index_item}{Index\+Item} $\ast$ {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const =0
+\item 
+virtual bool \hyperlink{class_indexer_aa2be6d79e0425aafd10b98118fcbb4ee}{operator()} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Override operator() \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_indexer_abb847ff86be1ec9265fb53a5ac6f7008}{contains} (const std\+::string \&s) const =0
+\begin{DoxyCompactList}\small\item\em Boolean Function Contains. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ \hyperlink{class_indexer_a8d98ba740db6f5f8521d557bf908aead}{query} (const std\+::string \&s, size\+\_\+t i=10) const =0
+\begin{DoxyCompactList}\small\item\em Search and Process Query. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}{normalize} ()=0
+\begin{DoxyCompactList}\small\item\em Compute Weights. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}{size} () const =0
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{class_indexer_a9f9ea4d9946c531f257720cc9e9391eb}{item\+\_\+freq} (const std\+::string \&s) const =0
+\begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}{term\+\_\+freq} (const std\+::string \&s, int i) const =0
+\begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
+virtual double \hyperlink{class_indexer_aadcdca40938d27c465e564ac8852f02d}{norm\+\_\+tf} (const std\+::string \&s, int i) const =0
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+virtual double \hyperlink{class_indexer_af71c69a4267217969f21cba44822f263}{norm\+\_\+idf} (const std\+::string \&s) const =0
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+virtual double \hyperlink{class_indexer_a8301fcbdf40afd926ab71d4767575d32}{weight} (const std\+::string \&s, int i) const =0
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_indexer_a0587f6a4d61620219473bf583ecdbad5}{query\+\_\+freqs} (std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, const std\+::vector$<$ std\+::string $>$ \&t) const =0
+\begin{DoxyCompactList}\small\item\em Query Term Frequency. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_indexer_a74819336b6d9883483c09349ebdf43b8}{query\+\_\+weights} (std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&dw) const =0
+\begin{DoxyCompactList}\small\item\em Query and \hyperlink{class_document}{Document} Weights. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ \hyperlink{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}{cos\+\_\+similarity} (const std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, const std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&dw, const std\+::vector$<$ std\+::string $>$ \&t) const =0
+\begin{DoxyCompactList}\small\item\em Calculate the Cosine Similarity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{class_indexer_adee34c99c25edcfd4a2b2ae6fe06c3cc}{h\+\_\+separator} (size\+\_\+t w)
+\item 
+static const std\+::string \hyperlink{class_indexer_ab8eadc78458b58c256a70208ea927d55}{v\+\_\+separator} (size\+\_\+t w)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stopword}{Stopword} \hyperlink{class_indexer_af6f4a98f2cd0bb95f22203902ed2349d}{stopword}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stopword}{Stopword} Object. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_indexer_a605caf73d13945418d628d740468d86d}{longest} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Size\+\_\+T Member Variable. \end{DoxyCompactList}\item 
+bool \hyperlink{class_indexer_a1345c9d490613f7b3a823ade15d7f68c}{normalized} \{ false \}
+\begin{DoxyCompactList}\small\item\em Boolean Member Variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_indexer_a0ddf1224851353fc92bfbff6f499fa97}\label{class_indexer_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_indexer}{Indexer} class. 
+
+\mbox{[}B\+A\+SE C\+L\+A\+SS\mbox{]} This class handles parsing through a list of Documents and creating specified Index\+Items for each said Documents. The weight and score for each \hyperlink{class_index_item}{Index\+Item} is calculated and stored within in a map which will be used to compare with a Input Query specified by end user in order to generate results, based on the cosine similarity of the Query and \hyperlink{class_index_item}{Index\+Item} Map. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_indexer_abb847ff86be1ec9265fb53a5ac6f7008}\label{class_indexer_abb847ff86be1ec9265fb53a5ac6f7008}} 
+\index{Indexer@{Indexer}!contains@{contains}}
+\index{contains@{contains}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily virtual bool Indexer\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Boolean Function Contains. 
+
+Pure Virtual Function. Return true if dictionary contains string input parameter 
+
+Implemented in \hyperlink{class_document_indexer_a4bd5fd7be55de9932933dd6f7bfa7d9f}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}\label{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}} 
+\index{Indexer@{Indexer}!cos\+\_\+similarity@{cos\+\_\+similarity}}
+\index{cos\+\_\+similarity@{cos\+\_\+similarity}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{cos\+\_\+similarity()}{cos\_similarity()}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$\hyperlink{class_query_result}{Query\+Result}$>$ Indexer\+::cos\+\_\+similarity (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{const std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&}]{dw,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Calculate the Cosine Similarity. 
+
+Pure Virtual. Create a vector of \hyperlink{class_query_result}{Query\+Result} through which the cosine similarity is calculated. Returns the vector of \hyperlink{class_query_result}{Query\+Result} containing the match score of each document to the search query. 
+
+Implemented in \hyperlink{class_document_indexer_a8738997048b5bfd336f48bade7715cc6}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a913914f26a73e00f293308baff97e23f}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_adee34c99c25edcfd4a2b2ae6fe06c3cc}\label{class_indexer_adee34c99c25edcfd4a2b2ae6fe06c3cc}} 
+\index{Indexer@{Indexer}!h\+\_\+separator@{h\+\_\+separator}}
+\index{h\+\_\+separator@{h\+\_\+separator}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{h\+\_\+separator()}{h\_separator()}}
+{\footnotesize\ttfamily const std\+::string Indexer\+::h\+\_\+separator (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & is a Size\+\_\+T value corresponding to size of horizontal separator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String value corresponding to generated horizontal seperator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_indexer_a9f9ea4d9946c531f257720cc9e9391eb}\label{class_indexer_a9f9ea4d9946c531f257720cc9e9391eb}} 
+\index{Indexer@{Indexer}!item\+\_\+freq@{item\+\_\+freq}}
+\index{item\+\_\+freq@{item\+\_\+freq}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{item\+\_\+freq()}{item\_freq()}}
+{\footnotesize\ttfamily virtual int Indexer\+::item\+\_\+freq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Member Integer Function. 
+
+Pure Virtual. Item Frequency; Used in calculation of Weight. 
+
+Implemented in \hyperlink{class_document_indexer_a302fed9a2c33a60bc7d9d7bcb03902fa}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a892b5cc701450698a04de74a3661928e}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_af71c69a4267217969f21cba44822f263}\label{class_indexer_af71c69a4267217969f21cba44822f263}} 
+\index{Indexer@{Indexer}!norm\+\_\+idf@{norm\+\_\+idf}}
+\index{norm\+\_\+idf@{norm\+\_\+idf}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{norm\+\_\+idf()}{norm\_idf()}}
+{\footnotesize\ttfamily virtual double Indexer\+::norm\+\_\+idf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Member Double Function. 
+
+Pure Virtual. Normalized \hyperlink{class_document}{Document} Frequency; Used in calculation of Weight. 
+
+Implemented in \hyperlink{class_document_indexer_a1c366e241572edc6e1d256db906cac43}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a646014181566f20140cee5dbd16f52fa}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_aadcdca40938d27c465e564ac8852f02d}\label{class_indexer_aadcdca40938d27c465e564ac8852f02d}} 
+\index{Indexer@{Indexer}!norm\+\_\+tf@{norm\+\_\+tf}}
+\index{norm\+\_\+tf@{norm\+\_\+tf}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{norm\+\_\+tf()}{norm\_tf()}}
+{\footnotesize\ttfamily virtual double Indexer\+::norm\+\_\+tf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Member Double Function. 
+
+Pure Virtual. Normalized Term Frequency; Used in calculation of Weight. 
+
+Implemented in \hyperlink{class_document_indexer_a91cbacd5c82134b2ba6ab79e06fa4a60}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ada837ec334535e133c9ec511b369abfa}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}\label{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}} 
+\index{Indexer@{Indexer}!normalize@{normalize}}
+\index{normalize@{normalize}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily virtual void Indexer\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute Weights. 
+
+Pure Virtual Function. This method utilizes the method \hyperlink{class_indexer_a8301fcbdf40afd926ab71d4767575d32}{weight()} to calculate and store the weight of each token. 
+
+Implemented in \hyperlink{class_document_indexer_a5e0aeb92576847e9462670693cb0737c}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ae038d36081439a5107821ac48a318d66}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_aa2be6d79e0425aafd10b98118fcbb4ee}\label{class_indexer_aa2be6d79e0425aafd10b98118fcbb4ee}} 
+\index{Indexer@{Indexer}!operator()@{operator()}}
+\index{operator()@{operator()}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual bool Indexer\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Override operator() 
+
+Virtual Function. Override operator(). Return value from member function contains \mbox{\Hypertarget{class_indexer_a8d98ba740db6f5f8521d557bf908aead}\label{class_indexer_a8d98ba740db6f5f8521d557bf908aead}} 
+\index{Indexer@{Indexer}!query@{query}}
+\index{query@{query}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily virtual const std\+::vector$<$\hyperlink{class_query_result}{Query\+Result}$>$ Indexer\+::query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{size\+\_\+t}]{i = {\ttfamily 10} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Search and Process Query. 
+
+Virtual Function. If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a \hyperlink{class_query_result}{Query\+Result} vector. (See \hyperlink{class_query_result}{Query\+Result} class for more details). Depending on the input parameter i (default 10), this method returns the top i results. 
+
+Implemented in \hyperlink{class_document_indexer_af14be24c72be4b3eb165da9c504ec7d1}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_acc4165c39f2193050d207861936927a7}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_a0587f6a4d61620219473bf583ecdbad5}\label{class_indexer_a0587f6a4d61620219473bf583ecdbad5}} 
+\index{Indexer@{Indexer}!query\+\_\+freqs@{query\+\_\+freqs}}
+\index{query\+\_\+freqs@{query\+\_\+freqs}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{query\+\_\+freqs()}{query\_freqs()}}
+{\footnotesize\ttfamily virtual void Indexer\+::query\+\_\+freqs (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Query Term Frequency. 
+
+Pure Virtual. Get Query Term Frequencies and update the frequency if the token is already pressent in the map q. Otherwise, create an new key entry. 
+
+Implemented in \hyperlink{class_document_indexer_a48d441022f2f6ea3437f5a67b318e06e}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_af059ce5526fad2995f5595ace00e51a3}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_a74819336b6d9883483c09349ebdf43b8}\label{class_indexer_a74819336b6d9883483c09349ebdf43b8}} 
+\index{Indexer@{Indexer}!query\+\_\+weights@{query\+\_\+weights}}
+\index{query\+\_\+weights@{query\+\_\+weights}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{query\+\_\+weights()}{query\_weights()}}
+{\footnotesize\ttfamily virtual void Indexer\+::query\+\_\+weights (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&}]{dw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Query and \hyperlink{class_document}{Document} Weights. 
+
+Pure Virtual. Update the Query and \hyperlink{class_document}{Document} weights by iterating through both map parameters. 
+
+Implemented in \hyperlink{class_document_indexer_ad9a1b17fec1c999e98b58e3433727f05}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ad3835aaf2ff4a59fff85d596dfc95d5c}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}\label{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}} 
+\index{Indexer@{Indexer}!size@{size}}
+\index{size@{size}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily virtual size\+\_\+t Indexer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Accessor Method. 
+
+Pure Virtual Function. Returns size of a data member. 
+
+Implemented in \hyperlink{class_document_indexer_a0c5ab06e1506acc9bbc950e5c563e278}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a47409c62e1607ae3919a77080fe240a0}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}\label{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}} 
+\index{Indexer@{Indexer}!term\+\_\+freq@{term\+\_\+freq}}
+\index{term\+\_\+freq@{term\+\_\+freq}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{term\+\_\+freq()}{term\_freq()}}
+{\footnotesize\ttfamily virtual int Indexer\+::term\+\_\+freq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Member Integer Function. 
+
+Pure Virtual. Term Frequency; Used in calculation of Weight. 
+
+Implemented in \hyperlink{class_document_indexer_aba9275a0648629cab3772e75519938e8}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a54f8bbbce9e37c355fe435b26c16f1ac}{Sentence\+Indexer}.
+
+\mbox{\Hypertarget{class_indexer_ab8eadc78458b58c256a70208ea927d55}\label{class_indexer_ab8eadc78458b58c256a70208ea927d55}} 
+\index{Indexer@{Indexer}!v\+\_\+separator@{v\+\_\+separator}}
+\index{v\+\_\+separator@{v\+\_\+separator}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{v\+\_\+separator()}{v\_separator()}}
+{\footnotesize\ttfamily const std\+::string Indexer\+::v\+\_\+separator (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & is a Size\+\_\+T value corresponding to size of vertical separator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String value corresponding to generated vertical seperator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_indexer_a8301fcbdf40afd926ab71d4767575d32}\label{class_indexer_a8301fcbdf40afd926ab71d4767575d32}} 
+\index{Indexer@{Indexer}!weight@{weight}}
+\index{weight@{weight}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{weight()}{weight()}}
+{\footnotesize\ttfamily virtual double Indexer\+::weight (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Member Double Function. 
+
+Pure Virtual. Weight = (1 + Log (term frequency)) $\ast$ Log ( \# of Documents / \hyperlink{class_document}{Document} Frequency) 
+
+Implemented in \hyperlink{class_document_indexer_aa637e8bce87c52d0d78bfebe8af02f13}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}{Sentence\+Indexer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_indexer_a605caf73d13945418d628d740468d86d}\label{class_indexer_a605caf73d13945418d628d740468d86d}} 
+\index{Indexer@{Indexer}!longest@{longest}}
+\index{longest@{longest}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{longest}{longest}}
+{\footnotesize\ttfamily size\+\_\+t Indexer\+::longest \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size\+\_\+T Member Variable. 
+
+Equal to longest \hyperlink{class_index_item}{Index\+Item} \mbox{\Hypertarget{class_indexer_a1345c9d490613f7b3a823ade15d7f68c}\label{class_indexer_a1345c9d490613f7b3a823ade15d7f68c}} 
+\index{Indexer@{Indexer}!normalized@{normalized}}
+\index{normalized@{normalized}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{normalized}{normalized}}
+{\footnotesize\ttfamily bool Indexer\+::normalized \{ false \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Boolean Member Variable. 
+
+Boolean Data Member to keep track whether \hyperlink{class_indexer}{Indexer} has been normalized with the addition of new Documents \mbox{\Hypertarget{class_indexer_af6f4a98f2cd0bb95f22203902ed2349d}\label{class_indexer_af6f4a98f2cd0bb95f22203902ed2349d}} 
+\index{Indexer@{Indexer}!stopword@{stopword}}
+\index{stopword@{stopword}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{stopword}{stopword}}
+{\footnotesize\ttfamily \hyperlink{class_stopword}{Stopword} Indexer\+::stopword\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_stopword}{Stopword} Object. 
+
+Contains list of stopwords that shouldn\textquotesingle{}t be included in \hyperlink{class_index}{Index} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/indexer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/indexer.\+cpp\end{DoxyCompactItemize}

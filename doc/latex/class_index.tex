@@ -1,0 +1,112 @@
+\hypertarget{class_index}{}\section{Index Class Reference}
+\label{class_index}\index{Index@{Index}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_index_aa9d4e7751fa8bdd7452858f641d8c912}{Index} (const std\+::string \&index\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{class_index_a6d6dfe2b2a058065c9e62d4f6c285a48}{docs} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{class_index_a187d69bacb4870d4dff6b37584df0925}{name} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_index_a66c168cae41b8ad8a683163c34772b81}{name\+\_\+}
+\begin{DoxyCompactList}\small\item\em String Member Variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_index_ab62d558f26d98409751e445a806a77b8}{docs\+\_\+fp}
+\begin{DoxyCompactList}\small\item\em Vector String Member Variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_document_indexer}{Document\+Indexer} \& \hyperlink{class_index_a82199a005a825421b7db05a3c2547180}{operator$<$$<$} (\hyperlink{class_document_indexer}{Document\+Indexer} \&i, const \hyperlink{class_index}{Index} \&ix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_index_aa9d4e7751fa8bdd7452858f641d8c912}\label{class_index_aa9d4e7751fa8bdd7452858f641d8c912}} 
+\index{Index@{Index}!Index@{Index}}
+\index{Index@{Index}!Index@{Index}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Index\+::\+Index (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{index\+\_\+fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+\_\+fp} & is a string corresponding to the filepath of \hyperlink{class_index}{Index} of files \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_index_a6d6dfe2b2a058065c9e62d4f6c285a48}\label{class_index_a6d6dfe2b2a058065c9e62d4f6c285a48}} 
+\index{Index@{Index}!docs@{docs}}
+\index{docs@{docs}!Index@{Index}}
+\subsubsection{\texorpdfstring{docs()}{docs()}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::string$>$\& Index\+::docs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor Method. 
+
+Returns the vector of string, specifying the list of documents that will be used to populate the search engine. \mbox{\Hypertarget{class_index_a187d69bacb4870d4dff6b37584df0925}\label{class_index_a187d69bacb4870d4dff6b37584df0925}} 
+\index{Index@{Index}!name@{name}}
+\index{name@{name}!Index@{Index}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string\& Index\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor Method. 
+
+Returns the name and filepath of the index file, storing the documents. 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_index_a82199a005a825421b7db05a3c2547180}\label{class_index_a82199a005a825421b7db05a3c2547180}} 
+\index{Index@{Index}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Index@{Index}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \hyperlink{class_document_indexer}{Document\+Indexer}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_document_indexer}{Document\+Indexer} \&}]{i,  }\item[{const \hyperlink{class_index}{Index} \&}]{ix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is a \hyperlink{class_indexer}{Indexer} object \\
+\hline
+{\em ix} & is a \hyperlink{class_index}{Index} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_indexer}{Indexer} object i (parameter) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_index_ab62d558f26d98409751e445a806a77b8}\label{class_index_ab62d558f26d98409751e445a806a77b8}} 
+\index{Index@{Index}!docs\+\_\+fp@{docs\+\_\+fp}}
+\index{docs\+\_\+fp@{docs\+\_\+fp}!Index@{Index}}
+\subsubsection{\texorpdfstring{docs\+\_\+fp}{docs\_fp}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Index\+::docs\+\_\+fp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector String Member Variable. 
+
+Vector containing filepaths of documents as string objects. \mbox{\Hypertarget{class_index_a66c168cae41b8ad8a683163c34772b81}\label{class_index_a66c168cae41b8ad8a683163c34772b81}} 
+\index{Index@{Index}!name\+\_\+@{name\+\_\+}}
+\index{name\+\_\+@{name\+\_\+}!Index@{Index}}
+\subsubsection{\texorpdfstring{name\+\_\+}{name\_}}
+{\footnotesize\ttfamily std\+::string Index\+::name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+String Member Variable. 
+
+Name of file at index filepath (index\+\_\+fp) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/index.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/index.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,42 @@
+***  START GOOGLER PROGRAM  ***
+Processing index file '../files/index.txt'... done.
+Processing stopwords file '../files/stopwords.txt'... done.
+Generating unfiltered index... done.
+Normalizing unfiltered index... done.
+Generating filtered index... done.
+Normalizing filtered index... done.
+Type in a query to search through (normalized) unfiltered index: never let the world know
+
+ QUERY WEIGHTS
+ --------------------------
+ know                0.000
+ let                 0.000
+ never               0.000
+ the                 0.000
+ world               1.099
+ --------------------------
+
+QUERY: never let the world know
+ #1: 'doc1.txt' - cosine similarity of 1.000
+ #2: 'doc2.txt' - cosine similarity of 0.000
+ #3: 'doc3.txt' - cosine similarity of 0.000
+Type in another query to search through unfiltered index: who what world why
+
+ QUERY WEIGHTS
+ --------------------------
+ what                1.099
+ who                 1.099
+ why                 1.099
+ world               1.099
+ --------------------------
+
+QUERY: who what world why
+ #1: 'doc3.txt' - cosine similarity of 0.685
+ #2: 'doc1.txt' - cosine similarity of 0.500
+ #3: 'doc2.txt' - cosine similarity of 0.500
+Type in another query to search through unfiltered index:
+Adding another document to the unfiltered index... done.
+Type in a query to search through (not normalized) unfiltered index: testing normalize
+QUERY: testing normalize
+Exception thrown: INDEX_NOT_NORMALIZED
+***  END GOOGLER PROGRAM  ***

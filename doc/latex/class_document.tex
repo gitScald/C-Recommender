@@ -1,0 +1,205 @@
+\hypertarget{class_document}{}\section{Document Class Reference}
+\label{class_document}\index{Document@{Document}}
+Inheritance diagram for Document\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_document}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_document_acdbcbe550084e8c20f4f67eb229ad66a}\label{class_document_acdbcbe550084e8c20f4f67eb229ad66a}} 
+\hyperlink{class_document_acdbcbe550084e8c20f4f67eb229ad66a}{Document} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_document_a4399bbc9420b5e5c269e9d38be5d4810}{Document} (const std\+::string \&doc\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_a68e12b27c40699cd3c2fff66a6161473}{contains} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Token Verification Method. \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_a44b8141f08f57f9122b3dba4a59bf7e4}{operator()} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Overloading Operator () \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{class_document_a68936706468433f1bbba813797e32bd5}{name} () const override
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_document_a67e7f9b8c668a723b6f7173ae52e5c99}\label{class_document_a67e7f9b8c668a723b6f7173ae52e5c99}} 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_document_ab15ddbb4889c3ed9be0eac73f9f1db94}\label{class_document_ab15ddbb4889c3ed9be0eac73f9f1db94}} 
+std\+::string \hyperlink{class_document_ab15ddbb4889c3ed9be0eac73f9f1db94}{name\+\_\+short}
+\begin{DoxyCompactList}\small\item\em String containing name of document. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_document_ac0be9d01e5e7c2478f3857b0665789c7}\label{class_document_ac0be9d01e5e7c2478f3857b0665789c7}} 
+size\+\_\+t \hyperlink{class_document_ac0be9d01e5e7c2478f3857b0665789c7}{longest} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Value representation of longest string key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_document_a449b7563be6606a689d4417c940b3b39}\label{class_document_a449b7563be6606a689d4417c940b3b39}} 
+class {\bfseries Document\+Indexer}
+\item 
+\hyperlink{class_document}{Document} \& \hyperlink{class_document_ab4b587c28bf3ed83ad2cb6e9052a5a58}{operator$<$$<$} (\hyperlink{class_document}{Document} \&d, const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\item 
+\hyperlink{class_document_indexer}{Document\+Indexer} \& \hyperlink{class_document_a6c2e084b73080867237d1637bc040d66}{operator$<$$<$} (\hyperlink{class_document_indexer}{Document\+Indexer} \&i, const \hyperlink{class_document}{Document} \&d)
+\item 
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \& \hyperlink{class_document_a30be5b0aa936deff7dc8763b554083ef}{operator$<$$<$} (\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&i, const \hyperlink{class_document}{Document} \&d)
+\item 
+std\+::ostream \& \hyperlink{class_document_aa87204fbda2f471a4c7a4499d97c8c27}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_document}{Document} \&d)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_document_a4399bbc9420b5e5c269e9d38be5d4810}\label{class_document_a4399bbc9420b5e5c269e9d38be5d4810}} 
+\index{Document@{Document}!Document@{Document}}
+\index{Document@{Document}!Document@{Document}}
+\subsubsection{\texorpdfstring{Document()}{Document()}}
+{\footnotesize\ttfamily Document\+::\+Document (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{doc\+\_\+fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Constructor takes as input the file name, more precisely its file path, and reads the content of the file into the document object. Using String\+Stream and Tokenizer objects, the constructor dumps the values of the input file into a private map container \char`\"{}dict\char`\"{} (Key = Word, Value = Word Count). 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_document_a68e12b27c40699cd3c2fff66a6161473}\label{class_document_a68e12b27c40699cd3c2fff66a6161473}} 
+\index{Document@{Document}!contains@{contains}}
+\index{contains@{contains}!Document@{Document}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Document\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Token Verification Method. 
+
+Method verifying if the input parameter, representing a key, exist in private map container \char`\"{}dict\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value representing whether or not the map contains the word specified. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_index_item_a534d96bf041a485ed124663b9cded2fb}{Index\+Item}.
+
+\mbox{\Hypertarget{class_document_a68936706468433f1bbba813797e32bd5}\label{class_document_a68936706468433f1bbba813797e32bd5}} 
+\index{Document@{Document}!name@{name}}
+\index{name@{name}!Document@{Document}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string\& Document\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accessor Method. 
+
+Accessor Method. Virtual Method. Returns member variable name\+\_\+ 
+
+Reimplemented from \hyperlink{class_index_item_a059cbae312c51ae7d02050f8f325bf93}{Index\+Item}.
+
+\mbox{\Hypertarget{class_document_a44b8141f08f57f9122b3dba4a59bf7e4}\label{class_document_a44b8141f08f57f9122b3dba4a59bf7e4}} 
+\index{Document@{Document}!operator()@{operator()}}
+\index{operator()@{operator()}!Document@{Document}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Document\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overloading Operator () 
+
+Returns boolean value of member function \char`\"{}contains(x)\char`\"{} where arguement x corresponds to input String parameter. 
+
+Reimplemented from \hyperlink{class_index_item_a38ccc46639b8d0b066024bad728c1bfa}{Index\+Item}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_document_ab4b587c28bf3ed83ad2cb6e9052a5a58}\label{class_document_ab4b587c28bf3ed83ad2cb6e9052a5a58}} 
+\index{Document@{Document}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Document@{Document}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \hyperlink{class_document}{Document}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_document}{Document} \&}]{d,  }\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+This function adds a string token (word corresponding to a document) to a map of a specified \hyperlink{class_document}{Document} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & is a \hyperlink{class_document}{Document} object \\
+\hline
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_document}{Document} object once addition has been completed, regardless of success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_document_a6c2e084b73080867237d1637bc040d66}\label{class_document_a6c2e084b73080867237d1637bc040d66}} 
+\index{Document@{Document}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Document@{Document}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \hyperlink{class_document_indexer}{Document\+Indexer}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_document_indexer}{Document\+Indexer} \&}]{i,  }\item[{const \hyperlink{class_document}{Document} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & is a \hyperlink{class_document}{Document} object \\
+\hline
+{\em i} & is a \hyperlink{class_indexer}{Indexer} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_indexer}{Indexer} object i (parameter) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_document_a30be5b0aa936deff7dc8763b554083ef}\label{class_document_a30be5b0aa936deff7dc8763b554083ef}} 
+\index{Document@{Document}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Document@{Document}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \hyperlink{class_sentence_indexer}{Sentence\+Indexer}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&}]{i,  }\item[{const \hyperlink{class_document}{Document} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is a \hyperlink{class_sentence_indexer}{Sentence\+Indexer} object \\
+\hline
+{\em d} & is a \hyperlink{class_document}{Document} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} Object from input containing \hyperlink{class_sentence}{Sentence} objects derived from \hyperlink{class_document}{Document} d 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_document_aa87204fbda2f471a4c7a4499d97c8c27}\label{class_document_aa87204fbda2f471a4c7a4499d97c8c27}} 
+\index{Document@{Document}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Document@{Document}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_document}{Document} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+This function prints out to an output stream object, the contents of the \hyperlink{class_document}{Document} object. Prints the information first of the \hyperlink{class_document}{Document} (name\+\_\+ and content\+\_\+) followed by the dictionary (map container)
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream Object \\
+\hline
+{\em d} & is a \hyperlink{class_document}{Document} Object whose content will be streamed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ouput Stream object once data has been pushed to stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/document.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/document.\+cpp\end{DoxyCompactItemize}

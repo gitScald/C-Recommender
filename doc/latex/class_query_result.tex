@@ -1,0 +1,198 @@
+\hypertarget{class_query_result}{}\section{Query\+Result Class Reference}
+\label{class_query_result}\index{Query\+Result@{Query\+Result}}
+
+
+\hyperlink{class_query_result}{Query\+Result} Class.  
+
+
+
+
+{\ttfamily \#include $<$query\+\_\+result.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_query_result_a23c0f8433d60025e81759f569dc08ab8}{Query\+Result} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_query_result_a4052497ab00536fed160dd0d0520d15f}{Query\+Result} (const \hyperlink{class_index_item}{Index\+Item} $\ast$item, double score)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_query_result_a702070b121570dbb10b47b264cabaa5f}{Query\+Result} (const \hyperlink{class_query_result}{Query\+Result} \&qr)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_query_result_a568a9db7e3935e4a24cc63e9ec0c80a7}\label{class_query_result_a568a9db7e3935e4a24cc63e9ec0c80a7}} 
+\hyperlink{class_query_result_a568a9db7e3935e4a24cc63e9ec0c80a7}{Query\+Result} (\hyperlink{class_query_result}{Query\+Result} \&\&qr)
+\begin{DoxyCompactList}\small\item\em Move Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_query_result}{Query\+Result} \& \hyperlink{class_query_result_a238ab498750ea7ed31b965a416cc5930}{operator=} (const \hyperlink{class_query_result}{Query\+Result} \&qr)
+\begin{DoxyCompactList}\small\item\em Overload Operator=. \end{DoxyCompactList}\item 
+\hyperlink{class_query_result}{Query\+Result} \& \hyperlink{class_query_result_a61fe09a36b729072cf8db7d36fbd57ba}{operator=} (\hyperlink{class_query_result}{Query\+Result} \&\&qr)
+\begin{DoxyCompactList}\small\item\em Overload Operator=. \end{DoxyCompactList}\item 
+\hyperlink{class_query_result_a7802d975b87856e0c213575258e0f4c0}{operator bool} () const
+\begin{DoxyCompactList}\small\item\em Overload Operator() \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_query_result_af5577f4385769796fe8ff1dc99b83215}\label{class_query_result_af5577f4385769796fe8ff1dc99b83215}} 
+const std\+::string \& {\bfseries content} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_query_result_af34df0a7a6ae86b5eba712e3be297da3}\label{class_query_result_af34df0a7a6ae86b5eba712e3be297da3}} 
+const \hyperlink{class_index_item}{Index\+Item} $\ast$ {\bfseries item\+\_\+}
+\item 
+\mbox{\Hypertarget{class_query_result_abc28ed6816fe64438a1c4a9dcc3d802d}\label{class_query_result_abc28ed6816fe64438a1c4a9dcc3d802d}} 
+double \hyperlink{class_query_result_abc28ed6816fe64438a1c4a9dcc3d802d}{score\+\_\+}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_document}{Document} (ranking) Score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_query_result_aee8d99732fbc64cfb0c8fc5ff84baf99}\label{class_query_result_aee8d99732fbc64cfb0c8fc5ff84baf99}} 
+static const size\+\_\+t {\bfseries w\+\_\+prec} \{ 3 \}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_query_result_a860145488e9a3cd6c7df13816dd3f78e}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_query_result}{Query\+Result} \&qr)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\item 
+bool \hyperlink{class_query_result_a818370d36ae89f51264a7701543884bd}{operator$<$} (const \hyperlink{class_query_result}{Query\+Result} \&qr1, const \hyperlink{class_query_result}{Query\+Result} \&qr2)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_query_result}{Query\+Result} Class. 
+
+Container class, where each \hyperlink{class_query_result}{Query\+Result} object contains the document name and their document score, which is based off a scoring function that computes the cosine similarity between their document vector and a user specified query vector. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_query_result_a23c0f8433d60025e81759f569dc08ab8}\label{class_query_result_a23c0f8433d60025e81759f569dc08ab8}} 
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{Query\+Result()}{QueryResult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Query\+Result\+::\+Query\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Specifies a empty document with a score of 0. \mbox{\Hypertarget{class_query_result_a4052497ab00536fed160dd0d0520d15f}\label{class_query_result_a4052497ab00536fed160dd0d0520d15f}} 
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{Query\+Result()}{QueryResult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Query\+Result\+::\+Query\+Result (\begin{DoxyParamCaption}\item[{const \hyperlink{class_index_item}{Index\+Item} $\ast$}]{item,  }\item[{double}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Constructor assigning the document name to member variable \char`\"{}doc\char`\"{} and score to member variable \char`\"{}score\char`\"{}. \mbox{\Hypertarget{class_query_result_a702070b121570dbb10b47b264cabaa5f}\label{class_query_result_a702070b121570dbb10b47b264cabaa5f}} 
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{Query\+Result()}{QueryResult()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Query\+Result\+::\+Query\+Result (\begin{DoxyParamCaption}\item[{const \hyperlink{class_query_result}{Query\+Result} \&}]{qr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy Constructor. 
+
+(Used by std\+::sort()) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_query_result_a7802d975b87856e0c213575258e0f4c0}\label{class_query_result_a7802d975b87856e0c213575258e0f4c0}} 
+\index{Query\+Result@{Query\+Result}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily Query\+Result\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Overload Operator() 
+
+Verifies that that \hyperlink{class_query_result}{Query\+Result} object isn\textquotesingle{}t an empty QR object. \mbox{\Hypertarget{class_query_result_a238ab498750ea7ed31b965a416cc5930}\label{class_query_result_a238ab498750ea7ed31b965a416cc5930}} 
+\index{Query\+Result@{Query\+Result}!operator=@{operator=}}
+\index{operator=@{operator=}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_query_result}{Query\+Result} \& Query\+Result\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_query_result}{Query\+Result} \&}]{qr }\end{DoxyParamCaption})}
+
+
+
+Overload Operator=. 
+
+(Used by std\+::sort()) Copy Assignment
+
+
+\begin{DoxyParams}{Parameters}
+{\em qr} & is a \hyperlink{class_query_result}{Query\+Result} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_query_result}{Query\+Result} object ($\ast$this) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_query_result_a61fe09a36b729072cf8db7d36fbd57ba}\label{class_query_result_a61fe09a36b729072cf8db7d36fbd57ba}} 
+\index{Query\+Result@{Query\+Result}!operator=@{operator=}}
+\index{operator=@{operator=}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_query_result}{Query\+Result} \& Query\+Result\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{class_query_result}{Query\+Result} \&\&}]{qr }\end{DoxyParamCaption})}
+
+
+
+Overload Operator=. 
+
+Move Assignment
+
+
+\begin{DoxyParams}{Parameters}
+{\em qr} & is a \hyperlink{class_query_result}{Query\+Result} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_query_result}{Query\+Result} object ($\ast$this) 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_query_result_a818370d36ae89f51264a7701543884bd}\label{class_query_result_a818370d36ae89f51264a7701543884bd}} 
+\index{Query\+Result@{Query\+Result}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_query_result}{Query\+Result} \&}]{qr1,  }\item[{const \hyperlink{class_query_result}{Query\+Result} \&}]{qr2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$. 
+
+Compares score of two \hyperlink{class_query_result}{Query\+Result} objects. True if qr1 is greater than qr2
+
+
+\begin{DoxyParams}{Parameters}
+{\em qr1} & is a \hyperlink{class_query_result}{Query\+Result} Object \\
+\hline
+{\em qr2} & is a \hyperlink{class_query_result}{Query\+Result} Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_query_result_a860145488e9a3cd6c7df13816dd3f78e}\label{class_query_result_a860145488e9a3cd6c7df13816dd3f78e}} 
+\index{Query\+Result@{Query\+Result}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_query_result}{Query\+Result} \&}]{qr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+This function prints out to an output stream object the \hyperlink{class_query_result}{Query\+Result}\textquotesingle{}s objects Name and Score. Saves the O\+Stream flags.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream Object \\
+\hline
+{\em qr} & is a \hyperlink{class_query_result}{Query\+Result} Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_query_result}{Query\+Result} object ($\ast$this) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/query\+\_\+result.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/query\+\_\+result.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+\hypertarget{class_stopword}{}\section{Stopword Class Reference}
+\label{class_stopword}\index{Stopword@{Stopword}}
+
+
+\hyperlink{class_stopword}{Stopword} Class.  
+
+
+
+
+{\ttfamily \#include $<$stopword.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stopword_a9580930ded0ee601ad610a078914a628}{Stopword} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_stopword_a81af802f411344af42482f7ff2856027}{Stopword} (const std\+::string \&stopw\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_stopword_a0f16e88a567b2e69f67a6c14f47d8655}{operator()} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Overloaded Operator() \end{DoxyCompactList}\item 
+const std\+::string \& \hyperlink{class_stopword_abe5022f0267536ea0191a93047f8de42}{name} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stopword_ae24bca3213b4583afe6df418020b5ce6}\label{class_stopword_ae24bca3213b4583afe6df418020b5ce6}} 
+std\+::string \hyperlink{class_stopword_ae24bca3213b4583afe6df418020b5ce6}{name\+\_\+}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stopword}{Stopword} Filepath. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_stopword_a26e651b97f51c51318f4782479f082d4}\label{class_stopword_a26e651b97f51c51318f4782479f082d4}} 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_stopword_a26e651b97f51c51318f4782479f082d4}{stopwords}
+\begin{DoxyCompactList}\small\item\em Vector of \hyperlink{class_stopword}{Stopword} String Tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_stopword_a743f7e7caa12801dd9cbf74e4eed8d63}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_stopword}{Stopword} \&s)
+\begin{DoxyCompactList}\small\item\em Overload Operator$<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_stopword}{Stopword} Class. 
+
+An object of this class is used for stopword filtering. It utilized an external file, whose filepath is specified (O\+P\+T\+I\+O\+N\+AL). 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_stopword_a9580930ded0ee601ad610a078914a628}\label{class_stopword_a9580930ded0ee601ad610a078914a628}} 
+\index{Stopword@{Stopword}!Stopword@{Stopword}}
+\index{Stopword@{Stopword}!Stopword@{Stopword}}
+\subsubsection{\texorpdfstring{Stopword()}{Stopword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Stopword\+::\+Stopword (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Creates a \hyperlink{class_stopword}{Stopword} object with no stopwords specified in vector \char`\"{}stopwords\char`\"{}. \mbox{\Hypertarget{class_stopword_a81af802f411344af42482f7ff2856027}\label{class_stopword_a81af802f411344af42482f7ff2856027}} 
+\index{Stopword@{Stopword}!Stopword@{Stopword}}
+\index{Stopword@{Stopword}!Stopword@{Stopword}}
+\subsubsection{\texorpdfstring{Stopword()}{Stopword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Stopword\+::\+Stopword (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{stopw\+\_\+fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Utilizing the parameter and an Input Stream (File) Object, the method reads and extrapulates the stopwords from the specified filepath, if the stopword filepath is correct. For each string token, it is pushed into the vector \char`\"{}stopwords\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stopw\+\_\+fp} & is the String \hyperlink{class_stopword}{Stopword} Filepath \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stopword_abe5022f0267536ea0191a93047f8de42}\label{class_stopword_abe5022f0267536ea0191a93047f8de42}} 
+\index{Stopword@{Stopword}!name@{name}}
+\index{name@{name}!Stopword@{Stopword}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string\& Stopword\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor Method. 
+
+Returns the value of member variable \char`\"{}name\+\_\+\char`\"{}. This variable is specified when the explicit constructor is called. \mbox{\Hypertarget{class_stopword_a0f16e88a567b2e69f67a6c14f47d8655}\label{class_stopword_a0f16e88a567b2e69f67a6c14f47d8655}} 
+\index{Stopword@{Stopword}!operator()@{operator()}}
+\index{operator()@{operator()}!Stopword@{Stopword}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Stopword\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Overloaded Operator() 
+
+This overloaded operator is called to verify if a specified input string token s exist in the vector \char`\"{}stopwords\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value; If stopword vector contains string token 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_stopword_a743f7e7caa12801dd9cbf74e4eed8d63}\label{class_stopword_a743f7e7caa12801dd9cbf74e4eed8d63}} 
+\index{Stopword@{Stopword}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Stopword@{Stopword}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_stopword}{Stopword} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload Operator$<$$<$. 
+
+Output Stopwords and \hyperlink{class_stopword}{Stopword} Filepath using Output Stream
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream object \\
+\hline
+{\em s} & is a \hyperlink{class_stopword}{Stopword} Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the Ouput Stream object once data has been pushed to stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/stopword.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/stopword.\+cpp\end{DoxyCompactItemize}

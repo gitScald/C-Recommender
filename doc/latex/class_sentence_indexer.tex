@@ -1,0 +1,564 @@
+\hypertarget{class_sentence_indexer}{}\section{Sentence\+Indexer Class Reference}
+\label{class_sentence_indexer}\index{Sentence\+Indexer@{Sentence\+Indexer}}
+
+
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} class.  
+
+
+
+
+{\ttfamily \#include $<$sentence\+\_\+indexer.\+h$>$}
+
+Inheritance diagram for Sentence\+Indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sentence_indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sentence_indexer_a2ec9f359954191ebc5d84c759fd2238d}{Sentence\+Indexer} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_sentence_indexer_a65a376d016bd9ff8a9f7c1f8521f2a1f}{Sentence\+Indexer} (const std\+::string \&abbrevs\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sentence_indexer_a8048abf41bf3513d04c611e90afddcc5}\label{class_sentence_indexer_a8048abf41bf3513d04c611e90afddcc5}} 
+virtual \hyperlink{class_sentence_indexer_a8048abf41bf3513d04c611e90afddcc5}{$\sim$\+Sentence\+Indexer} ()
+\begin{DoxyCompactList}\small\item\em Virtual Deconstructor. \end{DoxyCompactList}\item 
+const \hyperlink{class_index_item}{Index\+Item} $\ast$ \hyperlink{class_sentence_indexer_a4f8655135cb46ba4fee6a53418f15d03}{operator\mbox{[}$\,$\mbox{]}} (int i) const override
+\item 
+bool \hyperlink{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}{contains} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Contains Method. \end{DoxyCompactList}\item 
+bool \hyperlink{class_sentence_indexer_aa4af4b0d8b859bd6ff4eed4889c8447c}{contains} (const \hyperlink{class_sentence}{Sentence} \&s) const
+\begin{DoxyCompactList}\small\item\em Contains Method. \end{DoxyCompactList}\item 
+void \hyperlink{class_sentence_indexer_ae038d36081439a5107821ac48a318d66}{normalize} () override
+\begin{DoxyCompactList}\small\item\em Compute Weights. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ \hyperlink{class_sentence_indexer_acc4165c39f2193050d207861936927a7}{query} (const std\+::string \&s, size\+\_\+t i=500) const override
+\begin{DoxyCompactList}\small\item\em Search and Process Query. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_sentence_indexer_a47409c62e1607ae3919a77080fe240a0}{size} () const override
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_sentence_indexer_a892b5cc701450698a04de74a3661928e}{item\+\_\+freq} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
+int \hyperlink{class_sentence_indexer_a54f8bbbce9e37c355fe435b26c16f1ac}{term\+\_\+freq} (const std\+::string \&s, int i) const override
+\begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
+double \hyperlink{class_sentence_indexer_ada837ec334535e133c9ec511b369abfa}{norm\+\_\+tf} (const std\+::string \&s, int i) const override
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+double \hyperlink{class_sentence_indexer_a646014181566f20140cee5dbd16f52fa}{norm\+\_\+idf} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+double \hyperlink{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}{weight} (const std\+::string \&s, int i) const override
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+void \hyperlink{class_sentence_indexer_af059ce5526fad2995f5595ace00e51a3}{query\+\_\+freqs} (std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, const std\+::vector$<$ std\+::string $>$ \&t) const override
+\begin{DoxyCompactList}\small\item\em Query Term Frequency. \end{DoxyCompactList}\item 
+void \hyperlink{class_sentence_indexer_ad3835aaf2ff4a59fff85d596dfc95d5c}{query\+\_\+weights} (std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&sw) const override
+\begin{DoxyCompactList}\small\item\em Query and \hyperlink{class_document}{Document} Weights. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ \hyperlink{class_sentence_indexer_a913914f26a73e00f293308baff97e23f}{cos\+\_\+similarity} (const std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, const std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&sw, const std\+::vector$<$ std\+::string $>$ \&t) const override
+\begin{DoxyCompactList}\small\item\em Calculate the Cosine Similarity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_sentence_indexer_a6f6dd24962085f59f1a87e2c21edb58f}{tokenizer\+\_\+fp}
+\begin{DoxyCompactList}\small\item\em Member String Variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_document}{Document} $>$ \hyperlink{class_sentence_indexer_aeb90cac752804711f0bb6a1eacf810f6}{docs}
+\begin{DoxyCompactList}\small\item\em Member Vector \hyperlink{class_document}{Document} Variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_sentence}{Sentence} $>$ \hyperlink{class_sentence_indexer_a3c6b2408388e17f3b43ec9fec36f2628}{sentences}
+\begin{DoxyCompactList}\small\item\em Member Vector \hyperlink{class_sentence}{Sentence} Variable. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{class_sentence}{Sentence}, double $>$ \hyperlink{class_sentence_indexer_aabc21ba6e88b50f969a26d1eec8d4d7b}{index}
+\begin{DoxyCompactList}\small\item\em Token(s) Map Container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \& \hyperlink{class_sentence_indexer_a30be5b0aa936deff7dc8763b554083ef}{operator$<$$<$} (\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&i, const \hyperlink{class_document}{Document} \&d)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\item 
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \& \hyperlink{class_sentence_indexer_ae40f2c0786940505a8881ad209f2e892}{operator$<$$<$} (\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&i, const \hyperlink{class_index}{Index} \&ix)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{class_sentence_indexer_a8508e3ba7ddd0063c317c20295354e03}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&i)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} class. 
+
+\mbox{[}D\+E\+R\+I\+V\+ED C\+L\+A\+SS\mbox{]} This class acts as kind of the gateway for the program. In a simplified manner, it\+:
+\begin{DoxyItemize}
+\item Prompts user for indexing and query
+\item Creates an \hyperlink{class_index}{Index} object from a specified file path
+\item Create \hyperlink{class_document}{Document} objects for files specified in \hyperlink{class_index}{Index} object, using classes Sentnece\+Tokenizer
+\item Populate map with sentence tokens from Documents
+\item Calculate weights for sentence of specified documents
+\item Determine query score per sentence using class Query\+\_\+\+Result
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Benjamin Vial 29590765 
+
+Mandeep Tahim 26935478 
+
+Daniel Carrera 26729886
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+C\+O\+MP 345 Assignment 3 -\/ Fall 2017 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sentence_indexer_a2ec9f359954191ebc5d84c759fd2238d}\label{class_sentence_indexer_a2ec9f359954191ebc5d84c759fd2238d}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!Sentence\+Indexer@{Sentence\+Indexer}}
+\index{Sentence\+Indexer@{Sentence\+Indexer}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{Sentence\+Indexer()}{SentenceIndexer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sentence\+Indexer\+::\+Sentence\+Indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty Constructor. 
+
+Empty derived constructor referencing base class \hyperlink{class_indexer}{Indexer} \mbox{\Hypertarget{class_sentence_indexer_a65a376d016bd9ff8a9f7c1f8521f2a1f}\label{class_sentence_indexer_a65a376d016bd9ff8a9f7c1f8521f2a1f}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!Sentence\+Indexer@{Sentence\+Indexer}}
+\index{Sentence\+Indexer@{Sentence\+Indexer}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{Sentence\+Indexer()}{SentenceIndexer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sentence\+Indexer\+::\+Sentence\+Indexer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{abbrevs\+\_\+fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Constructor for object \hyperlink{class_sentence_indexer}{Sentence\+Indexer}. Storing the filepath to the abbreviation file.. The constructor makes rerence to the base class \hyperlink{class_indexer}{Indexer}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}\label{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!contains@{contains}}
+\index{contains@{contains}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sentence\+Indexer\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Contains Method. 
+
+Member Function verifies String token exist in \hyperlink{class_sentence}{Sentence} \hyperlink{class_index}{Index}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String Token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value; True if token exist in index. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_abb847ff86be1ec9265fb53a5ac6f7008}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_aa4af4b0d8b859bd6ff4eed4889c8447c}\label{class_sentence_indexer_aa4af4b0d8b859bd6ff4eed4889c8447c}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!contains@{contains}}
+\index{contains@{contains}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sentence\+Indexer\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{class_sentence}{Sentence} \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Contains Method. 
+
+Member Function verifies \hyperlink{class_sentence}{Sentence} Object exist in \hyperlink{class_sentence}{Sentence} \hyperlink{class_index}{Index}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a \hyperlink{class_sentence}{Sentence} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value. True if \hyperlink{class_sentence}{Sentence} object exist within Vector of \hyperlink{class_sentence}{Sentence} sentences 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sentence_indexer_a913914f26a73e00f293308baff97e23f}\label{class_sentence_indexer_a913914f26a73e00f293308baff97e23f}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!cos\+\_\+similarity@{cos\+\_\+similarity}}
+\index{cos\+\_\+similarity@{cos\+\_\+similarity}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{cos\+\_\+similarity()}{cos\_similarity()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ Sentence\+Indexer\+::cos\+\_\+similarity (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{const std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&}]{sw,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Calculate the Cosine Similarity. 
+
+Create a vector of \hyperlink{class_query_result}{Query\+Result} through which the cosine similarity is calculated. Returns the vector of \hyperlink{class_query_result}{Query\+Result} containing the match score of each document to the search query.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & is a Map$<$token(\+String), $<$freq(int), weight(double)$>$$>$ \\
+\hline
+{\em sw} & is a Map$<$token(\+String), vector$<$document weight(double)$>$$>$ \\
+\hline
+{\em t} & is a Vector$<$\+String$>$ corresponding to User Input Query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Query\+Result$>$ corresponds to Cosine Similarity between User Query and each \hyperlink{class_document}{Document} (Decreasing Order) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_a892b5cc701450698a04de74a3661928e}\label{class_sentence_indexer_a892b5cc701450698a04de74a3661928e}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!item\+\_\+freq@{item\+\_\+freq}}
+\index{item\+\_\+freq@{item\+\_\+freq}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{item\+\_\+freq()}{item\_freq()}}
+{\footnotesize\ttfamily int Sentence\+Indexer\+::item\+\_\+freq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Integer Function. 
+
+\hyperlink{class_document}{Document} Frequency; Used in calculation of Weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer occurence of Token in Documents 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a9f9ea4d9946c531f257720cc9e9391eb}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_a646014181566f20140cee5dbd16f52fa}\label{class_sentence_indexer_a646014181566f20140cee5dbd16f52fa}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!norm\+\_\+idf@{norm\+\_\+idf}}
+\index{norm\+\_\+idf@{norm\+\_\+idf}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{norm\+\_\+idf()}{norm\_idf()}}
+{\footnotesize\ttfamily double Sentence\+Indexer\+::norm\+\_\+idf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Double Function. 
+
+Normalized \hyperlink{class_document}{Document} Frequency; Used in calculation of Weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value corresponding to the normalized document frequency of a token 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_af71c69a4267217969f21cba44822f263}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_ada837ec334535e133c9ec511b369abfa}\label{class_sentence_indexer_ada837ec334535e133c9ec511b369abfa}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!norm\+\_\+tf@{norm\+\_\+tf}}
+\index{norm\+\_\+tf@{norm\+\_\+tf}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{norm\+\_\+tf()}{norm\_tf()}}
+{\footnotesize\ttfamily double Sentence\+Indexer\+::norm\+\_\+tf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Double Function. 
+
+Normalized Term Frequency; Used in calculation of Weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+{\em i} & is a Integer index of \hyperlink{class_document}{Document} in Map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value corresponding to the normalized term frequency of a token in a \hyperlink{class_document}{Document} at index i 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_aadcdca40938d27c465e564ac8852f02d}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_ae038d36081439a5107821ac48a318d66}\label{class_sentence_indexer_ae038d36081439a5107821ac48a318d66}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!normalize@{normalize}}
+\index{normalize@{normalize}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Sentence\+Indexer\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute Weights. 
+
+Pure Virtual Function. This method utilizes the method \hyperlink{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}{weight()} to calculate and store the weight of each token. 
+
+Implements \hyperlink{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_a4f8655135cb46ba4fee6a53418f15d03}\label{class_sentence_indexer_a4f8655135cb46ba4fee6a53418f15d03}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const \hyperlink{class_index_item}{Index\+Item} $\ast$ Sentence\+Indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is a integer value corresponding to a position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to \hyperlink{class_index_item}{Index\+Item} in a Vector of Sentences 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_acc4165c39f2193050d207861936927a7}\label{class_sentence_indexer_acc4165c39f2193050d207861936927a7}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!query@{query}}
+\index{query@{query}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ Sentence\+Indexer\+::query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{size\+\_\+t}]{i = {\ttfamily 500} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Search and Process Query. 
+
+If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a \hyperlink{class_query_result}{Query\+Result} vector. (See \hyperlink{class_query_result}{Query\+Result} class for more details). Depending on the input parameter i (default 500), this method returns sentences from most to least relevance, creating an essay of word count less than i.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a User Inputer Query String \\
+\hline
+{\em i} & is a size\+\_\+t defining return size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Query\+Result$>$ containing Top i Cosine Similarity 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a8d98ba740db6f5f8521d557bf908aead}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_af059ce5526fad2995f5595ace00e51a3}\label{class_sentence_indexer_af059ce5526fad2995f5595ace00e51a3}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!query\+\_\+freqs@{query\+\_\+freqs}}
+\index{query\+\_\+freqs@{query\+\_\+freqs}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{query\+\_\+freqs()}{query\_freqs()}}
+{\footnotesize\ttfamily void Sentence\+Indexer\+::query\+\_\+freqs (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Query Term Frequency. 
+
+Get Query Term Frequencies and update the frequency if the token is already pressent in the map q. Otherwise, create an new key entry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & is a Map$<$token(String, $<$freq(int), weight(double$>$$>$ \\
+\hline
+{\em t} & is a Vector$<$\+String$>$ corresponding to User Input Query \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_indexer_a0587f6a4d61620219473bf583ecdbad5}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_ad3835aaf2ff4a59fff85d596dfc95d5c}\label{class_sentence_indexer_ad3835aaf2ff4a59fff85d596dfc95d5c}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!query\+\_\+weights@{query\+\_\+weights}}
+\index{query\+\_\+weights@{query\+\_\+weights}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{query\+\_\+weights()}{query\_weights()}}
+{\footnotesize\ttfamily void Sentence\+Indexer\+::query\+\_\+weights (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&}]{sw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Query and \hyperlink{class_document}{Document} Weights. 
+
+Update the Query and \hyperlink{class_document}{Document} weights by iterating through both map parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & is a Map$<$token(\+String), $<$freq(int), weight(double)$>$$>$ \\
+\hline
+{\em sw} & is a Map$<$token(\+String), vector$<$document weight(double)$>$$>$ \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_indexer_a74819336b6d9883483c09349ebdf43b8}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_a47409c62e1607ae3919a77080fe240a0}\label{class_sentence_indexer_a47409c62e1607ae3919a77080fe240a0}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!size@{size}}
+\index{size@{size}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Sentence\+Indexer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accessor Method. 
+
+Returns size of vector documents docs 
+
+Implements \hyperlink{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_a54f8bbbce9e37c355fe435b26c16f1ac}\label{class_sentence_indexer_a54f8bbbce9e37c355fe435b26c16f1ac}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!term\+\_\+freq@{term\+\_\+freq}}
+\index{term\+\_\+freq@{term\+\_\+freq}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{term\+\_\+freq()}{term\_freq()}}
+{\footnotesize\ttfamily int Sentence\+Indexer\+::term\+\_\+freq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Integer Function. 
+
+Term Frequency; Used in calculation of Weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+{\em i} & is a Integer index of \hyperlink{class_document}{Document} in Map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer occurence of Token in a \hyperlink{class_document}{Document} at index i 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}{Indexer}.
+
+\mbox{\Hypertarget{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}\label{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!weight@{weight}}
+\index{weight@{weight}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{weight()}{weight()}}
+{\footnotesize\ttfamily double Sentence\+Indexer\+::weight (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Double Function. 
+
+Weight = (1 + Log (term frequency)) $\ast$ Log ( \# of Documents / \hyperlink{class_document}{Document} Frequency)
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+{\em i} & is a Integer index of \hyperlink{class_document}{Document} in Map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value corresponding to the weight of a token in a \hyperlink{class_document}{Document} at index i 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a8301fcbdf40afd926ab71d4767575d32}{Indexer}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_sentence_indexer_a30be5b0aa936deff7dc8763b554083ef}\label{class_sentence_indexer_a30be5b0aa936deff7dc8763b554083ef}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{class_sentence_indexer}{Sentence\+Indexer}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&}]{i,  }\item[{const \hyperlink{class_document}{Document} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+If needed, expands the \hyperlink{class_indexer}{Indexer} object to accommodate another document. Iterate and push sentence tokens from \hyperlink{class_document}{Document} object onto \hyperlink{class_sentence_indexer}{Sentence\+Indexer} i, creating tokens (keys) if they don\textquotesingle{}t already exist with a value of zero vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is a \hyperlink{class_sentence_indexer}{Sentence\+Indexer} object \\
+\hline
+{\em d} & is a \hyperlink{class_document}{Document} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} Object from input containing \hyperlink{class_sentence}{Sentence} objects derived from \hyperlink{class_document}{Document} d 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sentence_indexer_ae40f2c0786940505a8881ad209f2e892}\label{class_sentence_indexer_ae40f2c0786940505a8881ad209f2e892}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{class_sentence_indexer}{Sentence\+Indexer}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&}]{i,  }\item[{const \hyperlink{class_index}{Index} \&}]{ix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+Creates and adds \hyperlink{class_sentence}{Sentence} Objects from \hyperlink{class_index}{Index}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is a \hyperlink{class_sentence_indexer}{Sentence\+Indexer} object \\
+\hline
+{\em ix} & is a \hyperlink{class_index}{Index} object containing list of Documents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} Object from input containing Documents specified from \hyperlink{class_index}{Index} ix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sentence_indexer_a8508e3ba7ddd0063c317c20295354e03}\label{class_sentence_indexer_a8508e3ba7ddd0063c317c20295354e03}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_sentence_indexer}{Sentence\+Indexer} \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+Print to an Output Stream Object all relevant information from the \hyperlink{class_sentence_indexer}{Sentence\+Indexer} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream object \\
+\hline
+{\em i} & is a \hyperlink{class_sentence_indexer}{Sentence\+Indexer} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output Stream object os whose buffer contains data retrieved from \hyperlink{class_sentence_indexer}{Sentence\+Indexer} i 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sentence_indexer_aeb90cac752804711f0bb6a1eacf810f6}\label{class_sentence_indexer_aeb90cac752804711f0bb6a1eacf810f6}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!docs@{docs}}
+\index{docs@{docs}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{docs}{docs}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_document}{Document}$>$ Sentence\+Indexer\+::docs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member Vector \hyperlink{class_document}{Document} Variable. 
+
+Contains Vector of Documents that are parsed through the \hyperlink{class_indexer}{Indexer} \mbox{\Hypertarget{class_sentence_indexer_aabc21ba6e88b50f969a26d1eec8d4d7b}\label{class_sentence_indexer_aabc21ba6e88b50f969a26d1eec8d4d7b}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!index@{index}}
+\index{index@{index}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily std\+::map$<$\hyperlink{class_sentence}{Sentence}, double$>$ Sentence\+Indexer\+::index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Token(s) Map Container. 
+
+This map contains all the \hyperlink{class_sentence}{Sentence} objects derived from the documents. It\textquotesingle{}s Key represents tokens as \hyperlink{class_sentence}{Sentence} objects. It\textquotesingle{}s Value corresponds to a double where the value designates the weight \mbox{\Hypertarget{class_sentence_indexer_a3c6b2408388e17f3b43ec9fec36f2628}\label{class_sentence_indexer_a3c6b2408388e17f3b43ec9fec36f2628}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!sentences@{sentences}}
+\index{sentences@{sentences}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{sentences}{sentences}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_sentence}{Sentence}$>$ Sentence\+Indexer\+::sentences\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member Vector \hyperlink{class_sentence}{Sentence} Variable. 
+
+Contains Vector of Sentencces derived from Documents \mbox{\Hypertarget{class_sentence_indexer_a6f6dd24962085f59f1a87e2c21edb58f}\label{class_sentence_indexer_a6f6dd24962085f59f1a87e2c21edb58f}} 
+\index{Sentence\+Indexer@{Sentence\+Indexer}!tokenizer\+\_\+fp@{tokenizer\+\_\+fp}}
+\index{tokenizer\+\_\+fp@{tokenizer\+\_\+fp}!Sentence\+Indexer@{Sentence\+Indexer}}
+\subsubsection{\texorpdfstring{tokenizer\+\_\+fp}{tokenizer\_fp}}
+{\footnotesize\ttfamily std\+::string Sentence\+Indexer\+::tokenizer\+\_\+fp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member String Variable. 
+
+Contains filepath of the tokenizer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence\+\_\+indexer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence\+\_\+indexer.\+cpp\end{DoxyCompactItemize}
