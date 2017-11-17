@@ -19,6 +19,8 @@ class SentenceIndexer;
 
 class Document :public IndexItem {
     friend class DocumentIndexer;
+    friend class Movie;
+    friend class MovieIndexer;
     //! Overload operator<<
     /*!
     This function adds a string token (word corresponding to a document) to a map of a specified
