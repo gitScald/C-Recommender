@@ -1,6 +1,69 @@
 #include "movie_indexer.h"
 #include <sstream>
 
+bool MovieIndexer::contains(const std::string& s) const {
+    for (std::vector<Movie>::const_iterator it{ movies.begin() };
+        it != movies.end();
+        ++it) {
+        if (it->doc.contains(s))
+            return true;
+    }
+
+    return false;
+}
+
+const IndexItem* MovieIndexer::operator[] (size_t i) const {
+    const IndexItem* pii = &movies.at(i);
+
+    return pii;
+}
+
+void MovieIndexer::normalize() {
+
+}
+
+const std::vector<QueryResult> MovieIndexer::query(
+    const std::string& s, size_t i) const {
+    return std::vector<QueryResult>();
+}
+
+int MovieIndexer::item_freq(const std::string& s) const {
+    return 0;
+}
+
+int MovieIndexer::term_freq(const std::string& s, int i) const {
+    return 0;
+}
+
+double MovieIndexer::norm_tf(const std::string& s, int i) const {
+    return 0;
+}
+
+double MovieIndexer::norm_idf(const std::string& s) const {
+    return 0;
+}
+
+double MovieIndexer::weight(const std::string& s, int i) const {
+    return 0;
+}
+
+void MovieIndexer::query_freqs(std::map<std::string, Indexer::query_pair>& q,
+    const std::vector<std::string>& t) const {
+
+}
+
+void MovieIndexer::query_weights(std::map<std::string, Indexer::query_pair>& q,
+    std::map<std::string, std::vector<double>>& dw) const {
+
+}
+
+const std::vector<QueryResult> MovieIndexer::cos_similarity(
+    const std::map<std::string, Indexer::query_pair>& q,
+    const std::map<std::string, std::vector<double>>& dw,
+    const std::vector<std::string>& t) const {
+    return std::vector<QueryResult>();
+}
+
 void MovieIndexer::init() {
     // grab and tokenize movie metadata
     if (!data_fp_.empty()) {
@@ -13,7 +76,9 @@ void MovieIndexer::init() {
         else {
             std::stringstream ss;
             ss << ifs.rdbuf();
+            std::cout << "Processing metadata file '" << data_fp_ << "'...";
             tokenize_data(ss);
+            std::cout << " done." << std::endl;
         }
     }
 
@@ -28,7 +93,9 @@ void MovieIndexer::init() {
         else {
             std::stringstream ss;
             ss << ifs.rdbuf();
+            std::cout << "Processing summary file '" << summary_fp_ << "'...";
             tokenize_summary(ss);
+            std::cout << " done." << std::endl;
         }
     }
 }

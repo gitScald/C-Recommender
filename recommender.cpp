@@ -4,22 +4,14 @@ int main(int argc, char* argv[]) {
     std::cout << "***  START RECOMMENDER PROGRAM  ***" << std::endl;
 
     // Windows path: files/*.txt
-    const std::string index_fp{ "files/index_windows.txt" };
-    const std::string stopw_fp{ "files/stopwords.txt" };
-    const std::string extra_fp{ "files/extra_doc.txt" };
+    const std::string data_fp{ "MovieSummaries/movie.metadata.tsv" };
+    const std::string summary_fp{ "MovieSummaries/plot_summaries.txt" };
 
     // Linux path: ../files/*.txt
-    //const std::string index_fp{ "../files/index.txt" };
-    //const std::string stopw_fp{ "../files/stopwords.txt" };
-    //const std::string extra_fp{ "../files/extra_doc.txt" };
+    //const std::string index_fp{ "../MovieSummaries/movie.metadata.tsv" };
+    //const std::string stopw_fp{ "../MovieSummaries/plot_summaries.txt" };
 
-    //std::cout << "Processing index file '" << index_fp << "'...";
-    //Index ix{ index_fp };
-    //std::cout << " done." << std::endl;
-
-    //std::cout << "Processing stopwords file '" << stopw_fp << "'...";
-    //Stopword s{ stopw_fp };
-    //std::cout << " done." << std::endl;
+    MovieIndexer{ data_fp, summary_fp };
 
     //DocumentIndexer fil;
     //DocumentIndexer unfil;
