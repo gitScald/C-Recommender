@@ -12,7 +12,7 @@ public:
     Movie()
         : IndexItem() {}
     explicit Movie(const std::string& name, const std::string& content,
-        size_t id, const std::string& release)
+        const std::string& id, const std::string& release)
         : IndexItem(name, content), id_{ id }, release_date_{ release } {}
     Movie(const Movie& m)
         : IndexItem(m.name_, m.content_), id_{ m.id_ },
@@ -22,12 +22,12 @@ public:
     bool operator()(const std::string& s) const override { return contains(s); }
     bool contains(const std::string& s) const override { return doc.contains(s); }
     const size_t size() const override { return doc.size(); };
-    const size_t id() const { return id_; };
+    const std::string& id() const { return id_; };
     const std::string& release_date() const { return release_date_; };
     void build_index();
 
 private:
-    size_t id_;
+    std::string id_;
     std::string release_date_;
     Document doc;
 };

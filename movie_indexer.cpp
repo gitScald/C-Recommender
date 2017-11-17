@@ -1,11 +1,28 @@
 #include "movie_indexer.h"
+#include "stringops.h"
+#include "word_tokenizer.h"
 #include <sstream>
 
+std::ostream& operator<<(std::ostream& os, const MovieIndexer& mi) {
+    // simple index output
+    for (std::vector<Movie>::const_iterator it{ mi.movies.begin() };
+        it != mi.movies.end();
+        ++it)
+        os << *it << std::endl << std::endl;
+    
+    return os;
+}
+
 bool MovieIndexer::contains(const std::string& s) const {
+    // returns true if the movie is in the index
+    // precondition: movie title has already been lowered and stripped
+    std::string title;
     for (std::vector<Movie>::const_iterator it{ movies.begin() };
         it != movies.end();
         ++it) {
-        if (it->doc.contains(s))
+        title = it->name_;
+        lower(strip(title));
+        if (title == s)
             return true;
     }
 
@@ -13,54 +30,96 @@ bool MovieIndexer::contains(const std::string& s) const {
 }
 
 const IndexItem* MovieIndexer::operator[] (size_t i) const {
+    // returns a pointer to the movie at the given index
     const IndexItem* pii = &movies.at(i);
 
     return pii;
 }
 
 void MovieIndexer::normalize() {
-
+    // calls member document indexer normalize() method
+    index.normalize();
 }
 
 const std::vector<QueryResult> MovieIndexer::query(
     const std::string& s, size_t i) const {
+    // throw an exception if the index is not normalized
+    if (!normalized)
+        throw IndexException("INDEX_NOT_NORMALIZED");
+
+    // lower and strip movie title
+    std::string query_title{ s };
+    lower(strip(query_title));
+
+    // throw an exception if the movie is not in the index
+    if (!contains(s))
+        throw IndexException("MOVIE_NOT_IN_INDEX");
+
+    // ********************************************************
+    // TODO: figure out how to get term frequencies and weights
+    // for all movie summaries
+    // ********************************************************
+
+    //// get query term frequencies
+    //// query_ is of the form (token, <freq, weight>)
+    //std::map<std::string, Indexer::query_pair> query_;
+    //query_freqs(query_, tokens);
+
+    //// get query and document weights
+    //std::map<std::string, std::vector<double>> doc_weights;
+    //query_weights(query_, doc_weights);
+
+    //// return only the top i results
+    //std::vector<QueryResult> results{ cos_similarity(query_, doc_weights, tokens) };
+    //results.resize(std::min(results.size(), i));
+
+    // ********************************************************
+
+    //return results;
+
     return std::vector<QueryResult>();
 }
 
 int MovieIndexer::item_freq(const std::string& s) const {
-    return 0;
+    // calls member document indexer item_freq() method
+    return index.item_freq(s);
 }
 
 int MovieIndexer::term_freq(const std::string& s, int i) const {
-    return 0;
+    // calls member document indexer term_freq() method
+    return index.term_freq(s, i);
 }
 
 double MovieIndexer::norm_tf(const std::string& s, int i) const {
-    return 0;
+    // calls member document indexer norm_tf() method
+    return index.norm_tf(s, i);
 }
 
 double MovieIndexer::norm_idf(const std::string& s) const {
-    return 0;
+    // calls member document indexer norm_idf() method
+    return index.norm_idf(s);
 }
 
 double MovieIndexer::weight(const std::string& s, int i) const {
-    return 0;
+    // calls member document indexer weight() method
+    return index.weight(s, i);
 }
 
 void MovieIndexer::query_freqs(std::map<std::string, Indexer::query_pair>& q,
     const std::vector<std::string>& t) const {
-
+    // TODO
 }
 
 void MovieIndexer::query_weights(std::map<std::string, Indexer::query_pair>& q,
     std::map<std::string, std::vector<double>>& dw) const {
-
+    // TODO
 }
 
 const std::vector<QueryResult> MovieIndexer::cos_similarity(
     const std::map<std::string, Indexer::query_pair>& q,
     const std::map<std::string, std::vector<double>>& dw,
     const std::vector<std::string>& t) const {
+    // TODO
     return std::vector<QueryResult>();
 }
 
@@ -93,73 +152,117 @@ void MovieIndexer::init() {
         else {
             std::stringstream ss;
             ss << ifs.rdbuf();
-            std::cout << "Processing summary file '" << summary_fp_ << "'...";
+            std::cout << "Processing summary file '" << summary_fp_
+                << "'..." << std::endl;
             tokenize_summary(ss);
-            std::cout << " done." << std::endl;
         }
     }
+
+    // add movie document objects to the index
+    for (std::vector<Movie>::const_iterator it{ movies.begin() };
+        it != movies.end();
+        ++it)
+        index << it->doc;
 }
 
 void MovieIndexer::tokenize_data(std::stringstream& ss) {
     // fill up movies vector with metadata
-    std::stringstream metadata_ss;
     std::string metadata;
+    std::string data;
     std::getline(ss, metadata);
 
-    std::string dummy;
-    size_t id;
-    std::string name;
-    std::string release_date;
+    std::string id, name, release_date;
 
     while (metadata != std::string()) {
+        // movie entries enter a stringstream
+        std::stringstream metadata_ss;
         metadata_ss << metadata;
-        dummy = name = release_date = std::string();
-        id = 0;
 
-        // fetch movie metadata, skipping extra id
-        metadata_ss >> id >> dummy >> name >> release_date;
+        // then each movie entry is tokenized using tab delimiters
+        std::getline(metadata_ss, data, '\t');
+        id = data;
+        
+        // skip extra id
+        std::getline(metadata_ss, data, '\t');
+
+        std::getline(metadata_ss, data, '\t');
+        name = data;
+
+        std::getline(metadata_ss, data, '\t');
+        release_date = data;
+
+        // create a movie object from the metadata
         movies.emplace_back(Movie(name, std::string(), id, release_date));
 
-        // clear metadata stringstream
-        metadata_ss.str(std::string());
+        // read next entry
+        std::getline(ss, metadata);
     }
 }
 
 void MovieIndexer::tokenize_summary(std::stringstream& ss) {
     // fill up movies vector with plot summaries
-    std::map<size_t, std::string> summaries;
-    std::map<size_t, std::string>::const_iterator m_it;
+    std::map<std::string, std::string> summaries;
+    std::map<std::string, std::string>::iterator m_it;
+    std::vector<Movie>::iterator v_it;
 
-    std::stringstream summary_ss;
     std::string summary;
+    std::string data;
     std::getline(ss, summary);
 
-    size_t id;
-    std::string content;
+    std::string id, content;
 
+    // loop through movie objects and make a map out of their ids
+    std::cout << "Building map entries for movie objects...";
+    for (v_it = movies.begin();
+        v_it != movies.end();
+        ++v_it)
+        summaries.insert(std::pair<std::string, std::string>(
+            std::make_pair(v_it->id_, std::string())));
+    std::cout << " done." << std::endl;
+
+    std::cout << "Fetching plot summaries...";
     while (summary != std::string()) {
+        // movie entries enter a stringstream
+        std::stringstream summary_ss;
         summary_ss << summary;
-        id = 0;
-        content = std::string();
+
+        // then each movie entry is tokenized using tab delimiters
+        std::getline(summary_ss, data, '\t');
+        id = data;
+
+        std::getline(summary_ss, data);
+        content = data;
 
         // fetch movie summary, mapping to its id
-        summary_ss >> id >> content;
         m_it = summaries.find(id);
-        if (m_it == summaries.end()) {
-            summaries.insert(std::pair<size_t, std::string>
-                (std::make_pair(id, content)));
-        }
+        if (m_it != summaries.end())
+            m_it->second = content;
 
-        // clear summary stringstream
-        summary_ss.str(std::string());
+        // read next entry
+        std::getline(ss, summary);
     }
+    std::cout << " done." << std::endl;
 
-    // loop through summary entries and add them to the movie objects
-    for (std::vector<Movie>::iterator v_it{ movies.begin() };
+    // loop through movie objects and append plot summaries
+    std::cout << "Appending plot summaries to movie objects...";
+    for (v_it = movies.begin();
         v_it != movies.end();
         ++v_it) {
+        
+        // append summary to movie object
         m_it = summaries.find(v_it->id_);
-        if (m_it != summaries.end())
-            v_it->doc.content_ = m_it->second;
+        if (m_it != summaries.end()) {
+            if (!m_it->second.empty()) {
+                v_it->content_ = m_it->second;
+                v_it->doc.content_ = m_it->second;
+            }
+
+            // append generic message if summary is not available
+            else {
+                v_it->content_ = "(no summary available)";
+                v_it->doc.content_ = "(no summary available)";
+            }
+        }
     }
+    std::cout << " done." << std::endl;
 }

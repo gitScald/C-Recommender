@@ -1,10 +1,12 @@
 #ifndef MOVIE_INDEXER_H
 #define MOVIE_INDEXER_H
 
-#include "indexer.h"
+#include "document_indexer.h"
 #include "movie.h"
 
 class MovieIndexer :public Indexer {
+    friend std::ostream& operator<<(std::ostream& os, const MovieIndexer& mi);
+
 public:
     MovieIndexer() {}
     explicit MovieIndexer(const std::string& data_fp,
@@ -22,6 +24,7 @@ private:
     std::string data_fp_;
     std::string summary_fp_;
     std::vector<Movie> movies;
+    DocumentIndexer index;
 
     void init();
     void tokenize_data(std::stringstream& ss);
