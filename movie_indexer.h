@@ -14,6 +14,7 @@ public:
         : data_fp_{ data_fp }, summary_fp_{ summary_fp } { init(); }
 
     const IndexItem* operator[] (size_t i) const override;
+    std::string fetchSummary(const std::string & s) const;
     bool contains(const std::string& s) const override;
     void normalize() override;
     const std::vector<QueryResult> query(

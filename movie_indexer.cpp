@@ -13,6 +13,21 @@ std::ostream& operator<<(std::ostream& os, const MovieIndexer& mi) {
     return os;
 }
 
+std::string MovieIndexer::fetchSummary(const std::string& s) const {
+    std::string title;
+    std::string content;
+    for (std::vector<Movie>::const_iterator it{ movies.begin() };
+        it != movies.end();
+        ++it) {
+        title = it->name_;
+        //lower(strip(title));
+        if (title == s)
+            content = it->content_;
+    }
+
+    return content;
+}
+
 bool MovieIndexer::contains(const std::string& s) const {
     // returns true if the movie is in the index
     // precondition: movie title has already been lowered and stripped
@@ -21,7 +36,7 @@ bool MovieIndexer::contains(const std::string& s) const {
         it != movies.end();
         ++it) {
         title = it->name_;
-        lower(strip(title));
+        //lower(strip(title));
         if (title == s)
             return true;
     }
@@ -39,6 +54,7 @@ const IndexItem* MovieIndexer::operator[] (size_t i) const {
 void MovieIndexer::normalize() {
     // calls member document indexer normalize() method
     index.normalize();
+    normalized = true;
 }
 
 const std::vector<QueryResult> MovieIndexer::query(
@@ -49,11 +65,35 @@ const std::vector<QueryResult> MovieIndexer::query(
 
     // lower and strip movie title
     std::string query_title{ s };
-    lower(strip(query_title));
+    //lower(strip(query_title));
 
     // throw an exception if the movie is not in the index
     if (!contains(s))
         throw IndexException("MOVIE_NOT_IN_INDEX");
+
+    std::string query_Summary(fetchSummary(s));
+
+    if (query_Summary == "(no summary available)")
+        throw IndexException("MOVIE_DOES_NOT_CONTAIN_SUMMARY");
+
+    std::cout << query_Summary << std::endl;
+    std::stringstream ss{ query_Summary };
+    WordTokenizer t;
+    const std::vector<std::string> tokens{ t.tokenize(ss) };
+
+    std::map<std::string, Indexer::query_pair> query_;
+    query_freqs(query_, tokens);
+
+    std::map<std::string, std::vector<double>> doc_weights;
+    query_weights(query_, doc_weights);
+
+    /*
+    Mandeep Note:
+    -Methods from DocumentIndexer work.
+    -Correct Weight/Freq? 
+    -lower(strip(string)) throws C++ Assert Debugging Error. Cannot figure out issue.
+    */
+
 
     // ********************************************************
     // TODO: figure out how to get term frequencies and weights
@@ -107,12 +147,12 @@ double MovieIndexer::weight(const std::string& s, int i) const {
 
 void MovieIndexer::query_freqs(std::map<std::string, Indexer::query_pair>& q,
     const std::vector<std::string>& t) const {
-    // TODO
+    index.query_freqs(q, t);
 }
 
 void MovieIndexer::query_weights(std::map<std::string, Indexer::query_pair>& q,
     std::map<std::string, std::vector<double>>& dw) const {
-    // TODO
+    index.query_weights(q, dw);
 }
 
 const std::vector<QueryResult> MovieIndexer::cos_similarity(
