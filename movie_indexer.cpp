@@ -20,7 +20,7 @@ std::string MovieIndexer::summary(const std::string& s) const {
         it != movies.end();
         ++it) {
         title = it->name_;
-        //lower(strip(title));
+        //lower(strip(title)); // does not handle non-ASCII characters
         if (title == s)
             content = it->content_;
     }
@@ -36,7 +36,7 @@ bool MovieIndexer::contains(const std::string& s) const {
         it != movies.end();
         ++it) {
         title = it->name_;
-        //lower(strip(title));
+        //lower(strip(title)); // does not handle non-ASCII characters
         if (title == s)
             return true;
     }
@@ -65,59 +65,39 @@ const std::vector<QueryResult> MovieIndexer::query(
 
     // lower and strip movie title
     std::string query_title{ s };
-    //lower(strip(query_title));
+    //lower(strip(query_title)); // does not handle non-ASCII characters
 
     // throw an exception if the movie is not in the index
     if (!contains(s))
         throw IndexException("MOVIE_NOT_IN_INDEX");
 
-    std::string query_Summary(summary(s));
+    std::string summary(summary(s));
 
-    if (query_Summary == "(no summary available)")
-        throw IndexException("MOVIE_DOES_NOT_CONTAIN_SUMMARY");
+    //if (query_Summary == "(no summary available)")
+    //    throw IndexException("MOVIE_DOES_NOT_CONTAIN_SUMMARY");
+    //std::cout << query_Summary << std::endl;
 
-    std::cout << query_Summary << std::endl;
-    std::stringstream ss{ query_Summary };
+    std::stringstream ss{ summary };
     WordTokenizer t;
     const std::vector<std::string> tokens{ t.tokenize(ss) };
 
     std::map<std::string, Indexer::query_pair> query_;
+    std::cout << "Computing query term frequencies...";
     query_freqs(query_, tokens);
+    std::cout << " done." << std::endl;
 
+    std::cout << "Computing query term weights...";
     std::map<std::string, std::vector<double>> doc_weights;
     query_weights(query_, doc_weights);
+    std::cout << " done." << std::endl;
 
-    /*
-    Mandeep Note:
-    -Methods from DocumentIndexer work.
-    -Correct Weight/Freq? 
-    -lower(strip(string)) throws C++ Assert Debugging Error. Cannot figure out issue.
-    */
+    // return only the top i results
+    std::cout << "Computing cosine similarities...";
+    std::vector<QueryResult> results{ cos_similarity(query_, doc_weights, tokens) };
+    results.resize(std::min(results.size(), i));
+    std::cout << " done." << std::endl;
 
-
-    // ********************************************************
-    // TODO: figure out how to get term frequencies and weights
-    // for all movie summaries
-    // ********************************************************
-
-    //// get query term frequencies
-    //// query_ is of the form (token, <freq, weight>)
-    //std::map<std::string, Indexer::query_pair> query_;
-    //query_freqs(query_, tokens);
-
-    //// get query and document weights
-    //std::map<std::string, std::vector<double>> doc_weights;
-    //query_weights(query_, doc_weights);
-
-    //// return only the top i results
-    //std::vector<QueryResult> results{ cos_similarity(query_, doc_weights, tokens) };
-    //results.resize(std::min(results.size(), i));
-
-    // ********************************************************
-
-    //return results;
-
-    return std::vector<QueryResult>();
+    return results;
 }
 
 int MovieIndexer::item_freq(const std::string& s) const {
@@ -159,8 +139,43 @@ const std::vector<QueryResult> MovieIndexer::cos_similarity(
     const std::map<std::string, Indexer::query_pair>& q,
     const std::map<std::string, std::vector<double>>& dw,
     const std::vector<std::string>& t) const {
-    // TODO
-    return std::vector<QueryResult>();
+    // computes cosine similarity between query and each document
+    std::vector<QueryResult> results;
+    std::string token;
+    double num{ 0 };
+    double len1{ 0 };
+    double len2{ 0 };
+    double den{ 0 };
+    for (size_t mov{ 0 }; mov != index.docs.size(); ++mov) {
+        std::cout << "computing similarity for " << index.docs.at(mov).name_
+            << " " << mov << "/" << index.docs.size() << std::endl;
+        num = 0;
+        len1 = 0;
+        len2 = 0;
+        den = 0;
+        for (std::vector<std::string>::const_iterator it{ t.begin() };
+            it != t.end();
+            ++it) {
+            num += q.at(*it).second * dw.at(*it).at(mov);
+            len1 += std::pow(q.at(*it).second, 2);
+            len2 += std::pow(dw.at(*it).at(mov), 2);
+        }
+        den = std::sqrt(len1) * std::sqrt(len2);
+
+        // construct and add query result (score is zero if den is zero)
+        // emplace_back() makes use of move operations
+        if (den == 0)
+            results.emplace_back(QueryResult(&index.docs.at(mov), 0));
+        else
+            results.emplace_back(QueryResult(&index.docs.at(mov), num / den));
+
+        std::cout << "done" << std::endl;
+    }
+
+    // sort results before returning (highest score first)
+    std::sort(results.begin(), results.end());
+
+    return results;
 }
 
 void MovieIndexer::init() {
@@ -192,9 +207,9 @@ void MovieIndexer::init() {
         else {
             std::stringstream ss;
             ss << ifs.rdbuf();
-            std::cout << "Processing metadata file '" << data_fp_ << "'...";
+            std::cout << "Processing metadata file '" << data_fp_
+                << "'..." << std::endl;
             tokenize_data(ss);
-            std::cout << " done." << std::endl;
         }
     }
 
@@ -225,6 +240,7 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
         movies_map.insert(std::pair<std::string, Movie&>(v_it->id_, *v_it));
     std::cout << " done." << std::endl;
 
+    std::cout << "Processing movie metadata and summaries...";
     while (metadata != std::string()) {
         // movie entries enter a stringstream
         std::stringstream metadata_ss;
@@ -248,11 +264,13 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
         if (m_it != movies_map.end()) {
             m_it->second.name_ = name;
             m_it->second.release_date_ = release_date;
+            m_it->second.build_index();
         }
 
         // read next entry
         std::getline(ss, metadata);
     }
+    std::cout << " done." << std::endl;
 }
 
 void MovieIndexer::tokenize_summary(std::stringstream& ss) {

@@ -50,7 +50,9 @@ public:
 
     */
     explicit Document(const std::string& doc_fp)
-        : IndexItem(doc_fp) { init(); }
+        : IndexItem(doc_fp) { init_from_file(); }
+    explicit Document(const std::string& name, const std::string& content)
+        : IndexItem(name, content) { init_from_content(name, content); }
     virtual ~Document() {};
     //! Token Verification Method.
     /*!
@@ -75,7 +77,8 @@ private:
     std::string name_short; //!< String containing name of document
     size_t longest{ 0 }; //!< Value representation of longest string key.
 
-    void init();
+    void init_from_file();
+    void init_from_content(const std::string& name, const std::string& content);
 };
 
 #endif // !DOCUMENT_H

@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << "Normalizing movie index...";
     mov.normalize();
-    std::cout << " done.";
+    std::cout << " done." << std::endl << std::endl;
 
     const std::string h_separator{ Indexer::h_separator(80) };
     std::cout << "Type in a movie title to get recommendations: ";
@@ -27,13 +27,13 @@ int main(int argc, char* argv[]) {
         std::cout << std::endl;
         try {
             results = mov.query(query);
-            std::cout << std::endl;
 
             // print out top 5 (by default) recommendations
             std::cout << "BECAUSE YOU WATCHED: " << query << std::endl;
             for (size_t i{ 0 }; i != results.size(); ++i)
                 if (results.at(i)) {
-                    std::cout << " #" << (i + 1) << ": " << results.at(i) << std::endl
+                    std::cout << std::endl << " #" << (i + 1) << ": "
+                        << results.at(i) << std::endl
                         << h_separator << std::endl << std::endl
                         << "Press [Enter] to display the next recommendation: ";
                     std::cin.get();

@@ -23,6 +23,13 @@ inline std::string& lower(std::string& s) {
     return s;
 }
 
+// used to get rid of non-ASCII characters
+struct NonASCIIChar {
+    bool operator() (char c) const {
+        return !isprint(static_cast<unsigned char>(c));
+    }
+};
+
 //! Remove unwanted characters
 /*!
 Removes all unwanted characters based in parameters
@@ -34,6 +41,8 @@ Removes all unwanted characters based in parameters
 inline std::string& strip(std::string& s, const std::string& bad_chars=std::string()) {
     // strips a string of all forbidden characters
     // by default, removes all punctuation
+    s.erase(std::remove_if(s.begin(), s.end(), NonASCIIChar()), s.end());
+
     if (bad_chars.empty())
         s.erase(std::remove_if(s.begin(), s.end(), ispunct), s.end());
 

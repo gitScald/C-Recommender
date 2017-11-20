@@ -23,7 +23,7 @@ public:
     bool contains(const std::string& s) const override { return doc.contains(s); }
     const size_t size() const override { return doc.size(); };
     const std::string& id() const { return id_; };
-    const std::string& release_date() const { return release_date_; };
+    const std::string& release_date() const { return release_date_; }
     void build_index();
 
 private:

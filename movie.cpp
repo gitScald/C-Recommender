@@ -14,24 +14,6 @@ std::ostream& operator<<(std::ostream& os, const Movie& m) {
 }
 
 void Movie::build_index() {
-    // builds the index of the movie summary
-    if (!doc.content().empty()) {
-        std::stringstream buffer;
-        buffer << content_;
-        doc.content_ = buffer.str();
-
-        // reset stringstream and tokenize summary
-        WordTokenizer t;
-        buffer.clear();
-        buffer.seekg(0);
-        std::vector<std::string> word_tokens = t.tokenize(buffer);
-
-        // dump the contents of tokens into dict and weights
-        for (std::vector<std::string>::const_iterator it{ word_tokens.begin() };
-            it != word_tokens.end();
-            ++it) {
-            doc << *it;
-            std::cout << doc;
-        }
-    }
+    // create movie document object
+    doc = Document(name_, content_);
 }
