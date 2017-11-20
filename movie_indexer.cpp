@@ -13,7 +13,7 @@ std::ostream& operator<<(std::ostream& os, const MovieIndexer& mi) {
     return os;
 }
 
-std::string MovieIndexer::fetchSummary(const std::string& s) const {
+std::string MovieIndexer::summary(const std::string& s) const {
     std::string title;
     std::string content;
     for (std::vector<Movie>::const_iterator it{ movies.begin() };
@@ -71,7 +71,7 @@ const std::vector<QueryResult> MovieIndexer::query(
     if (!contains(s))
         throw IndexException("MOVIE_NOT_IN_INDEX");
 
-    std::string query_Summary(fetchSummary(s));
+    std::string query_Summary(summary(s));
 
     if (query_Summary == "(no summary available)")
         throw IndexException("MOVIE_DOES_NOT_CONTAIN_SUMMARY");
@@ -164,23 +164,6 @@ const std::vector<QueryResult> MovieIndexer::cos_similarity(
 }
 
 void MovieIndexer::init() {
-    // grab and tokenize movie metadata
-    if (!data_fp_.empty()) {
-        std::ifstream ifs{ data_fp_ };
-
-        if (!ifs)
-            std::cerr << "WARNING: Could not establish input stream with '"
-            << data_fp_ << "'" << std::endl;
-
-        else {
-            std::stringstream ss;
-            ss << ifs.rdbuf();
-            std::cout << "Processing metadata file '" << data_fp_ << "'...";
-            tokenize_data(ss);
-            std::cout << " done." << std::endl;
-        }
-    }
-
     // grab and tokenize movie summaries
     if (!summary_fp_.empty()) {
         std::ifstream ifs{ summary_fp_ };
@@ -198,6 +181,23 @@ void MovieIndexer::init() {
         }
     }
 
+    // grab and tokenize movie metadata
+    if (!data_fp_.empty()) {
+        std::ifstream ifs{ data_fp_ };
+
+        if (!ifs)
+            std::cerr << "WARNING: Could not establish input stream with '"
+            << data_fp_ << "'" << std::endl;
+
+        else {
+            std::stringstream ss;
+            ss << ifs.rdbuf();
+            std::cout << "Processing metadata file '" << data_fp_ << "'...";
+            tokenize_data(ss);
+            std::cout << " done." << std::endl;
+        }
+    }
+
     // add movie document objects to the index
     for (std::vector<Movie>::const_iterator it{ movies.begin() };
         it != movies.end();
@@ -207,11 +207,23 @@ void MovieIndexer::init() {
 
 void MovieIndexer::tokenize_data(std::stringstream& ss) {
     // fill up movies vector with metadata
+    std::map<std::string, Movie&> movies_map;
+    std::map<std::string, Movie&>::iterator m_it;
+    std::vector<Movie>::iterator v_it;
+
     std::string metadata;
     std::string data;
     std::getline(ss, metadata);
 
     std::string id, name, release_date;
+
+    // loop through movie objects and make a map out of their ids
+    std::cout << "Building map entries for movie objects...";
+    for (v_it = movies.begin();
+        v_it != movies.end();
+        ++v_it)
+        movies_map.insert(std::pair<std::string, Movie&>(v_it->id_, *v_it));
+    std::cout << " done." << std::endl;
 
     while (metadata != std::string()) {
         // movie entries enter a stringstream
@@ -231,8 +243,12 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
         std::getline(metadata_ss, data, '\t');
         release_date = data;
 
-        // create a movie object from the metadata
-        movies.emplace_back(Movie(name, std::string(), id, release_date));
+        // fetch movie metadata, mapping to its id
+        m_it = movies_map.find(id);
+        if (m_it != movies_map.end()) {
+            m_it->second.name_ = name;
+            m_it->second.release_date_ = release_date;
+        }
 
         // read next entry
         std::getline(ss, metadata);
@@ -241,24 +257,12 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
 
 void MovieIndexer::tokenize_summary(std::stringstream& ss) {
     // fill up movies vector with plot summaries
-    std::map<std::string, std::string> summaries;
-    std::map<std::string, std::string>::iterator m_it;
-    std::vector<Movie>::iterator v_it;
-
     std::string summary;
     std::string data;
     std::getline(ss, summary);
 
     std::string id, content;
 
-    // loop through movie objects and make a map out of their ids
-    std::cout << "Building map entries for movie objects...";
-    for (v_it = movies.begin();
-        v_it != movies.end();
-        ++v_it)
-        summaries.insert(std::pair<std::string, std::string>(
-            std::make_pair(v_it->id_, std::string())));
-    std::cout << " done." << std::endl;
 
     std::cout << "Fetching plot summaries...";
     while (summary != std::string()) {
@@ -273,36 +277,11 @@ void MovieIndexer::tokenize_summary(std::stringstream& ss) {
         std::getline(summary_ss, data);
         content = data;
 
-        // fetch movie summary, mapping to its id
-        m_it = summaries.find(id);
-        if (m_it != summaries.end())
-            m_it->second = content;
+        // create a movie object from the summary
+        movies.emplace_back(Movie(std::string(), content, id, std::string()));
 
         // read next entry
         std::getline(ss, summary);
-    }
-    std::cout << " done." << std::endl;
-
-    // loop through movie objects and append plot summaries
-    std::cout << "Appending plot summaries to movie objects...";
-    for (v_it = movies.begin();
-        v_it != movies.end();
-        ++v_it) {
-        
-        // append summary to movie object
-        m_it = summaries.find(v_it->id_);
-        if (m_it != summaries.end()) {
-            if (!m_it->second.empty()) {
-                v_it->content_ = m_it->second;
-                v_it->doc.content_ = m_it->second;
-            }
-
-            // append generic message if summary is not available
-            else {
-                v_it->content_ = "(no summary available)";
-                v_it->doc.content_ = "(no summary available)";
-            }
-        }
     }
     std::cout << " done." << std::endl;
 }

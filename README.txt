@@ -3,12 +3,12 @@
                 Daniel Carrera (26729886)
  * Course:      COMP 345
  * Instructor:  René WITTE
- * Due date:    November 8th, 2017
+ * Due date:    November 21st, 2017
 
- C++ Essay Generator
- ===================
+ C++ Movie Recommender
+ =====================
 
-This is a C++11 implementation of an essay generator.
+This is a C++11 implementation of a movie recommendation system.
 
 Compilation:
 ------------
@@ -27,8 +27,9 @@ Upon successful compilation, navigate to the following subdirectories to test th
     googler/exe
     indexing/exe
     summarizer/exe
+    recommender/exe
 
-NOTE: Both 'googler' and 'indexing' programs will search for the 'files/' directory, in which should be located 'index.txt' (which holds the paths of all documents to reference), 'extra_doc.txt' (an extra document to index after an initial normalization), and 'stopwords.txt' (optional). The 'summarizer' program uses data provided in the 'a3data/' directory (provided by the professor).
+NOTE: Both 'googler' and 'indexing' programs will search for the 'files/' directory, in which should be located 'index.txt' (which holds the paths of all documents to reference), 'extra_doc.txt' (an extra document to index after an initial normalization), and 'stopwords.txt' (optional). The 'summarizer' program uses data provided in the 'a3data/' directory, and the `recommender` program uses a `MovieSummaries` directory (provided by the professor).
 
 NOTE: Failure to provide any of the indexing text files will cause a WARNING, but not a RUN-TIME ERROR. This means the index will display an empty table, and query operations will likely fail.
 
@@ -48,6 +49,10 @@ Archive contents:
         q2docs/*.txt
         q3docs/*.txt
         *.txt                   Questions to query the index with
+    - MovieSummaries/           Documents to process (provided by the professor)
+        movie.metadata.tsv      Movie metadata to process
+        plot_summaries.txt      Movie summaries to process
+                                (other documents not used)
     - doc/                      Project documentation (created with Doxygen)
         html/*                  HTML documentation
         latex/*                 LaTeX documentation
@@ -69,11 +74,16 @@ Archive contents:
         obj/                    Target for object files
         makefile                Makefile for indexing executable
         sample.txt              Sample interaction with indexing
-    - indexing/
+    - summarizer/
         exe/                    Target for executable
         obj/                    Target for object files
         makefile                Makefile for summarizer executable
         sample.txt              Sample interaction with summarizer
+    - recommender/
+        exe/                    Target for executable
+        obj/                    Target for object files
+        makefile                Makefile for recommender executable
+        sample.txt              Sample interaction with recommender
     - src/
         *.cpp                   Source files
         *.h                     Header files

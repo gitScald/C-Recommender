@@ -4,6 +4,7 @@ CFLAGS := -c -std=c++11 -Wall
 TAR := summarizer
 EXCL1 := gindexer.cpp
 EXCL2 := googler.cpp
+EXCL3 := recommender.cpp
 
 SRCDIR := ../src
 OBJDIR := obj
@@ -11,6 +12,7 @@ EXEDIR := exe
 
 SRC := $(filter-out $(SRCDIR)/$(EXCL1), $(wildcard $(SRCDIR)/*.cpp))
 SRC := $(filter-out $(SRCDIR)/$(EXCL2), $(SRC))
+SRC := $(filter-out $(SRCDIR)/$(EXCL3), $(SRC))
 OBJ := $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRC))
 EXE := $(EXEDIR)/$(TAR)
 
