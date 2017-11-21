@@ -13,7 +13,7 @@ std::ostream& operator<<(std::ostream& os, const Movie& m) {
     return os;
 }
 
-void Movie::build_index() {
+void Movie::init() {
     // create movie document object
     doc = Document(name_, content_);
 }

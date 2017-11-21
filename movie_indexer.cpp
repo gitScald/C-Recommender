@@ -20,7 +20,7 @@ std::string MovieIndexer::summary(const std::string& s) const {
         it != movies.end();
         ++it) {
         title = it->name_;
-        //lower(strip(title)); // does not handle non-ASCII characters
+        lower(strip(title));
         if (title == s)
             content = it->content_;
     }
@@ -36,7 +36,7 @@ bool MovieIndexer::contains(const std::string& s) const {
         it != movies.end();
         ++it) {
         title = it->name_;
-        //lower(strip(title)); // does not handle non-ASCII characters
+        lower(strip(title));
         if (title == s)
             return true;
     }
@@ -65,19 +65,15 @@ const std::vector<QueryResult> MovieIndexer::query(
 
     // lower and strip movie title
     std::string query_title{ s };
-    //lower(strip(query_title)); // does not handle non-ASCII characters
+    lower(strip(query_title));
 
     // throw an exception if the movie is not in the index
     if (!contains(s))
         throw IndexException("MOVIE_NOT_IN_INDEX");
 
-    std::string summary(summary(s));
+    std::string summary_(summary(s));
 
-    //if (query_Summary == "(no summary available)")
-    //    throw IndexException("MOVIE_DOES_NOT_CONTAIN_SUMMARY");
-    //std::cout << query_Summary << std::endl;
-
-    std::stringstream ss{ summary };
+    std::stringstream ss{ summary_ };
     WordTokenizer t;
     const std::vector<std::string> tokens{ t.tokenize(ss) };
 
@@ -147,8 +143,6 @@ const std::vector<QueryResult> MovieIndexer::cos_similarity(
     double len2{ 0 };
     double den{ 0 };
     for (size_t mov{ 0 }; mov != index.docs.size(); ++mov) {
-        std::cout << "computing similarity for " << index.docs.at(mov).name_
-            << " " << mov << "/" << index.docs.size() << std::endl;
         num = 0;
         len1 = 0;
         len2 = 0;
@@ -264,7 +258,7 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
         if (m_it != movies_map.end()) {
             m_it->second.name_ = name;
             m_it->second.release_date_ = release_date;
-            m_it->second.build_index();
+            m_it->second.init();
         }
 
         // read next entry

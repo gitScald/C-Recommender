@@ -24,7 +24,7 @@ public:
     const size_t size() const override { return doc.size(); };
     const std::string& id() const { return id_; };
     const std::string& release_date() const { return release_date_; }
-    void build_index();
+    void init();
 
 private:
     std::string id_;

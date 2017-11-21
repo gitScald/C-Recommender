@@ -5,11 +5,13 @@ int main(int argc, char* argv[]) {
 
     // Windows path: path/*
     const std::string data_fp{ "MovieSummaries/movie.metadata.tsv" };
-    const std::string summary_fp{ "MovieSummaries/plot_summaries.txt" };
+    //const std::string summary_fp{ "MovieSummaries/plot_summaries.txt" };
+    const std::string summary_fp{ "MovieSummaries/plot_summaries_small.txt" };
 
     // Linux path: ../path/*
-    //const std::string index_fp{ "../MovieSummaries/movie.metadata.tsv" };
-    //const std::string stopw_fp{ "../MovieSummaries/plot_summaries.txt" };
+    //const std::string data_fp{ "../MovieSummaries/movie.metadata.tsv" };
+    ////const std::string summary_fp{ "../MovieSummaries/plot_summaries.txt" };
+    //const std::string summary_fp{ "MovieSummaries/plot_summaries_small.txt" };
 
     std::cout << "Generating movie index..." << std::endl;
     MovieIndexer mov{ data_fp, summary_fp };
