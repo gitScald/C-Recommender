@@ -24,6 +24,7 @@ class Document;
 class Index;
 
 class DocumentIndexer :public Indexer {
+    friend class MovieIndexer;
 
     //! Shorthand for Index Table Display (Term Frequency, tf-idf Weight)
     typedef std::pair<std::vector<int>, std::vector<double>> vec_pair;

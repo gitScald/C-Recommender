@@ -1,4 +1,6 @@
+#include "document.h"
 #include "query_result.h"
+#include "movie.h"
 #include "sentence.h"
 #include <iomanip>
 #include <typeinfo>
@@ -49,18 +51,29 @@ std::ostream& operator<<(std::ostream& os, const QueryResult& qr) {
     // save os flags before using std::fixed
     const std::ios_base::fmtflags unfixed{ os.flags() };
 
-    // check if this is a sentence (different output)
-    const Sentence* ps = dynamic_cast<const Sentence*>(qr.item_);
-    if (ps) {
-        os << "("
-            << std::fixed << std::setprecision(QueryResult::w_prec) << qr.score_
-            << ") " << *ps;
+    // document output
+    const Document* pd = dynamic_cast<const Document*>(qr.item_);
+    if (pd) {
+        os << "'" << qr.item_->name() << "' - cosine similarity of "
+            << std::fixed << std::setprecision(QueryResult::w_prec) << qr.score_;
     }
 
-    // otherwise, it's a document
-    else
-        os << "'" << qr.item_->name() << "' - cosine similarity of "
-        << std::fixed << std::setprecision(QueryResult::w_prec) << qr.score_;
+    else {
+        // sentence output
+        const Sentence* ps = dynamic_cast<const Sentence*>(qr.item_);
+        if (ps) {
+            os << "("
+                << std::fixed << std::setprecision(QueryResult::w_prec) << qr.score_
+                << ") " << *ps;
+        }
+
+        else {
+            // movie output
+            const Movie* pm = dynamic_cast<const Movie*>(qr.item_);
+            if (pm)
+                os << *pm;
+        }
+    }
 
     os.flags(unfixed);
 

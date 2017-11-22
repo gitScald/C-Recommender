@@ -17,10 +17,13 @@
 #ifndef MOVIE_INDEXER_H
 #define MOVIE_INDEXER_H
 
-#include "document_indexer.h"
+//#include "document_indexer.h"
 #include "movie.h"
+#include <unordered_map>
 
 class MovieIndexer :public Indexer {
+    typedef std::pair<std::vector<int>, std::vector<double>> vec_pair;
+
     //!Overload operator<<. 
     /*!
     Print to an Output Stream Object all relevant information from the MovieIndexer object.
@@ -40,6 +43,11 @@ public:
     explicit MovieIndexer(const std::string& data_fp,
         const std::string& summary_fp)
         : data_fp_{ data_fp }, summary_fp_{ summary_fp } { init(); }
+    //!Destructor
+    /*!
+    Virtual destructor
+    */
+    virtual ~MovieIndexer() {};
 
     const IndexItem* operator[] (size_t i) const override;
     //!Retrieve Method
@@ -86,7 +94,13 @@ private:
     /*!
     To avoid redundancy of code, methods from DocumentIndexer are used for reference.
     */
-    DocumentIndexer index;
+    //DocumentIndexer index;
+
+    // new structure
+    bool in_docs(const std::string& s) const;
+    std::vector<Document> docs;
+    std::unordered_map<std::string, vec_pair> index;
+    void index_docs();
 
     void init();
     //!Void Member Function

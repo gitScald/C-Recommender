@@ -7,13 +7,6 @@
 - Populate map with sentence tokens from Documents
 - Calculate weights for sentence of specified documents
 - Determine query score per sentence using class Query_Result
-
-\author Benjamin Vial	29590765
-\author Mandeep Tahim   26935478
-\author Daniel Carrera  26729886
-
-\note COMP 345 Assignment 3 - Fall 2017
-
 */
 #ifndef SENTENCE_INDEXER_H
 #define SENTENCE_INDEXER_H

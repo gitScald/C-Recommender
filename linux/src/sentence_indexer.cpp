@@ -70,7 +70,7 @@ const std::vector<QueryResult> SentenceIndexer::query(
     const std::string& s, size_t i) const {
     // throw an exception if the index is not normalized
     if (!normalized)
-        throw IndexerExcept();
+        throw IndexException("INDEX_NOT_NORMALIZED");
 
     // tokenize the query string
     std::stringstream ss{ s };

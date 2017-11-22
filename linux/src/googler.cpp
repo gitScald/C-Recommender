@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
        std::cout << "QUERY: " << query << std::endl << h_separator << std::endl;
        results = unfil.query(query);
    }
-   catch (IndexerExcept& e) {
+   catch (IndexException& e) {
        std::cout << "Exception thrown: " << e.what() << std::endl
            << "***  END GOOGLER PROGRAM  ***" << std::endl;
    }

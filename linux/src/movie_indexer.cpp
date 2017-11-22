@@ -1,8 +1,13 @@
 #include "movie_indexer.h"
-#include "stringops.h"
 #include "word_tokenizer.h"
+#include <algorithm>
+#include <future>
 #include <sstream>
-
+/*!
+\param os is a Output Stream object
+\param mi is a MovieIndexer object
+\return Output Stream object os whose buffer contains data retrieved from MovieIndexer mi
+*/
 std::ostream& operator<<(std::ostream& os, const MovieIndexer& mi) {
     // simple index output
     for (std::vector<Movie>::const_iterator it{ mi.movies.begin() };
@@ -12,38 +17,78 @@ std::ostream& operator<<(std::ostream& os, const MovieIndexer& mi) {
     
     return os;
 }
+void MovieIndexer::index_docs() {
+    normalized = false;
 
+    // allocate map space
+    size_t doc{ 0 };
+    for (std::vector<Document>::const_iterator v_it{ docs.begin() };
+        v_it != docs.end();
+        ++v_it) {
+        for (std::map<std::string, int>::const_iterator m_it{ v_it->dict.begin() };
+            m_it != v_it->dict.end();
+            ++m_it) {
+            // check if token is not already in the index
+            std::unordered_map<std::string, MovieIndexer::vec_pair>::const_iterator um_it{ index.find(m_it->first) };
+
+            if (um_it == index.end())
+                // create map entry if not
+                index.insert(std::pair<std::string, MovieIndexer::vec_pair>{ m_it->first,
+                    MovieIndexer::vec_pair(std::vector<int>(movies.size()),
+                        std::vector<double>(movies.size())) });
+
+            // add the token count to the index
+            index.at(m_it->first).first.at(doc) = m_it->second;
+        }
+
+        // continue to next document
+        ++doc;
+    }
+}
+/*!
+\param s is a String variable corresponding to movie title
+\return String corresponding to movie summary stored within movies vector
+*/
 std::string MovieIndexer::summary(const std::string& s) const {
-    std::string title;
     std::string content;
     for (std::vector<Movie>::const_iterator it{ movies.begin() };
         it != movies.end();
         ++it) {
-        title = it->name_;
-        //lower(strip(title)); // does not handle non-ASCII characters
-        if (title == s)
+        if (it->name_ == s)
             content = it->content_;
     }
 
     return content;
 }
-
+/*!
+\param s is a String variable corresponding to movie title
+\return True if movie exists within movies vector
+*/
 bool MovieIndexer::contains(const std::string& s) const {
     // returns true if the movie is in the index
-    // precondition: movie title has already been lowered and stripped
-    std::string title;
     for (std::vector<Movie>::const_iterator it{ movies.begin() };
         it != movies.end();
         ++it) {
-        title = it->name_;
-        //lower(strip(title)); // does not handle non-ASCII characters
-        if (title == s)
+        if (it->name_ == s)
             return true;
     }
 
     return false;
 }
-
+bool MovieIndexer::in_docs(const std::string& s) const {
+    // returns true if any of the documents contain the token
+    for (std::vector<Document>::const_iterator it{ docs.begin() };
+        it != docs.end();
+        ++it) {
+        if (it->contains(s))
+            return true;
+    }
+    return false;
+}
+/*!
+\param i is a integer value corresponding to a position
+\return Pointer to IndexItem in a Vector of Movie
+*/
 const IndexItem* MovieIndexer::operator[] (size_t i) const {
     // returns a pointer to the movie at the given index
     const IndexItem* pii = &movies.at(i);
@@ -52,30 +97,33 @@ const IndexItem* MovieIndexer::operator[] (size_t i) const {
 }
 
 void MovieIndexer::normalize() {
-    // calls member document indexer normalize() method
-    index.normalize();
+    // computes token weights
+    for (std::unordered_map<std::string, MovieIndexer::vec_pair>::const_iterator m_it{ index.begin() };
+        m_it != index.end();
+        ++m_it) {
+        for (size_t doc{ 0 }; doc != size(); ++doc)
+            // compute and write weights in the map entry
+            index.at(m_it->first).second.at(doc) = weight(m_it->first, doc);
+    }
+
     normalized = true;
 }
-
+/*!
+\param s is a User Inputer Query String
+\param i is a size_t defining return size
+\return Vector<QueryResult> containing Top i Cosine Similarity
+*/
 const std::vector<QueryResult> MovieIndexer::query(
     const std::string& s, size_t i) const {
     // throw an exception if the index is not normalized
     if (!normalized)
         throw IndexException("INDEX_NOT_NORMALIZED");
 
-    // lower and strip movie title
-    std::string query_title{ s };
-    //lower(strip(query_title)); // does not handle non-ASCII characters
-
     // throw an exception if the movie is not in the index
     if (!contains(s))
         throw IndexException("MOVIE_NOT_IN_INDEX");
 
-    std::string summary_{ summary(s) };
-
-    //if (query_Summary == "(no summary available)")
-    //    throw IndexException("MOVIE_DOES_NOT_CONTAIN_SUMMARY");
-    //std::cout << query_Summary << std::endl;
+    std::string summary_(summary(s));
 
     std::stringstream ss{ summary_ };
     WordTokenizer t;
@@ -91,50 +139,148 @@ const std::vector<QueryResult> MovieIndexer::query(
     query_weights(query_, doc_weights);
     std::cout << " done." << std::endl;
 
-    // return only the top i results
+    // compute cosine similarities
     std::cout << "Computing cosine similarities...";
     std::vector<QueryResult> results{ cos_similarity(query_, doc_weights, tokens) };
-    results.resize(std::min(results.size(), i));
+
+    // first result will be the queried movie itself, so take one more result
+    results.resize(std::min(results.size(), i + 1));
     std::cout << " done." << std::endl;
 
     return results;
 }
-
+/*!
+\param s is a String token
+\return Integer occurence of Token
+*/
 int MovieIndexer::item_freq(const std::string& s) const {
-    // calls member document indexer item_freq() method
-    return index.item_freq(s);
-}
+    // returns the number of summaries a token is found in
+    int freq{ 0 };
+    std::unordered_map<std::string, MovieIndexer::vec_pair>::const_iterator m_it{ index.find(s) };
+    if (m_it != index.end()) {
+        for (std::vector<int>::const_iterator v_it{ m_it->second.first.begin() };
+            v_it != m_it->second.first.end();
+            ++v_it)
+            if (*v_it > 0)
+                freq += 1;
+    }
 
+    return freq;
+}
+/*!
+\param s is a String token
+\param i is a Integer index of Document in Map in DocumentIndexer
+\return Integer occurence of Token
+*/
 int MovieIndexer::term_freq(const std::string& s, int i) const {
-    // calls member document indexer term_freq() method
-    return index.term_freq(s, i);
-}
+    // return the count of a token in the summary at the given index
+    int freq{ 0 };
+    if (docs.at(i).contains(s))
+        freq = docs.at(i).dict.at(s);
 
+    return freq;
+}
+/*!
+\param s is a String token
+\param i is a Integer index of Document in Map in DocumentIndexer
+\return Double value corresponding to the normalized term frequency of a token in a Document at index i in DocumentIndexer
+*/
 double MovieIndexer::norm_tf(const std::string& s, int i) const {
-    // calls member document indexer norm_tf() method
-    return index.norm_tf(s, i);
-}
+    // computes the normalized tf of a token in a summary
+    // normalized term frequency is zero if term frequency is zero
+    if (docs.at(i).contains(s))
+        return std::max((1 + log(static_cast<double>(term_freq(s, i)))), 0.0);
 
+    return 0;
+}
+/*!
+\param s is a String token
+\return Double value corresponding to the normalized document frequency of a token
+*/
 double MovieIndexer::norm_idf(const std::string& s) const {
-    // calls member document indexer norm_idf() method
-    return index.norm_idf(s);
-}
+    // computes the normalized idf of a token
+    if (in_docs(s))
+        return log(static_cast<double>(docs.size()) / static_cast<double>(item_freq(s)));
 
+    return 0;
+}
+/*!
+\param s is a String token
+\param i is a Integer index of Document in Map in DocumentIndexer
+\return Double value corresponding to the weight of a token in a Document at index in DocumentIndexer
+*/
 double MovieIndexer::weight(const std::string& s, int i) const {
-    // calls member document indexer weight() method
-    return index.weight(s, i);
-}
+    // returns the weight of a token in the summary at the given index
+    // std::async() causes Linux to have PMS, take this out for the demo
+    std::future<double> future_tf{ std::async(&MovieIndexer::norm_tf, this, s, i) };
+    std::future<double> future_idf{ std::async(&MovieIndexer::norm_idf, this, s) };
 
+    double idf = future_idf.get();
+    if (idf == 0)
+        return 0;
+
+    return future_tf.get() * idf;
+
+    //double tf{ norm_tf(s, i) };
+    //double idf{ norm_idf(s) };
+
+    //if (idf == 0)
+    //    return 0;
+
+    //return tf * idf;
+}
+/*!
+\param q is a Map<token(String, <freq(int), weight(double>>
+\param t is a Vector<String> corresponding to User Input Query
+*/
 void MovieIndexer::query_freqs(std::map<std::string, Indexer::query_pair>& q,
     const std::vector<std::string>& t) const {
-    index.query_freqs(q, t);
-}
+    // gets query term frequencies
+    std::map<std::string, MovieIndexer::query_pair>::const_iterator m_it{ q.end() };
+    for (std::vector<std::string>::const_iterator it{ t.begin() };
+        it != t.end();
+        ++it) {
+        // increment the frequency if the token is already present
+        m_it = q.find(*it);
+        if (m_it != q.end())
+            ++q.at(*it).first;
 
+        // otherwise create an entry for it
+        else
+            q.insert(std::pair<std::string, Indexer::query_pair>
+        { *it, Indexer::query_pair(std::make_pair(1, 0.0)) });
+    }
+}
+/*!
+\param q is a Map<token(String), <freq(int), weight(double)>>
+\param sw is a Map<token(String), vector<document weight(double)>>
+*/
 void MovieIndexer::query_weights(std::map<std::string, Indexer::query_pair>& q,
     std::map<std::string, std::vector<double>>& dw) const {
-    index.query_weights(q, dw);
-}
+    // gets query and document weights
+    double tf{ 0 };
+    double idf{ 0 };
+    for (std::map<std::string, Indexer::query_pair>::iterator q_it{ q.begin() };
+        q_it != q.end();
+        ++q_it) {
+        // get query weights
+        tf = std::max(1 + log(static_cast<double>(q_it->second.first)), 0.0);
+        idf = norm_idf(q_it->first);
+        q_it->second.second = tf * idf;
 
+        // get document weights
+        dw.insert(std::pair<std::string, std::vector<double>>
+        {q_it->first, std::vector<double>(docs.size())});
+        for (size_t doc{ 0 }; doc != docs.size(); ++doc)
+            dw.at(q_it->first).at(doc) = weight(q_it->first, doc);
+    }
+}
+/*!
+\param q is a Map<token(String), <freq(int), weight(double)>>
+\param dw is a Map<token(String), vector<document weight(double)>>
+\param t is a Vector<String> corresponding to User Input Query
+\return Vector<QueryResult> corresponds to Cosine Similarity between User Query and each Document (Decreasing Order)
+*/
 const std::vector<QueryResult> MovieIndexer::cos_similarity(
     const std::map<std::string, Indexer::query_pair>& q,
     const std::map<std::string, std::vector<double>>& dw,
@@ -155,8 +301,8 @@ const std::vector<QueryResult> MovieIndexer::cos_similarity(
             it != t.end();
             ++it) {
             num += q.at(*it).second * dw.at(*it).at(mov);
-            len1 += std::pow(q.at(*it).second, 2);
-            len2 += std::pow(dw.at(*it).at(mov), 2);
+            len1 += q.at(*it).second * q.at(*it).second;
+            len2 += dw.at(*it).at(mov) * dw.at(*it).at(mov);
         }
         den = std::sqrt(len1) * std::sqrt(len2);
 
@@ -166,8 +312,6 @@ const std::vector<QueryResult> MovieIndexer::cos_similarity(
             results.emplace_back(QueryResult(&movies.at(mov), 0));
         else
             results.emplace_back(QueryResult(&movies.at(mov), num / den));
-
-        std::cout << "done" << std::endl;
     }
 
     // sort results before returning (highest score first)
@@ -211,17 +355,18 @@ void MovieIndexer::init() {
         }
     }
 
-    std::cout << "Done processing input files." << std::endl;
-
-    // add movie document objects to the index
-    std::cout << "Adding movie document objects to the index...";
+    // add movie document objects to the index and build it
+    std::cout << "Indexing document objects...";
     for (std::vector<Movie>::const_iterator it{ movies.begin() };
         it != movies.end();
         ++it)
-        index << it->doc;
+        docs.push_back(it->doc);
+    index_docs();
     std::cout << " done." << std::endl;
 }
-
+/*!
+\param ss is a StringStream Object containing metadata
+*/
 void MovieIndexer::tokenize_data(std::stringstream& ss) {
     // fill up movies vector with metadata
     std::map<std::string, Movie&> movies_map;
@@ -238,7 +383,7 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
     std::cout << "Building map entries for movie objects...";
     for (v_it = movies.begin();
         v_it != movies.end();
-        ++v_it)
+        ++v_it) 
         movies_map.insert(std::pair<std::string, Movie&>(v_it->id_, *v_it));
     std::cout << " done." << std::endl;
 
@@ -274,7 +419,9 @@ void MovieIndexer::tokenize_data(std::stringstream& ss) {
     }
     std::cout << " done." << std::endl;
 }
-
+/*!
+\param ss is a StringStream Object containing movie summary data
+*/
 void MovieIndexer::tokenize_summary(std::stringstream& ss) {
     // fill up movies vector with plot summaries
     std::string summary;

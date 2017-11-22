@@ -33,6 +33,8 @@ NOTE: Both 'googler' and 'indexing' programs will search for the 'files/' direct
 
 NOTE: Failure to provide any of the indexing text files will cause a WARNING, but not a RUN-TIME ERROR. This means the index will display an empty table, and query operations will likely fail.
 
+NOTE: The movie data files have been trimmed to a subset of their original size, as uploading them to Moodle would have been impossible otherwise. As well, a smaller version is available for quick testing with the files `plot_summaries_medium.txt` and `plot_summaries_small.txt`.
+
 The application was developed with the following:
 
 Operating system:   Microsoft Windows 7 64-bit SP1 6.1.7.7601
@@ -44,48 +46,50 @@ Compilers:          Microsoft Visual C++ 14.10.25008
 
 Archive contents:
 
-    - a3data/                   Documents to process (provided by the professor)
-        q1docs/*.txt            Documents to index to process questions
+    - a3data/                       Documents to process (provided by the professor)
+        q1docs/*.txt                Documents to index to process questions
         q2docs/*.txt
         q3docs/*.txt
-        *.txt                   Questions to query the index with
-    - MovieSummaries/           Documents to process (provided by the professor)
-        movie.metadata.tsv      Movie metadata to process
-        plot_summaries.txt      Movie summaries to process
-                                (other documents not used)
-    - doc/                      Project documentation (created with Doxygen)
-        html/*                  HTML documentation
-        latex/*                 LaTeX documentation
+        *.txt                       Questions to query the index with
+    - MovieSummaries/               Documents to process (provided by the professor)
+        movie.metadata.tsv          Movie metadata to process
+        plot_summaries.txt          Movie summaries to process
+        plot_summaries_medium.txt   Movie summaries to process (~1000 samples)
+        plot_summaries_small.txt    Movie summaries to process (~80 samples)
+                                    (other documents not used)
+    - doc/                          Project documentation (created with Doxygen)
+        html/*                      HTML documentation
+        latex/*                     LaTeX documentation
     - files/
-        doc1.txt                Sample documents to index
+        doc1.txt                    Sample documents to index
         doc2.txt
         doc3.txt
-        extra_doc.txt           Extra document (not included in index.txt), to test normalize() method
-        index.txt               Index file for Linux directory structure
-        index_windows.txt       Index file for Windows directory structure (if using a files/ folder with VS)
-        stopwords.txt           Sample stopwords file
+        extra_doc.txt               Extra document (not included in index.txt), to test normalize() method
+        index.txt                   Index file for Linux directory structure
+        index_windows.txt           Index file for Windows directory structure (if using a files/ folder with VS)
+        stopwords.txt               Sample stopwords file
     - googler/
-        exe/                    Target for executable
-        obj/                    Target for object files
-        makefile                Makefile for googler executable
-        sample.txt              Sample interaction with googler
+        exe/                        Target for executable
+        obj/                        Target for object files
+        makefile                    Makefile for googler executable
+        sample.txt                  Sample interaction with googler
     - indexing/
-        exe/                    Target for executable
-        obj/                    Target for object files
-        makefile                Makefile for indexing executable
-        sample.txt              Sample interaction with indexing
+        exe/                        Target for executable
+        obj/                        Target for object files
+        makefile                    Makefile for indexing executable
+        sample.txt                  Sample interaction with indexing
     - summarizer/
-        exe/                    Target for executable
-        obj/                    Target for object files
-        makefile                Makefile for summarizer executable
-        sample.txt              Sample interaction with summarizer
+        exe/                        Target for executable
+        obj/                        Target for object files
+        makefile                    Makefile for summarizer executable
+        sample.txt                  Sample interaction with summarizer
     - recommender/
-        exe/                    Target for executable
-        obj/                    Target for object files
-        makefile                Makefile for recommender executable
-        sample.txt              Sample interaction with recommender
+        exe/                        Target for executable
+        obj/                        Target for object files
+        makefile                    Makefile for recommender executable
+        sample.txt                  Sample interaction with recommender
     - src/
-        *.cpp                   Source files
-        *.h                     Header files
-    - makefile                  Root makefile for complete project
-    - README.txt:               This document
+        *.cpp                       Source files
+        *.h                         Header files
+    - makefile                      Root makefile for complete project
+    - README.txt:                   This document

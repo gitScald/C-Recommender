@@ -12,6 +12,7 @@ specified by end user in order to generate results, based on the cosine similari
 #include "index_item.h"
 #include "query_result.h"
 #include "stopword.h"
+#include <exception>
 #include <map>
 
 class Indexer {
@@ -125,9 +126,14 @@ protected:
         const std::vector<std::string>& t) const = 0;
 };
 
-struct IndexerExcept {
-    // need to make it return a char* for persistence
-    const char* what() const noexcept { return "INDEX_NOT_NORMALIZED"; }
+class IndexException :public std::exception {
+public:
+    IndexException(const std::string& what)
+        : what_{ what } {};
+    const char* what() const noexcept override { return what_.c_str(); }
+
+private:
+    std::string what_;
 };
 
 #endif // !INDEXER_H

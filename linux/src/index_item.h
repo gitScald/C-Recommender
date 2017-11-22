@@ -47,7 +47,7 @@ public:
     /*!
     Pure Virtual Function. Return true if dictionary contains string input string parameter
     */
-    const std::string& content() const { return content_; };
+    virtual const std::string& content() const { return content_; };
     //!Accessor Method
     /*!
     Virtual Method. 

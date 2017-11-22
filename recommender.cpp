@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     // Linux path: ../path/*
     //const std::string data_fp{ "../MovieSummaries/movie.metadata.tsv" };
     ////const std::string summary_fp{ "../MovieSummaries/plot_summaries.txt" };
-    //const std::string summary_fp{ "MovieSummaries/plot_summaries_small.txt" };
+    //const std::string summary_fp{ "../MovieSummaries/plot_summaries_small.txt" };
 
     std::cout << "Generating movie index..." << std::endl;
     MovieIndexer mov{ data_fp, summary_fp };
@@ -30,15 +30,19 @@ int main(int argc, char* argv[]) {
         try {
             results = mov.query(query);
 
-            // print out top 5 (by default) recommendations
-            std::cout << "BECAUSE YOU WATCHED: " << query << std::endl;
-            for (size_t i{ 0 }; i != results.size(); ++i)
+            // print out top 5 (by default) recommendations (avoid the movie itself)
+            std::cout << std::endl << std::endl << h_separator << std::endl << std::endl
+                << "BECAUSE YOU WATCHED: " << query << std::endl << std::endl << h_separator << std::endl;
+            for (size_t i{ 1 }; i != results.size(); ++i)
                 if (results.at(i)) {
-                    std::cout << std::endl << " #" << (i + 1) << ": "
-                        << results.at(i) << std::endl
-                        << h_separator << std::endl << std::endl
-                        << "Press [Enter] to display the next recommendation: ";
-                    std::cin.get();
+                    std::cout << results.at(i) << std::endl
+                        << h_separator << std::endl << std::endl;
+
+                    if (i != results.size() - 1) {
+                        std::cout << "Press [Enter] to display the next recommendation: ";
+                        std::cin.get();
+                        std::cout << std::endl;
+                    }
                 }
         }
 

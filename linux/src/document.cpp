@@ -7,7 +7,7 @@
 #include <iostream>
 #include <sstream>
 
-void Document::init() {
+void Document::init_from_file() {
     // builds the dictionary from the given file
     // get the short file name for table display
     const size_t slash{ name_.find_last_of('/') + 1 };
@@ -36,6 +36,24 @@ void Document::init() {
             ++it)
             *this << *it;
     }
+}
+
+void Document::init_from_content(const std::string& name,
+    const std::string& content) {
+    // builds the dictionary from the given content
+    name_short = name;
+
+    // tokenize contents
+    std::stringstream buffer;
+    buffer << content;
+    WordTokenizer t;
+    std::vector<std::string> tokens = t.tokenize(buffer);
+
+    // dump the contents of tokens into dict and weights
+    for (std::vector<std::string>::const_iterator it{ tokens.begin() };
+        it != tokens.end();
+        ++it)
+        *this << *it;
 }
 
 /*!

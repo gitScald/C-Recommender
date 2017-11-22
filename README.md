@@ -11,6 +11,10 @@ If you want to run the project in Windows (be it in Visual Studio or Eclipse), y
 
 Because Windows IDEs don't allow the creation of multiple executables within the same project, and because it's a pain to link another project with one, let alone two different IDEs, I've opted to allow to swap between four `main()` programs by commenting the other one out.
 
+## Speed Considerations
+
+The algorithm used for index normalization in the `MovieIndexer` class is extremely slow: it takes over an hour to normalize ~1000 sample summaries. Use the provided `plot_summaries_small.txt` file in the `linux/` folder for a quick run (with `Taxi Blues` and `The Good Life` as tested inputs).
+
 ## Linux
 
 When testing the program under Linux, use the file structure located in the `linux/` folder, navigate to the root folder, and call `make`. Then, to run either executable, call the following:
