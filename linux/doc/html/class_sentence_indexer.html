@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Essay Generator: SentenceIndexer Class Reference</title>
+<title>Recommender: SentenceIndexer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Essay Generator
+   <div id="projectname">Recommender
+   &#160;<span id="projectnumber">v4.0</span>
    </div>
-   <div id="projectbrief">COMP345 - Assignment 3</div>
+   <div id="projectbrief">COMP 345 - Assignment 4 (Fall 2017)</div>
   </td>
  </tr>
  </tbody>
@@ -96,8 +97,8 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sentence_indexer.html#a8048abf41bf3513d04c611e90afddcc5">~SentenceIndexer</a> ()</td></tr>
 <tr class="memdesc:a8048abf41bf3513d04c611e90afddcc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Deconstructor. <br /></td></tr>
 <tr class="separator:a8048abf41bf3513d04c611e90afddcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f8655135cb46ba4fee6a53418f15d03"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_index_item.html">IndexItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sentence_indexer.html#a4f8655135cb46ba4fee6a53418f15d03">operator[]</a> (int i) const override</td></tr>
-<tr class="separator:a4f8655135cb46ba4fee6a53418f15d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc5897caef051a20a2ef6e767989d88"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_index_item.html">IndexItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sentence_indexer.html#adcc5897caef051a20a2ef6e767989d88">operator[]</a> (size_t i) const override</td></tr>
+<tr class="separator:adcc5897caef051a20a2ef6e767989d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3299500d89ff36586472f81eb8efae8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sentence_indexer.html#af3299500d89ff36586472f81eb8efae8">contains</a> (const std::string &amp;s) const override</td></tr>
 <tr class="memdesc:af3299500d89ff36586472f81eb8efae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains Method.  <a href="#af3299500d89ff36586472f81eb8efae8">More...</a><br /></td></tr>
 <tr class="separator:af3299500d89ff36586472f81eb8efae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,14 +211,8 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
 <li>Create <a class="el" href="class_document.html">Document</a> objects for files specified in <a class="el" href="class_index.html">Index</a> object, using classes SentneceTokenizer</li>
 <li>Populate map with sentence tokens from Documents</li>
 <li>Calculate weights for sentence of specified documents</li>
-<li>Determine query score per sentence using class Query_Result</li>
+<li>Determine query score per sentence using class Query_Result </li>
 </ul>
-<dl class="section author"><dt>Author</dt><dd>Benjamin Vial 29590765 </dd>
-<dd>
-Mandeep Tahim 26935478 </dd>
-<dd>
-Daniel Carrera 26729886</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>COMP 345 Assignment 3 - Fall 2017 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ec9f359954191ebc5d84c759fd2238d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ec9f359954191ebc5d84c759fd2238d">&#9670;&nbsp;</a></span>SentenceIndexer() <span class="overload">[1/2]</span></h2>
@@ -384,7 +379,7 @@ Daniel Carrera 26729886</dd></dl>
 </div><div class="memdoc">
 
 <p>Calculate the Cosine Similarity. </p>
-<p>Create a vector of <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> through which the cosine similarity is calculated. Returns the vector of <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> containing the match score of each document to the search query.</p>
+<p>Create a vector of <a class="el" href="class_query_result.html">QueryResult</a> through which the cosine similarity is calculated. Returns the vector of <a class="el" href="class_query_result.html">QueryResult</a> containing the match score of each document to the search query.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">q</td><td>is a Map&lt;token(String), &lt;freq(int), weight(double)&gt;&gt; </td></tr>
@@ -554,8 +549,8 @@ Daniel Carrera 26729886</dd></dl>
 
 </div>
 </div>
-<a id="a4f8655135cb46ba4fee6a53418f15d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f8655135cb46ba4fee6a53418f15d03">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="adcc5897caef051a20a2ef6e767989d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc5897caef051a20a2ef6e767989d88">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -566,7 +561,7 @@ Daniel Carrera 26729886</dd></dl>
         <tr>
           <td class="memname">const <a class="el" href="class_index_item.html">IndexItem</a> * SentenceIndexer::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -583,7 +578,7 @@ Daniel Carrera 26729886</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> in a Vector of Sentences </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="class_index_item.html">IndexItem</a> in a Vector of Sentences </dd></dl>
 
 <p>Implements <a class="el" href="class_indexer.html">Indexer</a>.</p>
 
@@ -624,7 +619,7 @@ Daniel Carrera 26729886</dd></dl>
 </div><div class="memdoc">
 
 <p>Search and Process Query. </p>
-<p>If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> vector. (See <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> class for more details). Depending on the input parameter i (default 500), this method returns sentences from most to least relevance, creating an essay of word count less than i.</p>
+<p>If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a <a class="el" href="class_query_result.html">QueryResult</a> vector. (See <a class="el" href="class_query_result.html">QueryResult</a> class for more details). Depending on the input parameter i (default 500), this method returns sentences from most to least relevance, creating an essay of word count less than i.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>is a User Inputer Query String </td></tr>
@@ -1106,8 +1101,8 @@ Daniel Carrera 26729886</dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/<a class="el" href="sentence__indexer_8h_source.html">sentence_indexer.h</a></li>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/sentence_indexer.cpp</li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/<a class="el" href="sentence__indexer_8h_source.html">sentence_indexer.h</a></li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/sentence_indexer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

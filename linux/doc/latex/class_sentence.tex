@@ -20,7 +20,7 @@ Inheritance diagram for Sentence\+:\begin{figure}[H]
 \item 
 \hyperlink{class_sentence_aa767c3de8aaf7f2e30fa7524cdfcaead}{Sentence} ()
 \begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_sentence_af493870ce2b1718f57a979319af9e7a7}{Sentence} (const std\+::string \&\hyperlink{class_index_item_a059cbae312c51ae7d02050f8f325bf93}{name}, const std\+::string \&\hyperlink{class_index_item_aab7965cbd4a573ebf120ee6bad9a7fbf}{content}, int \hyperlink{class_sentence_af98c9ff5c5be578e7e45057ebd9b899b}{pos})
+\hyperlink{class_sentence_af493870ce2b1718f57a979319af9e7a7}{Sentence} (const std\+::string \&\hyperlink{class_index_item_a059cbae312c51ae7d02050f8f325bf93}{name}, const std\+::string \&\hyperlink{class_index_item_a2b5b4451bcb2fd50328bdc5b470d6296}{content}, int \hyperlink{class_sentence_af98c9ff5c5be578e7e45057ebd9b899b}{pos})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_sentence_a66492f63af03eabbb7b0faa10ab8b85e}\label{class_sentence_a66492f63af03eabbb7b0faa10ab8b85e}} 
 \hyperlink{class_sentence_a66492f63af03eabbb7b0faa10ab8b85e}{Sentence} (const \hyperlink{class_sentence}{Sentence} \&s)
@@ -33,7 +33,9 @@ bool \hyperlink{class_sentence_aacbd8da0eeadd6a544f00c7ea4169c79}{operator()} (c
 bool \hyperlink{class_sentence_a867c17dbf3ef55c8708faa120ffad162}{contains} (const std\+::string \&s) const override
 \begin{DoxyCompactList}\small\item\em Override function contains. \end{DoxyCompactList}\item 
 size\+\_\+t \hyperlink{class_sentence_af98c9ff5c5be578e7e45057ebd9b899b}{pos} () const
-\begin{DoxyCompactList}\small\item\em Accessor method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accessor method. \end{DoxyCompactList}\item 
+const size\+\_\+t \hyperlink{class_sentence_a98d70a10b7573aa295814d1326ed1164}{size} () const override
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,12 +49,10 @@ double \hyperlink{class_sentence_ac114a37a1f4c317f5141802d2d77b209}{norm\+\_\+id
 \begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
 double \hyperlink{class_sentence_ac7084c1822710975f94ed8a30ac73c2c}{weight} (const std\+::string \&s) const
 \begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_sentence_a69d6f959ca6dfb72a73e8f35f9a12afa}\label{class_sentence_a69d6f959ca6dfb72a73e8f35f9a12afa}} 
-void {\bfseries normalize} ()
-\item 
-\mbox{\Hypertarget{class_sentence_ad450504df67b1a466288c1d7d1165813}\label{class_sentence_ad450504df67b1a466288c1d7d1165813}} 
-void {\bfseries init} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_sentence_a69d6f959ca6dfb72a73e8f35f9a12afa}{normalize} ()
+\begin{DoxyCompactList}\small\item\em Compute Weights. \end{DoxyCompactList}\item 
+void \hyperlink{class_sentence_ad450504df67b1a466288c1d7d1165813}{init} ()
+\begin{DoxyCompactList}\small\item\em Void Member Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -132,7 +132,21 @@ Boolean value representing whether or not the map contains the sentence specifie
 
 Implements \hyperlink{class_index_item_a534d96bf041a485ed124663b9cded2fb}{Index\+Item}.
 
-\mbox{\Hypertarget{class_sentence_af3e48fa5d5776ae122b408191d67d327}\label{class_sentence_af3e48fa5d5776ae122b408191d67d327}} 
+\mbox{\Hypertarget{class_sentence_ad450504df67b1a466288c1d7d1165813}\label{class_sentence_ad450504df67b1a466288c1d7d1165813}} 
+\index{Sentence@{Sentence}!init@{init}}
+\index{init@{init}!Sentence@{Sentence}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Sentence\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Void Member Function. 
+
+Initilize \hyperlink{class_sentence}{Sentence} object by\+:
+\begin{DoxyItemize}
+\item Tokenizing \hyperlink{class_sentence}{Sentence} string (content\+\_\+) using \hyperlink{class_word_tokenizer}{Word\+Tokenizer}
+\item Store said tokens in dictionary (dict) 
+\end{DoxyItemize}\mbox{\Hypertarget{class_sentence_af3e48fa5d5776ae122b408191d67d327}\label{class_sentence_af3e48fa5d5776ae122b408191d67d327}} 
 \index{Sentence@{Sentence}!item\+\_\+freq@{item\+\_\+freq}}
 \index{item\+\_\+freq@{item\+\_\+freq}!Sentence@{Sentence}}
 \subsubsection{\texorpdfstring{item\+\_\+freq()}{item\_freq()}}
@@ -192,7 +206,17 @@ Normalized Term Frequency; Used in calculation of Weight.
 \begin{DoxyReturn}{Returns}
 Double value corresponding to the normalized term frequency of a token s in \hyperlink{class_sentence}{Sentence} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_sentence_aacbd8da0eeadd6a544f00c7ea4169c79}\label{class_sentence_aacbd8da0eeadd6a544f00c7ea4169c79}} 
+\mbox{\Hypertarget{class_sentence_a69d6f959ca6dfb72a73e8f35f9a12afa}\label{class_sentence_a69d6f959ca6dfb72a73e8f35f9a12afa}} 
+\index{Sentence@{Sentence}!normalize@{normalize}}
+\index{normalize@{normalize}!Sentence@{Sentence}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Sentence\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute Weights. 
+
+This method utilizes the method \hyperlink{class_sentence_ac7084c1822710975f94ed8a30ac73c2c}{weight()} to calculate and store the weight of each token. \mbox{\Hypertarget{class_sentence_aacbd8da0eeadd6a544f00c7ea4169c79}\label{class_sentence_aacbd8da0eeadd6a544f00c7ea4169c79}} 
 \index{Sentence@{Sentence}!operator()@{operator()}}
 \index{operator()@{operator()}!Sentence@{Sentence}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}}
@@ -216,7 +240,21 @@ Reimplemented from \hyperlink{class_index_item_a38ccc46639b8d0b066024bad728c1bfa
 
 Accessor method. 
 
-Returm position of \hyperlink{class_sentence}{Sentence} within a \hyperlink{class_document}{Document} \mbox{\Hypertarget{class_sentence_aa615a21b45de69ba4a1f0fa257a85ccd}\label{class_sentence_aa615a21b45de69ba4a1f0fa257a85ccd}} 
+Returm position of \hyperlink{class_sentence}{Sentence} within a \hyperlink{class_document}{Document} \mbox{\Hypertarget{class_sentence_a98d70a10b7573aa295814d1326ed1164}\label{class_sentence_a98d70a10b7573aa295814d1326ed1164}} 
+\index{Sentence@{Sentence}!size@{size}}
+\index{size@{size}!Sentence@{Sentence}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily const size\+\_\+t Sentence\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accessor Method. 
+
+Returns member variable content\+\_\+ 
+
+Reimplemented from \hyperlink{class_index_item_aa910a42ef4f6d7087297ac7fb8cf4a6c}{Index\+Item}.
+
+\mbox{\Hypertarget{class_sentence_aa615a21b45de69ba4a1f0fa257a85ccd}\label{class_sentence_aa615a21b45de69ba4a1f0fa257a85ccd}} 
 \index{Sentence@{Sentence}!term\+\_\+freq@{term\+\_\+freq}}
 \index{term\+\_\+freq@{term\+\_\+freq}!Sentence@{Sentence}}
 \subsubsection{\texorpdfstring{term\+\_\+freq()}{term\_freq()}}
@@ -396,5 +434,5 @@ Position of sentence in \hyperlink{class_document}{Document}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence.\+h\item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/sentence.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/sentence.\+cpp\end{DoxyCompactItemize}

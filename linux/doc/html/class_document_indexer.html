@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Essay Generator: DocumentIndexer Class Reference</title>
+<title>Recommender: DocumentIndexer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Essay Generator
+   <div id="projectname">Recommender
+   &#160;<span id="projectnumber">v4.0</span>
    </div>
-   <div id="projectbrief">COMP345 - Assignment 3</div>
+   <div id="projectbrief">COMP 345 - Assignment 4 (Fall 2017)</div>
   </td>
  </tr>
  </tbody>
@@ -86,8 +87,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_indexer.html#a44f3c39ee50c32c0226fe98a66f71d07">DocumentIndexer</a> ()</td></tr>
 <tr class="memdesc:a44f3c39ee50c32c0226fe98a66f71d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty Constructor. <br /></td></tr>
 <tr class="separator:a44f3c39ee50c32c0226fe98a66f71d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46bad198e100cc62dbc8f52ecc2acfeb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_index_item.html">IndexItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_indexer.html#a46bad198e100cc62dbc8f52ecc2acfeb">operator[]</a> (int i) const override</td></tr>
-<tr class="separator:a46bad198e100cc62dbc8f52ecc2acfeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68178124d9e7e30a60725483300a73ee"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_index_item.html">IndexItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_indexer.html#a68178124d9e7e30a60725483300a73ee">operator[]</a> (size_t i) const override</td></tr>
+<tr class="separator:a68178124d9e7e30a60725483300a73ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bd5fd7be55de9932933dd6f7bfa7d9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_indexer.html#a4bd5fd7be55de9932933dd6f7bfa7d9f">contains</a> (const std::string &amp;s) const override</td></tr>
 <tr class="memdesc:a4bd5fd7be55de9932933dd6f7bfa7d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Token Verification Method.  <a href="#a4bd5fd7be55de9932933dd6f7bfa7d9f">More...</a><br /></td></tr>
 <tr class="separator:a4bd5fd7be55de9932933dd6f7bfa7d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +159,9 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
+<tr class="memitem:a0675564ad66cfa7f2eff3b44c1f1b2cc"><td class="memItemLeft" align="right" valign="top"><a id="a0675564ad66cfa7f2eff3b44c1f1b2cc"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MovieIndexer</b></td></tr>
+<tr class="separator:a0675564ad66cfa7f2eff3b44c1f1b2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf57f424618ad5604e84eac633f977e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_indexer.html">DocumentIndexer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_indexer.html#adf57f424618ad5604e84eac633f977e9">operator&gt;&gt;</a> (const <a class="el" href="class_document.html">Document</a> &amp;d, <a class="el" href="class_document_indexer.html">DocumentIndexer</a> &amp;i)</td></tr>
 <tr class="memdesc:adf57f424618ad5604e84eac633f977e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload operator&gt;&gt;  <a href="#adf57f424618ad5604e84eac633f977e9">More...</a><br /></td></tr>
 <tr class="separator:adf57f424618ad5604e84eac633f977e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,7 +280,7 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
 </div><div class="memdoc">
 
 <p>Calculate the Cosine Similarity. </p>
-<p>Create a vector of <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> through which the cosine similarity is calculated. Returns the vector of <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> containing the match score of each document to the search query.</p>
+<p>Create a vector of <a class="el" href="class_query_result.html">QueryResult</a> through which the cosine similarity is calculated. Returns the vector of <a class="el" href="class_query_result.html">QueryResult</a> containing the match score of each document to the search query.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">q</td><td>is a Map&lt;token(String), &lt;freq(int), weight(double)&gt;&gt; </td></tr>
@@ -446,8 +450,8 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
 
 </div>
 </div>
-<a id="a46bad198e100cc62dbc8f52ecc2acfeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46bad198e100cc62dbc8f52ecc2acfeb">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="a68178124d9e7e30a60725483300a73ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68178124d9e7e30a60725483300a73ee">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -458,7 +462,7 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
         <tr>
           <td class="memname">const <a class="el" href="class_index_item.html">IndexItem</a> * DocumentIndexer::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -475,7 +479,7 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="class_index_item.html">IndexItem</a> </dd></dl>
 
 <p>Implements <a class="el" href="class_indexer.html">Indexer</a>.</p>
 
@@ -516,7 +520,7 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
 </div><div class="memdoc">
 
 <p>Search and Process Query. </p>
-<p>If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> vector. (See <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> class for more details).</p>
+<p>If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a <a class="el" href="class_query_result.html">QueryResult</a> vector. (See <a class="el" href="class_query_result.html">QueryResult</a> class for more details).</p>
 <p>Depending on the input parameter i (default 10), this method returns the Top i Documents that demonstrate from most to least relevance, which document is more like to contain the search query.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1044,8 +1048,8 @@ typedef std::pair&lt; int, double &gt;&#160;</td><td class="memItemRight" valign
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/<a class="el" href="document__indexer_8h_source.html">document_indexer.h</a></li>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/document_indexer.cpp</li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/<a class="el" href="document__indexer_8h_source.html">document_indexer.h</a></li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/document_indexer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

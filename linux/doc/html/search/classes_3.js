@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['queryresult',['QueryResult',['../class_query_result.html',1,'']]]
+  ['movie',['Movie',['../class_movie.html',1,'']]],
+  ['movieindexer',['MovieIndexer',['../class_movie_indexer.html',1,'']]]
 ];

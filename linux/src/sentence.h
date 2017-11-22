@@ -108,8 +108,17 @@ private:
     Weight = (1 + Log (term frequency)) * Log ( # of Documents / Document Frequency)
     */
     double weight(const std::string& s) const;
-
+    //!Compute Weights. 
+    /*!
+    This method utilizes the method weight() to calculate and store the weight of each token.
+    */
     void normalize();
+    //!Void Member Function
+    /*!
+    Initilize Sentence object by:
+    - Tokenizing Sentence string (content_) using WordTokenizer
+    - Store said tokens in dictionary (dict)
+    */
     void init();
 
 };

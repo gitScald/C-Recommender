@@ -1,0 +1,209 @@
+\hypertarget{class_movie}{}\section{Movie Class Reference}
+\label{class_movie}\index{Movie@{Movie}}
+
+
+\hyperlink{class_movie}{Movie} class.  
+
+
+
+
+{\ttfamily \#include $<$movie.\+h$>$}
+
+Inheritance diagram for Movie\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_movie}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_movie_a62d82e9e61d6349ae66a73d0af6667ac}{Movie} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_movie_a17b379568b67f19feb4629a45e837614}{Movie} (const std\+::string \&\hyperlink{class_index_item_a059cbae312c51ae7d02050f8f325bf93}{name}, const std\+::string \&\hyperlink{class_index_item_a2b5b4451bcb2fd50328bdc5b470d6296}{content}, const std\+::string \&\hyperlink{class_movie_a8c874927c4c49945d810a39938f64115}{id}, const std\+::string \&release)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_movie_afd914bae3adea2d57aa6ffcba5ad42b0}\label{class_movie_afd914bae3adea2d57aa6ffcba5ad42b0}} 
+\hyperlink{class_movie_afd914bae3adea2d57aa6ffcba5ad42b0}{Movie} (const \hyperlink{class_movie}{Movie} \&m)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_movie_abb2861f5e0f380ca942f68c05833ffe8}\label{class_movie_abb2861f5e0f380ca942f68c05833ffe8}} 
+virtual \hyperlink{class_movie_abb2861f5e0f380ca942f68c05833ffe8}{$\sim$\+Movie} ()
+\begin{DoxyCompactList}\small\item\em Virtual Deconstructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_movie_a2ccd49265baa8fe6c51f8f4953f20bca}{operator()} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Override operator() \end{DoxyCompactList}\item 
+bool \hyperlink{class_movie_ad6ee4833582077b9a6543ba574343005}{contains} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Override function contains. \end{DoxyCompactList}\item 
+const size\+\_\+t \hyperlink{class_movie_ad396ecf97c83fb48c09d2ea6138b430a}{size} () const override
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_movie_a8c874927c4c49945d810a39938f64115}\label{class_movie_a8c874927c4c49945d810a39938f64115}} 
+const std\+::string \& \hyperlink{class_movie_a8c874927c4c49945d810a39938f64115}{id} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_movie_aac8f46b332b732fa78bf19bd11b6bf8f}\label{class_movie_aac8f46b332b732fa78bf19bd11b6bf8f}} 
+const std\+::string \& \hyperlink{class_movie_aac8f46b332b732fa78bf19bd11b6bf8f}{release\+\_\+date} () const
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_a132f64e865e4fb8e03e9e422ef24579d}{init} ()
+\begin{DoxyCompactList}\small\item\em Void Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_movie_a7cee82dbea485a5cbe98d850fb1ae253}{id\+\_\+}
+\begin{DoxyCompactList}\small\item\em String Member Variable. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_movie_a34bde460ddda08989206136b9b07aebf}{release\+\_\+date\+\_\+}
+\begin{DoxyCompactList}\small\item\em String Member Variable. \end{DoxyCompactList}\item 
+\hyperlink{class_document}{Document} \hyperlink{class_movie_aadb7c41518aa8d7d8301793368cef929}{doc}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_document}{Document} Member Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_movie_a0675564ad66cfa7f2eff3b44c1f1b2cc}\label{class_movie_a0675564ad66cfa7f2eff3b44c1f1b2cc}} 
+class {\bfseries Movie\+Indexer}
+\item 
+std\+::ostream \& \hyperlink{class_movie_ad206ecf2beecb9cdf5f22d316a5930b5}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_movie}{Movie} \&m)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_movie}{Movie} class. 
+
+\mbox{[}D\+E\+R\+I\+V\+ED C\+L\+A\+SS\mbox{]} \hyperlink{class_movie}{Movie} objects represents one movie from the \hyperlink{class_index}{Index}. It is a container object that contains a string pertaining to the title(name\+\_\+), summary(content\+\_\+), movie id (id\+\_\+), release date (release\+\_\+date\+\_\+) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_movie_a62d82e9e61d6349ae66a73d0af6667ac}\label{class_movie_a62d82e9e61d6349ae66a73d0af6667ac}} 
+\index{Movie@{Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{Movie()}{Movie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Movie\+::\+Movie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty Constructor. 
+
+Empty derived constructor referencing base class \hyperlink{class_index_item}{Index\+Item} \mbox{\Hypertarget{class_movie_a17b379568b67f19feb4629a45e837614}\label{class_movie_a17b379568b67f19feb4629a45e837614}} 
+\index{Movie@{Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{Movie()}{Movie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Movie\+::\+Movie (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{content,  }\item[{const std\+::string \&}]{id,  }\item[{const std\+::string \&}]{release }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Constructor for object \hyperlink{class_movie}{Movie}. Storing the name (title), content (summary), id (movie id) and release (release date). The Name and Content makes reference to base class object \hyperlink{class_index_item}{Index\+Item}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_movie_ad6ee4833582077b9a6543ba574343005}\label{class_movie_ad6ee4833582077b9a6543ba574343005}} 
+\index{Movie@{Movie}!contains@{contains}}
+\index{contains@{contains}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Movie\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Override function contains. 
+
+Override function contains from base class. Return true if \hyperlink{class_document}{Document} contains string input string parameter 
+
+Implements \hyperlink{class_index_item_a534d96bf041a485ed124663b9cded2fb}{Index\+Item}.
+
+\mbox{\Hypertarget{class_movie_a132f64e865e4fb8e03e9e422ef24579d}\label{class_movie_a132f64e865e4fb8e03e9e422ef24579d}} 
+\index{Movie@{Movie}!init@{init}}
+\index{init@{init}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Movie\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Void Method. 
+
+Create/\+Initialize \hyperlink{class_document}{Document} object \mbox{\Hypertarget{class_movie_a2ccd49265baa8fe6c51f8f4953f20bca}\label{class_movie_a2ccd49265baa8fe6c51f8f4953f20bca}} 
+\index{Movie@{Movie}!operator()@{operator()}}
+\index{operator()@{operator()}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Movie\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Override operator() 
+
+Override operator from base class operator(). Return value from member function contains 
+
+Reimplemented from \hyperlink{class_index_item_a38ccc46639b8d0b066024bad728c1bfa}{Index\+Item}.
+
+\mbox{\Hypertarget{class_movie_ad396ecf97c83fb48c09d2ea6138b430a}\label{class_movie_ad396ecf97c83fb48c09d2ea6138b430a}} 
+\index{Movie@{Movie}!size@{size}}
+\index{size@{size}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily const size\+\_\+t Movie\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accessor Method. 
+
+Return size of summary 
+
+Reimplemented from \hyperlink{class_index_item_aa910a42ef4f6d7087297ac7fb8cf4a6c}{Index\+Item}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_movie_ad206ecf2beecb9cdf5f22d316a5930b5}\label{class_movie_ad206ecf2beecb9cdf5f22d316a5930b5}} 
+\index{Movie@{Movie}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_movie}{Movie} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+Output \hyperlink{class_movie}{Movie} object content to Output Stream
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream Object \\
+\hline
+{\em m} & is a \hyperlink{class_movie}{Movie} Object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output Stream Object os containing in its buffer the name, id, release date and summary of \hyperlink{class_movie}{Movie} Object m 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_movie_aadb7c41518aa8d7d8301793368cef929}\label{class_movie_aadb7c41518aa8d7d8301793368cef929}} 
+\index{Movie@{Movie}!doc@{doc}}
+\index{doc@{doc}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily \hyperlink{class_document}{Document} Movie\+::doc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{class_document}{Document} Member Object. 
+
+\hyperlink{class_document}{Document} Object stores summary of object. Incorporated in \hyperlink{class_document_indexer}{Document\+Indexer}. \mbox{\Hypertarget{class_movie_a7cee82dbea485a5cbe98d850fb1ae253}\label{class_movie_a7cee82dbea485a5cbe98d850fb1ae253}} 
+\index{Movie@{Movie}!id\+\_\+@{id\+\_\+}}
+\index{id\+\_\+@{id\+\_\+}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{id\+\_\+}{id\_}}
+{\footnotesize\ttfamily std\+::string Movie\+::id\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+String Member Variable. 
+
+Stores designated \hyperlink{class_movie}{Movie} ID \mbox{\Hypertarget{class_movie_a34bde460ddda08989206136b9b07aebf}\label{class_movie_a34bde460ddda08989206136b9b07aebf}} 
+\index{Movie@{Movie}!release\+\_\+date\+\_\+@{release\+\_\+date\+\_\+}}
+\index{release\+\_\+date\+\_\+@{release\+\_\+date\+\_\+}!Movie@{Movie}}
+\subsubsection{\texorpdfstring{release\+\_\+date\+\_\+}{release\_date\_}}
+{\footnotesize\ttfamily std\+::string Movie\+::release\+\_\+date\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+String Member Variable. 
+
+Stores designated \hyperlink{class_movie}{Movie} Release Date 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/movie.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/movie.\+cpp\end{DoxyCompactItemize}

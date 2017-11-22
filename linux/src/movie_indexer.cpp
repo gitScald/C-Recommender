@@ -75,6 +75,11 @@ bool MovieIndexer::contains(const std::string& s) const {
 
     return false;
 }
+
+/*!
+\param s is a String Token
+\return Boolean Value; True if Document contains input token s.
+*/
 bool MovieIndexer::in_docs(const std::string& s) const {
     // returns true if any of the documents contain the token
     for (std::vector<Document>::const_iterator it{ docs.begin() };
@@ -253,7 +258,7 @@ void MovieIndexer::query_freqs(std::map<std::string, Indexer::query_pair>& q,
 }
 /*!
 \param q is a Map<token(String), <freq(int), weight(double)>>
-\param sw is a Map<token(String), vector<document weight(double)>>
+\param dw is a Map<token(String), vector<document weight(double)>>
 */
 void MovieIndexer::query_weights(std::map<std::string, Indexer::query_pair>& q,
     std::map<std::string, std::vector<double>>& dw) const {

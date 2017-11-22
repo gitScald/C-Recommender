@@ -60,6 +60,10 @@ public:
     Member Function verifies String token (title) exist in stl container movies
     */
     bool contains(const std::string& s) const override;
+    //!Compute Weights. 
+    /*!
+    This method utilizes the method weight() to calculate and store the weight of each token.
+    */
     void normalize() override;
     //!Search and Process Query. 
     /*!
@@ -85,7 +89,7 @@ private:
     Contains filepath of the movie summary
     */
     std::string summary_fp_;
-    //!Member Vector Document Variable. 
+    //!Member Vector Movie Variable. 
     /*!
     Contains Vector of Movie that are parsed through the Indexer
     */
@@ -96,12 +100,41 @@ private:
     */
     //DocumentIndexer index;
 
-    // new structure
+    //!Member Boolean Function
+    /*!
+    Returns true if token s is contained within any Ddocument docs
+    */
     bool in_docs(const std::string& s) const;
+    //!Member Vector Document Variable. 
+    /*!
+    Contains Vector of Document that are parsed through the DocumentIndexer
+    */
     std::vector<Document> docs;
-    std::unordered_map<std::string, vec_pair> index;
-    void index_docs();
 
+
+    //! Token UnorderedMap Container
+    /*!
+    This map contains all the tokens derived from the documents.
+
+    It's Key represents tokens as String objects.
+    It's Value corresponds to a vector pair <int, double> where the integer value designates the document index
+    from where the token exist, while the double value represents its weight in respects to the designated document
+    index.
+    */
+    std::unordered_map<std::string, vec_pair> index;
+
+    //!Void Member Function
+    /*!
+    Stores document tokens in Unordered Map index. If the token is not already in the within the map, a new entry is created
+    */
+    void index_docs();
+    //!Void Member Function
+    /*!
+    Initilize Movie_Indexer by:
+    - Fetching and Tokenizing Movie Summary using summary_fp_
+    - Fetching and Tokenizing Movie Metadata using data_fp_
+    - Store Movie Document objects into index
+    */
     void init();
     //!Void Member Function
     /*!

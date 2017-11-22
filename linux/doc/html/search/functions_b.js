@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['v_5fseparator',['v_separator',['../class_indexer.html#ab8eadc78458b58c256a70208ea927d55',1,'Indexer']]]
+  ['sentence',['Sentence',['../class_sentence.html#aa767c3de8aaf7f2e30fa7524cdfcaead',1,'Sentence::Sentence()'],['../class_sentence.html#af493870ce2b1718f57a979319af9e7a7',1,'Sentence::Sentence(const std::string &amp;name, const std::string &amp;content, int pos)'],['../class_sentence.html#a66492f63af03eabbb7b0faa10ab8b85e',1,'Sentence::Sentence(const Sentence &amp;s)']]],
+  ['sentenceindexer',['SentenceIndexer',['../class_sentence_indexer.html#a2ec9f359954191ebc5d84c759fd2238d',1,'SentenceIndexer::SentenceIndexer()'],['../class_sentence_indexer.html#a65a376d016bd9ff8a9f7c1f8521f2a1f',1,'SentenceIndexer::SentenceIndexer(const std::string &amp;abbrevs_fp)']]],
+  ['sentencetokenizer',['SentenceTokenizer',['../class_sentence_tokenizer.html#a7ac4c0f31e4066808cb2f4e8f1aee545',1,'SentenceTokenizer::SentenceTokenizer()'],['../class_sentence_tokenizer.html#a7788c34102dd503c2df5fd51987dedd8',1,'SentenceTokenizer::SentenceTokenizer(const std::string &amp;bad, const std::string &amp;abbrevs_fp=std::string())']]],
+  ['size',['size',['../class_document_indexer.html#a0c5ab06e1506acc9bbc950e5c563e278',1,'DocumentIndexer::size()'],['../class_index_item.html#aa910a42ef4f6d7087297ac7fb8cf4a6c',1,'IndexItem::size()'],['../class_indexer.html#ab8b3e17bbf16d54e1e773a1630abb138',1,'Indexer::size()'],['../class_movie.html#ad396ecf97c83fb48c09d2ea6138b430a',1,'Movie::size()'],['../class_movie_indexer.html#a16a32702b061de5e38110801f80a7bc9',1,'MovieIndexer::size()'],['../class_sentence.html#a98d70a10b7573aa295814d1326ed1164',1,'Sentence::size()'],['../class_sentence_indexer.html#a47409c62e1607ae3919a77080fe240a0',1,'SentenceIndexer::size()']]],
+  ['stopword',['Stopword',['../class_stopword.html#a9580930ded0ee601ad610a078914a628',1,'Stopword::Stopword()'],['../class_stopword.html#a81af802f411344af42482f7ff2856027',1,'Stopword::Stopword(const std::string &amp;stopw_fp)']]],
+  ['summary',['summary',['../class_movie_indexer.html#a6723af1e2988be60cd24cad2014a7cad',1,'MovieIndexer']]]
 ];

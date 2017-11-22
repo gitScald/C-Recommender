@@ -45,7 +45,6 @@ private:
     Corresponds to vector of Abbreviations using during tokenization
     */
     std::vector<std::string> abbrevs;
-
     void init();
 };
 
