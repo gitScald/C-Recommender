@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wordtokenizer',['WordTokenizer',['../class_word_tokenizer.html',1,'']]]
+  ['queryresult',['QueryResult',['../class_query_result.html',1,'']]]
 ];

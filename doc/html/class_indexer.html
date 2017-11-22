@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Essay Generator: Indexer Class Reference</title>
+<title>Recommender: Indexer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Essay Generator
+   <div id="projectname">Recommender
+   &#160;<span id="projectnumber">v4.0</span>
    </div>
-   <div id="projectbrief">COMP345 - Assignment 3</div>
+   <div id="projectbrief">COMP 345 - Assignment 4 (Fall 2017)</div>
   </td>
  </tr>
  </tbody>
@@ -83,7 +84,8 @@ Inheritance diagram for Indexer:</div>
   <img src="class_indexer.png" usemap="#Indexer_map" alt=""/>
   <map id="Indexer_map" name="Indexer_map">
 <area href="class_document_indexer.html" alt="DocumentIndexer" shape="rect" coords="0,56,110,80"/>
-<area href="class_sentence_indexer.html" title="SentenceIndexer class. " alt="SentenceIndexer" shape="rect" coords="120,56,230,80"/>
+<area href="class_movie_indexer.html" title="SentenceIndexer class. " alt="MovieIndexer" shape="rect" coords="120,56,230,80"/>
+<area href="class_sentence_indexer.html" title="SentenceIndexer class. " alt="SentenceIndexer" shape="rect" coords="240,56,350,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -103,9 +105,9 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_indexer.html#a0fd33d8c08067e6042d189fdf343af01">~Indexer</a> ()</td></tr>
 <tr class="memdesc:a0fd33d8c08067e6042d189fdf343af01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Deconstructor. <br /></td></tr>
 <tr class="separator:a0fd33d8c08067e6042d189fdf343af01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3396f2205b557f583d0dfc756942244e"><td class="memItemLeft" align="right" valign="top"><a id="a3396f2205b557f583d0dfc756942244e"></a>
-virtual const <a class="el" href="class_index_item.html">IndexItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (int i) const =0</td></tr>
-<tr class="separator:a3396f2205b557f583d0dfc756942244e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99a41e5b92853e98befbf82706cfc55"><td class="memItemLeft" align="right" valign="top"><a id="ae99a41e5b92853e98befbf82706cfc55"></a>
+virtual const <a class="el" href="class_index_item.html">IndexItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (size_t i) const =0</td></tr>
+<tr class="separator:ae99a41e5b92853e98befbf82706cfc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2be6d79e0425aafd10b98118fcbb4ee"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_indexer.html#aa2be6d79e0425aafd10b98118fcbb4ee">operator()</a> (const std::string &amp;s) const</td></tr>
 <tr class="memdesc:aa2be6d79e0425aafd10b98118fcbb4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override operator()  <a href="#aa2be6d79e0425aafd10b98118fcbb4ee">More...</a><br /></td></tr>
 <tr class="separator:aa2be6d79e0425aafd10b98118fcbb4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,10 +175,12 @@ Friends</h2></td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09373f25959741150437b95f15ae11e2"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_indexer.html#a09373f25959741150437b95f15ae11e2">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_document_indexer.html">DocumentIndexer</a> &amp;i)</td></tr>
+<tr class="separator:a09373f25959741150437b95f15ae11e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_indexer.html" title="Indexer class. ">Indexer</a> class. </p>
-<p>[BASE CLASS] This class handles parsing through a list of Documents and creating specified IndexItems for each said Documents. The weight and score for each <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> is calculated and stored within in a map which will be used to compare with a Input Query specified by end user in order to generate results, based on the cosine similarity of the Query and <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> Map. </p>
+<p>[BASE CLASS] This class handles parsing through a list of Documents and creating specified IndexItems for each said Documents. The weight and score for each <a class="el" href="class_index_item.html">IndexItem</a> is calculated and stored within in a map which will be used to compare with a Input Query specified by end user in order to generate results, based on the cosine similarity of the Query and <a class="el" href="class_index_item.html">IndexItem</a> Map. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abb847ff86be1ec9265fb53a5ac6f7008"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb847ff86be1ec9265fb53a5ac6f7008">&#9670;&nbsp;</a></span>contains()</h2>
@@ -205,7 +209,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Boolean Function Contains. </p>
 <p>Pure Virtual Function. Return true if dictionary contains string input parameter </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a4bd5fd7be55de9932933dd6f7bfa7d9f">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#af3299500d89ff36586472f81eb8efae8">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_document_indexer.html#a4bd5fd7be55de9932933dd6f7bfa7d9f">DocumentIndexer</a>, <a class="el" href="class_movie_indexer.html#a94c19bb7518b7d219cc88bab1a507030">MovieIndexer</a>, and <a class="el" href="class_sentence_indexer.html#af3299500d89ff36586472f81eb8efae8">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -250,9 +254,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 </div><div class="memdoc">
 
 <p>Calculate the Cosine Similarity. </p>
-<p>Pure Virtual. Create a vector of <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> through which the cosine similarity is calculated. Returns the vector of <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> containing the match score of each document to the search query. </p>
+<p>Pure Virtual. Create a vector of <a class="el" href="class_query_result.html">QueryResult</a> through which the cosine similarity is calculated. Returns the vector of <a class="el" href="class_query_result.html">QueryResult</a> containing the match score of each document to the search query. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a8738997048b5bfd336f48bade7715cc6">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a913914f26a73e00f293308baff97e23f">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a2e09c1755d3d5b0fa6f238352d1850a7">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#a8738997048b5bfd336f48bade7715cc6">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a913914f26a73e00f293308baff97e23f">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -316,7 +320,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Member Integer Function. </p>
 <p>Pure Virtual. Item Frequency; Used in calculation of Weight. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a302fed9a2c33a60bc7d9d7bcb03902fa">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a892b5cc701450698a04de74a3661928e">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#ac19449df057ce8f16490bc42adab2b3c">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#a302fed9a2c33a60bc7d9d7bcb03902fa">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a892b5cc701450698a04de74a3661928e">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -347,7 +351,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Member Double Function. </p>
 <p>Pure Virtual. Normalized <a class="el" href="class_document.html">Document</a> Frequency; Used in calculation of Weight. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a1c366e241572edc6e1d256db906cac43">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a646014181566f20140cee5dbd16f52fa">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a488c038d7aa0b60d5e8192c12f19c33e">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#a1c366e241572edc6e1d256db906cac43">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a646014181566f20140cee5dbd16f52fa">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -388,7 +392,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Member Double Function. </p>
 <p>Pure Virtual. Normalized Term Frequency; Used in calculation of Weight. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a91cbacd5c82134b2ba6ab79e06fa4a60">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ada837ec334535e133c9ec511b369abfa">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a1ea55cde00e7a8be06eedcff56021de2">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#a91cbacd5c82134b2ba6ab79e06fa4a60">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ada837ec334535e133c9ec511b369abfa">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -418,7 +422,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Compute Weights. </p>
 <p>Pure Virtual Function. This method utilizes the method <a class="el" href="class_indexer.html#a8301fcbdf40afd926ab71d4767575d32" title="Member Double Function. ">weight()</a> to calculate and store the weight of each token. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a5e0aeb92576847e9462670693cb0737c">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ae038d36081439a5107821ac48a318d66">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_document_indexer.html#a5e0aeb92576847e9462670693cb0737c">DocumentIndexer</a>, <a class="el" href="class_movie_indexer.html#a87d8a0a6c117e3cbc9f5872889b9ed6d">MovieIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ae038d36081439a5107821ac48a318d66">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -486,9 +490,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 </div><div class="memdoc">
 
 <p>Search and Process Query. </p>
-<p>Virtual Function. If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> vector. (See <a class="el" href="class_query_result.html" title="QueryResult Class. ">QueryResult</a> class for more details). Depending on the input parameter i (default 10), this method returns the top i results. </p>
+<p>Virtual Function. If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a <a class="el" href="class_query_result.html">QueryResult</a> vector. (See <a class="el" href="class_query_result.html">QueryResult</a> class for more details). Depending on the input parameter i (default 10), this method returns the top i results. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#af14be24c72be4b3eb165da9c504ec7d1">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#acc4165c39f2193050d207861936927a7">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_document_indexer.html#af14be24c72be4b3eb165da9c504ec7d1">DocumentIndexer</a>, <a class="el" href="class_movie_indexer.html#a06225f4ac31f12e8ed253d0d2682d07a">MovieIndexer</a>, and <a class="el" href="class_sentence_indexer.html#acc4165c39f2193050d207861936927a7">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -529,7 +533,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Query Term Frequency. </p>
 <p>Pure Virtual. Get Query Term Frequencies and update the frequency if the token is already pressent in the map q. Otherwise, create an new key entry. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a48d441022f2f6ea3437f5a67b318e06e">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#af059ce5526fad2995f5595ace00e51a3">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a982d10037e8307649ee62eda078ae531">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#a48d441022f2f6ea3437f5a67b318e06e">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#af059ce5526fad2995f5595ace00e51a3">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -570,7 +574,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Query and <a class="el" href="class_document.html">Document</a> Weights. </p>
 <p>Pure Virtual. Update the Query and <a class="el" href="class_document.html">Document</a> weights by iterating through both map parameters. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#ad9a1b17fec1c999e98b58e3433727f05">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ad3835aaf2ff4a59fff85d596dfc95d5c">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a7a01d72125aa96e5d286a2bd0cb13ab8">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#ad9a1b17fec1c999e98b58e3433727f05">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ad3835aaf2ff4a59fff85d596dfc95d5c">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -600,7 +604,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Accessor Method. </p>
 <p>Pure Virtual Function. Returns size of a data member. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#a0c5ab06e1506acc9bbc950e5c563e278">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a47409c62e1607ae3919a77080fe240a0">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_document_indexer.html#a0c5ab06e1506acc9bbc950e5c563e278">DocumentIndexer</a>, <a class="el" href="class_movie_indexer.html#a16a32702b061de5e38110801f80a7bc9">MovieIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a47409c62e1607ae3919a77080fe240a0">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -641,7 +645,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Member Integer Function. </p>
 <p>Pure Virtual. Term Frequency; Used in calculation of Weight. </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#aba9275a0648629cab3772e75519938e8">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a54f8bbbce9e37c355fe435b26c16f1ac">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a4bba45f6f42bbbfb88a5f7d6aa56d0b3">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#aba9275a0648629cab3772e75519938e8">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#a54f8bbbce9e37c355fe435b26c16f1ac">SentenceIndexer</a>.</p>
 
 </div>
 </div>
@@ -715,7 +719,52 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <p>Member Double Function. </p>
 <p>Pure Virtual. Weight = (1 + Log (term frequency)) * Log ( # of Documents / <a class="el" href="class_document.html">Document</a> Frequency) </p>
 
-<p>Implemented in <a class="el" href="class_document_indexer.html#aa637e8bce87c52d0d78bfebe8af02f13">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ad436ab76195615090de457b50aabfe7b">SentenceIndexer</a>.</p>
+<p>Implemented in <a class="el" href="class_movie_indexer.html#a3caddb617dd3324b6535a22aff8ea987">MovieIndexer</a>, <a class="el" href="class_document_indexer.html#aa637e8bce87c52d0d78bfebe8af02f13">DocumentIndexer</a>, and <a class="el" href="class_sentence_indexer.html#ad436ab76195615090de457b50aabfe7b">SentenceIndexer</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a09373f25959741150437b95f15ae11e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09373f25959741150437b95f15ae11e2">&#9670;&nbsp;</a></span>operator<<</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_document_indexer.html">DocumentIndexer</a> &amp;&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>is a Output Stream object </td></tr>
+    <tr><td class="paramname">i</td><td>is a <a class="el" href="class_indexer.html" title="Indexer class. ">Indexer</a> object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Output Stream object os (parameter) </dd></dl>
 
 </div>
 </div>
@@ -741,7 +790,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 </div><div class="memdoc">
 
 <p>Size_T Member Variable. </p>
-<p>Equal to longest <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> </p>
+<p>Equal to longest <a class="el" href="class_index_item.html">IndexItem</a> </p>
 
 </div>
 </div>
@@ -796,8 +845,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/<a class="el" href="indexer_8h_source.html">indexer.h</a></li>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/indexer.cpp</li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/<a class="el" href="indexer_8h_source.html">indexer.h</a></li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/indexer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

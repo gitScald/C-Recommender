@@ -25,7 +25,7 @@ Inheritance diagram for Sentence\+Indexer\+:\begin{figure}[H]
 \mbox{\Hypertarget{class_sentence_indexer_a8048abf41bf3513d04c611e90afddcc5}\label{class_sentence_indexer_a8048abf41bf3513d04c611e90afddcc5}} 
 virtual \hyperlink{class_sentence_indexer_a8048abf41bf3513d04c611e90afddcc5}{$\sim$\+Sentence\+Indexer} ()
 \begin{DoxyCompactList}\small\item\em Virtual Deconstructor. \end{DoxyCompactList}\item 
-const \hyperlink{class_index_item}{Index\+Item} $\ast$ \hyperlink{class_sentence_indexer_a4f8655135cb46ba4fee6a53418f15d03}{operator\mbox{[}$\,$\mbox{]}} (int i) const override
+const \hyperlink{class_index_item}{Index\+Item} $\ast$ \hyperlink{class_sentence_indexer_adcc5897caef051a20a2ef6e767989d88}{operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const override
 \item 
 bool \hyperlink{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}{contains} (const std\+::string \&s) const override
 \begin{DoxyCompactList}\small\item\em Contains Method. \end{DoxyCompactList}\item 
@@ -89,20 +89,8 @@ std\+::ostream \& \hyperlink{class_sentence_indexer_a8508e3ba7ddd0063c317c202953
 \item Create \hyperlink{class_document}{Document} objects for files specified in \hyperlink{class_index}{Index} object, using classes Sentnece\+Tokenizer
 \item Populate map with sentence tokens from Documents
 \item Calculate weights for sentence of specified documents
-\item Determine query score per sentence using class Query\+\_\+\+Result
+\item Determine query score per sentence using class Query\+\_\+\+Result 
 \end{DoxyItemize}
-
-\begin{DoxyAuthor}{Author}
-Benjamin Vial 29590765 
-
-Mandeep Tahim 26935478 
-
-Daniel Carrera 26729886
-\end{DoxyAuthor}
-\begin{DoxyNote}{Note}
-C\+O\+MP 345 Assignment 3 -\/ Fall 2017 
-\end{DoxyNote}
-
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_sentence_indexer_a2ec9f359954191ebc5d84c759fd2238d}\label{class_sentence_indexer_a2ec9f359954191ebc5d84c759fd2238d}} 
@@ -288,11 +276,11 @@ Pure Virtual Function. This method utilizes the method \hyperlink{class_sentence
 
 Implements \hyperlink{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}{Indexer}.
 
-\mbox{\Hypertarget{class_sentence_indexer_a4f8655135cb46ba4fee6a53418f15d03}\label{class_sentence_indexer_a4f8655135cb46ba4fee6a53418f15d03}} 
+\mbox{\Hypertarget{class_sentence_indexer_adcc5897caef051a20a2ef6e767989d88}\label{class_sentence_indexer_adcc5897caef051a20a2ef6e767989d88}} 
 \index{Sentence\+Indexer@{Sentence\+Indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Sentence\+Indexer@{Sentence\+Indexer}}
 \subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
-{\footnotesize\ttfamily const \hyperlink{class_index_item}{Index\+Item} $\ast$ Sentence\+Indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily const \hyperlink{class_index_item}{Index\+Item} $\ast$ Sentence\+Indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -560,5 +548,5 @@ Contains filepath of the tokenizer
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence\+\_\+indexer.\+h\item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/sentence\+\_\+indexer.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/sentence\+\_\+indexer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/sentence\+\_\+indexer.\+cpp\end{DoxyCompactItemize}

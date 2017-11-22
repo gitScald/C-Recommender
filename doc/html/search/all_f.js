@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['_7eindexer',['~Indexer',['../class_indexer.html#a0fd33d8c08067e6042d189fdf343af01',1,'Indexer']]],
-  ['_7eindexitem',['~IndexItem',['../class_index_item.html#a38ee85d9f855b56d7bc591e3b3555f4c',1,'IndexItem']]],
-  ['_7esentence',['~Sentence',['../class_sentence.html#a27635745fc2f7328c75c299e4f382a10',1,'Sentence']]],
-  ['_7esentenceindexer',['~SentenceIndexer',['../class_sentence_indexer.html#a8048abf41bf3513d04c611e90afddcc5',1,'SentenceIndexer']]]
+  ['v_5fseparator',['v_separator',['../class_indexer.html#ab8eadc78458b58c256a70208ea927d55',1,'Indexer']]],
+  ['vec_5fpair',['vec_pair',['../class_document_indexer.html#a8a84f5e40d9364c31e81627270142628',1,'DocumentIndexer']]]
 ];

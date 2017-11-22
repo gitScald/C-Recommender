@@ -1,0 +1,635 @@
+\hypertarget{class_movie_indexer}{}\section{Movie\+Indexer Class Reference}
+\label{class_movie_indexer}\index{Movie\+Indexer@{Movie\+Indexer}}
+
+
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} class.  
+
+
+
+
+{\ttfamily \#include $<$movie\+\_\+indexer.\+h$>$}
+
+Inheritance diagram for Movie\+Indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_movie_indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_movie_indexer_abbec3abae682cf2ef8605b5fae8916a6}{Movie\+Indexer} ()
+\begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_movie_indexer_a9368e9bb63e2a854718521fa975102d2}{Movie\+Indexer} (const std\+::string \&data\+\_\+fp, const std\+::string \&summary\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_movie_indexer_a9034e6e0568a3334ea42b23f9dc14dd4}{$\sim$\+Movie\+Indexer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const \hyperlink{class_index_item}{Index\+Item} $\ast$ \hyperlink{class_movie_indexer_a088b5ec171f497ca107009f9c8486c2a}{operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const override
+\item 
+std\+::string \hyperlink{class_movie_indexer_a6723af1e2988be60cd24cad2014a7cad}{summary} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Retrieve Method. \end{DoxyCompactList}\item 
+bool \hyperlink{class_movie_indexer_a94c19bb7518b7d219cc88bab1a507030}{contains} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Contains Method. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a87d8a0a6c117e3cbc9f5872889b9ed6d}{normalize} () override
+\begin{DoxyCompactList}\small\item\em Compute Weights. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ \hyperlink{class_movie_indexer_a06225f4ac31f12e8ed253d0d2682d07a}{query} (const std\+::string \&s, size\+\_\+t i=5) const override
+\begin{DoxyCompactList}\small\item\em Search and Process Query. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_movie_indexer_a16a32702b061de5e38110801f80a7bc9}{size} () const override
+\begin{DoxyCompactList}\small\item\em Accessor Method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_movie_indexer_a140312f8dacd8509b238c20c19a0bdb7}\label{class_movie_indexer_a140312f8dacd8509b238c20c19a0bdb7}} 
+typedef std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ double $>$ $>$ {\bfseries vec\+\_\+pair}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_movie_indexer_a70273bfe03449ef11fa2515eb1566959}{in\+\_\+docs} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em Member \hyperlink{class_document_indexer}{Document\+Indexer} variable. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a0fe5cadd54679e3404b47cebee62eebf}{index\+\_\+docs} ()
+\begin{DoxyCompactList}\small\item\em Void Member Function. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a26ea53a1f47d8faa54a6289cda606003}{init} ()
+\begin{DoxyCompactList}\small\item\em Void Member Function. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a21e8c7c3da12f8704e36b727cd530658}{tokenize\+\_\+data} (std\+::stringstream \&ss)
+\begin{DoxyCompactList}\small\item\em Void Member Function. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a05be20f1dfeef59432c4310c633b41ec}{tokenize\+\_\+summary} (std\+::stringstream \&ss)
+\begin{DoxyCompactList}\small\item\em Void Member Function. \end{DoxyCompactList}\item 
+int \hyperlink{class_movie_indexer_ac19449df057ce8f16490bc42adab2b3c}{item\+\_\+freq} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
+int \hyperlink{class_movie_indexer_a4bba45f6f42bbbfb88a5f7d6aa56d0b3}{term\+\_\+freq} (const std\+::string \&s, int i) const override
+\begin{DoxyCompactList}\small\item\em Member Integer Function. \end{DoxyCompactList}\item 
+double \hyperlink{class_movie_indexer_a1ea55cde00e7a8be06eedcff56021de2}{norm\+\_\+tf} (const std\+::string \&s, int i) const override
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+double \hyperlink{class_movie_indexer_a488c038d7aa0b60d5e8192c12f19c33e}{norm\+\_\+idf} (const std\+::string \&s) const override
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+double \hyperlink{class_movie_indexer_a3caddb617dd3324b6535a22aff8ea987}{weight} (const std\+::string \&s, int i) const override
+\begin{DoxyCompactList}\small\item\em Member Double Function. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a982d10037e8307649ee62eda078ae531}{query\+\_\+freqs} (std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, const std\+::vector$<$ std\+::string $>$ \&t) const override
+\begin{DoxyCompactList}\small\item\em Query Term Frequency. \end{DoxyCompactList}\item 
+void \hyperlink{class_movie_indexer_a7a01d72125aa96e5d286a2bd0cb13ab8}{query\+\_\+weights} (std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&dw) const override
+\begin{DoxyCompactList}\small\item\em Query and \hyperlink{class_document}{Document} Weights. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ \hyperlink{class_movie_indexer_a2e09c1755d3d5b0fa6f238352d1850a7}{cos\+\_\+similarity} (const std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&q, const std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&dw, const std\+::vector$<$ std\+::string $>$ \&t) const override
+\begin{DoxyCompactList}\small\item\em Calculate the Cosine Similarity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_movie_indexer_ae7694a6ed8890793145c43a6d66817b3}{data\+\_\+fp\+\_\+}
+\begin{DoxyCompactList}\small\item\em Member String Variable. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_movie_indexer_a0d98a6556c32ebe752e886f7c73ef790}{summary\+\_\+fp\+\_\+}
+\begin{DoxyCompactList}\small\item\em Member String Variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_movie}{Movie} $>$ \hyperlink{class_movie_indexer_aabec6af7722fa0f54eb9153bef799db7}{movies}
+\begin{DoxyCompactList}\small\item\em Member Vector \hyperlink{class_movie}{Movie} Variable. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_document}{Document} $>$ \hyperlink{class_movie_indexer_ae931ceafb1dac1d376c85d37d89a1e8f}{docs}
+\begin{DoxyCompactList}\small\item\em Member Vector \hyperlink{class_document}{Document} Variable. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, vec\+\_\+pair $>$ \hyperlink{class_movie_indexer_a65c1c95748e5aabd897f13addd1de8a1}{index}
+\begin{DoxyCompactList}\small\item\em Token Unordered\+Map Container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_movie_indexer_ac341c6cedb7cda66713cf4bdd0fb8d72}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_movie_indexer}{Movie\+Indexer} \&mi)
+\begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_sentence_indexer}{Sentence\+Indexer} class. 
+
+\mbox{[}D\+E\+R\+I\+V\+ED C\+L\+A\+SS\mbox{]} This class acts as kind of the gateway for the program. In a simplified manner, it\+:
+\begin{DoxyItemize}
+\item Prompts user for indexing and query
+\item Creates an \hyperlink{class_index}{Index} object from a specified file path
+\item Create \hyperlink{class_movie}{Movie} objects for movies specified in \hyperlink{class_index}{Index} object.
+\item Calculate weights for sentence of specified Movies based on their summary
+\item Determine query score per movie using class Query\+\_\+\+Result
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Benjamin Vial 29590765 
+
+Mandeep Tahim 26935478 
+
+Daniel Carrera 26729886
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+C\+O\+MP 345 Assignment 4 -\/ Fall 2017 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_movie_indexer_abbec3abae682cf2ef8605b5fae8916a6}\label{class_movie_indexer_abbec3abae682cf2ef8605b5fae8916a6}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!Movie\+Indexer@{Movie\+Indexer}}
+\index{Movie\+Indexer@{Movie\+Indexer}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{Movie\+Indexer()}{MovieIndexer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Movie\+Indexer\+::\+Movie\+Indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty Constructor. 
+
+Empty derived constructor referencing base class \hyperlink{class_indexer}{Indexer} \mbox{\Hypertarget{class_movie_indexer_a9368e9bb63e2a854718521fa975102d2}\label{class_movie_indexer_a9368e9bb63e2a854718521fa975102d2}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!Movie\+Indexer@{Movie\+Indexer}}
+\index{Movie\+Indexer@{Movie\+Indexer}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{Movie\+Indexer()}{MovieIndexer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Movie\+Indexer\+::\+Movie\+Indexer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data\+\_\+fp,  }\item[{const std\+::string \&}]{summary\+\_\+fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Constructor for object \hyperlink{class_sentence_indexer}{Sentence\+Indexer}. Storing the filepath to the list of movies (data\+\_\+fp) and their summary (summary fp). The constructor makes rerence to the base class \hyperlink{class_indexer}{Indexer}. \mbox{\Hypertarget{class_movie_indexer_a9034e6e0568a3334ea42b23f9dc14dd4}\label{class_movie_indexer_a9034e6e0568a3334ea42b23f9dc14dd4}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!````~Movie\+Indexer@{$\sim$\+Movie\+Indexer}}
+\index{````~Movie\+Indexer@{$\sim$\+Movie\+Indexer}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{$\sim$\+Movie\+Indexer()}{~MovieIndexer()}}
+{\footnotesize\ttfamily virtual Movie\+Indexer\+::$\sim$\+Movie\+Indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Virtual destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_movie_indexer_a94c19bb7518b7d219cc88bab1a507030}\label{class_movie_indexer_a94c19bb7518b7d219cc88bab1a507030}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!contains@{contains}}
+\index{contains@{contains}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Movie\+Indexer\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Contains Method. 
+
+Member Function verifies String token (title) exist in stl container movies
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String variable corresponding to movie title \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if movie exists within movies vector 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_abb847ff86be1ec9265fb53a5ac6f7008}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a2e09c1755d3d5b0fa6f238352d1850a7}\label{class_movie_indexer_a2e09c1755d3d5b0fa6f238352d1850a7}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!cos\+\_\+similarity@{cos\+\_\+similarity}}
+\index{cos\+\_\+similarity@{cos\+\_\+similarity}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{cos\+\_\+similarity()}{cos\_similarity()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ Movie\+Indexer\+::cos\+\_\+similarity (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{const std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&}]{dw,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Calculate the Cosine Similarity. 
+
+Create a vector of \hyperlink{class_query_result}{Query\+Result} through which the cosine similarity is calculated. Returns the vector of \hyperlink{class_query_result}{Query\+Result}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & is a Map$<$token(\+String), $<$freq(int), weight(double)$>$$>$ \\
+\hline
+{\em dw} & is a Map$<$token(\+String), vector$<$document weight(double)$>$$>$ \\
+\hline
+{\em t} & is a Vector$<$\+String$>$ corresponding to User Input Query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Query\+Result$>$ corresponds to Cosine Similarity between User Query and each \hyperlink{class_document}{Document} (Decreasing Order) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a70273bfe03449ef11fa2515eb1566959}\label{class_movie_indexer_a70273bfe03449ef11fa2515eb1566959}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!in\+\_\+docs@{in\+\_\+docs}}
+\index{in\+\_\+docs@{in\+\_\+docs}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{in\+\_\+docs()}{in\_docs()}}
+{\footnotesize\ttfamily bool Movie\+Indexer\+::in\+\_\+docs (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member \hyperlink{class_document_indexer}{Document\+Indexer} variable. 
+
+To avoid redundancy of code, methods from \hyperlink{class_document_indexer}{Document\+Indexer} are used for reference.\+Member Boolean Function
+
+Returns true if token s is contained within any Ddocument docs
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String Token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean Value; True if \hyperlink{class_document}{Document} contains input token s. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_movie_indexer_a0fe5cadd54679e3404b47cebee62eebf}\label{class_movie_indexer_a0fe5cadd54679e3404b47cebee62eebf}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!index\+\_\+docs@{index\+\_\+docs}}
+\index{index\+\_\+docs@{index\+\_\+docs}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{index\+\_\+docs()}{index\_docs()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::index\+\_\+docs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Void Member Function. 
+
+Stores document tokens in Unordered Map index. If the token is not already in the within the map, a new entry is created \mbox{\Hypertarget{class_movie_indexer_a26ea53a1f47d8faa54a6289cda606003}\label{class_movie_indexer_a26ea53a1f47d8faa54a6289cda606003}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!init@{init}}
+\index{init@{init}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Void Member Function. 
+
+Initilize Movie\+\_\+\+Indexer by\+:
+\begin{DoxyItemize}
+\item Fetching and Tokenizing \hyperlink{class_movie}{Movie} Summary using summary\+\_\+fp\+\_\+
+\item Fetching and Tokenizing \hyperlink{class_movie}{Movie} Metadata using data\+\_\+fp\+\_\+
+\item Store \hyperlink{class_movie}{Movie} \hyperlink{class_document}{Document} objects into index 
+\end{DoxyItemize}\mbox{\Hypertarget{class_movie_indexer_ac19449df057ce8f16490bc42adab2b3c}\label{class_movie_indexer_ac19449df057ce8f16490bc42adab2b3c}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!item\+\_\+freq@{item\+\_\+freq}}
+\index{item\+\_\+freq@{item\+\_\+freq}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{item\+\_\+freq()}{item\_freq()}}
+{\footnotesize\ttfamily int Movie\+Indexer\+::item\+\_\+freq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Integer Function. 
+
+\hyperlink{class_movie}{Movie} Frequency; Used in calculation of Weight. Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer occurence of Token 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a9f9ea4d9946c531f257720cc9e9391eb}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a488c038d7aa0b60d5e8192c12f19c33e}\label{class_movie_indexer_a488c038d7aa0b60d5e8192c12f19c33e}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!norm\+\_\+idf@{norm\+\_\+idf}}
+\index{norm\+\_\+idf@{norm\+\_\+idf}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{norm\+\_\+idf()}{norm\_idf()}}
+{\footnotesize\ttfamily double Movie\+Indexer\+::norm\+\_\+idf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Double Function. 
+
+Normalized \hyperlink{class_document}{Document} Frequency; Used in calculation of Weight. Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value corresponding to the normalized document frequency of a token 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_af71c69a4267217969f21cba44822f263}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a1ea55cde00e7a8be06eedcff56021de2}\label{class_movie_indexer_a1ea55cde00e7a8be06eedcff56021de2}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!norm\+\_\+tf@{norm\+\_\+tf}}
+\index{norm\+\_\+tf@{norm\+\_\+tf}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{norm\+\_\+tf()}{norm\_tf()}}
+{\footnotesize\ttfamily double Movie\+Indexer\+::norm\+\_\+tf (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Double Function. 
+
+Normalized Term Frequency; Used in calculation of Weight. Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+{\em i} & is a Integer index of \hyperlink{class_document}{Document} in Map in \hyperlink{class_document_indexer}{Document\+Indexer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value corresponding to the normalized term frequency of a token in a \hyperlink{class_document}{Document} at index i in \hyperlink{class_document_indexer}{Document\+Indexer} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_aadcdca40938d27c465e564ac8852f02d}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a87d8a0a6c117e3cbc9f5872889b9ed6d}\label{class_movie_indexer_a87d8a0a6c117e3cbc9f5872889b9ed6d}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!normalize@{normalize}}
+\index{normalize@{normalize}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute Weights. 
+
+This method utilizes the method \hyperlink{class_movie_indexer_a3caddb617dd3324b6535a22aff8ea987}{weight()} to calculate and store the weight of each token. 
+
+Implements \hyperlink{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a088b5ec171f497ca107009f9c8486c2a}\label{class_movie_indexer_a088b5ec171f497ca107009f9c8486c2a}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const \hyperlink{class_index_item}{Index\+Item} $\ast$ Movie\+Indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is a integer value corresponding to a position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to \hyperlink{class_index_item}{Index\+Item} in a Vector of \hyperlink{class_movie}{Movie} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a06225f4ac31f12e8ed253d0d2682d07a}\label{class_movie_indexer_a06225f4ac31f12e8ed253d0d2682d07a}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!query@{query}}
+\index{query@{query}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \hyperlink{class_query_result}{Query\+Result} $>$ Movie\+Indexer\+::query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{size\+\_\+t}]{i = {\ttfamily 5} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Search and Process Query. 
+
+If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a \hyperlink{class_query_result}{Query\+Result} vector. (See \hyperlink{class_query_result}{Query\+Result} class for more details). Depending on the input parameter i (default 5), this method returns movies from most to least relevance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a User Inputer Query String \\
+\hline
+{\em i} & is a size\+\_\+t defining return size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Query\+Result$>$ containing Top i Cosine Similarity 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a8d98ba740db6f5f8521d557bf908aead}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a982d10037e8307649ee62eda078ae531}\label{class_movie_indexer_a982d10037e8307649ee62eda078ae531}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!query\+\_\+freqs@{query\+\_\+freqs}}
+\index{query\+\_\+freqs@{query\+\_\+freqs}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{query\+\_\+freqs()}{query\_freqs()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::query\+\_\+freqs (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Query Term Frequency. 
+
+Get Query Term Frequencies and update the frequency if the token is already pressent in the map q. Otherwise, create an new key entry. Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & is a Map$<$token(String, $<$freq(int), weight(double$>$$>$ \\
+\hline
+{\em t} & is a Vector$<$\+String$>$ corresponding to User Input Query \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_indexer_a0587f6a4d61620219473bf583ecdbad5}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a7a01d72125aa96e5d286a2bd0cb13ab8}\label{class_movie_indexer_a7a01d72125aa96e5d286a2bd0cb13ab8}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!query\+\_\+weights@{query\+\_\+weights}}
+\index{query\+\_\+weights@{query\+\_\+weights}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{query\+\_\+weights()}{query\_weights()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::query\+\_\+weights (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, Indexer\+::query\+\_\+pair $>$ \&}]{q,  }\item[{std\+::map$<$ std\+::string, std\+::vector$<$ double $>$$>$ \&}]{dw }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Query and \hyperlink{class_document}{Document} Weights. 
+
+Update the Query and \hyperlink{class_document}{Document} weights by iterating through both map parameters. Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & is a Map$<$token(\+String), $<$freq(int), weight(double)$>$$>$ \\
+\hline
+{\em dw} & is a Map$<$token(\+String), vector$<$document weight(double)$>$$>$ \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_indexer_a74819336b6d9883483c09349ebdf43b8}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a16a32702b061de5e38110801f80a7bc9}\label{class_movie_indexer_a16a32702b061de5e38110801f80a7bc9}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!size@{size}}
+\index{size@{size}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Movie\+Indexer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accessor Method. 
+
+Returns size of vector \hyperlink{class_movie}{Movie} movies 
+
+Implements \hyperlink{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a6723af1e2988be60cd24cad2014a7cad}\label{class_movie_indexer_a6723af1e2988be60cd24cad2014a7cad}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!summary@{summary}}
+\index{summary@{summary}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{summary()}{summary()}}
+{\footnotesize\ttfamily std\+::string Movie\+Indexer\+::summary (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve Method. 
+
+Retrieves summary (content\+\_\+) from Vector$<$\+Movie$>$ movies based on title (input s)
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String variable corresponding to movie title \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String corresponding to movie summary stored within movies vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_movie_indexer_a4bba45f6f42bbbfb88a5f7d6aa56d0b3}\label{class_movie_indexer_a4bba45f6f42bbbfb88a5f7d6aa56d0b3}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!term\+\_\+freq@{term\+\_\+freq}}
+\index{term\+\_\+freq@{term\+\_\+freq}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{term\+\_\+freq()}{term\_freq()}}
+{\footnotesize\ttfamily int Movie\+Indexer\+::term\+\_\+freq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Integer Function. 
+
+Term Frequency; Used in calculation of Weight. Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+{\em i} & is a Integer index of \hyperlink{class_document}{Document} in Map in \hyperlink{class_document_indexer}{Document\+Indexer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer occurence of Token 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}{Indexer}.
+
+\mbox{\Hypertarget{class_movie_indexer_a21e8c7c3da12f8704e36b727cd530658}\label{class_movie_indexer_a21e8c7c3da12f8704e36b727cd530658}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!tokenize\+\_\+data@{tokenize\+\_\+data}}
+\index{tokenize\+\_\+data@{tokenize\+\_\+data}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{tokenize\+\_\+data()}{tokenize\_data()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::tokenize\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Void Member Function. 
+
+Process and Tokenize metadata using the data\+\_\+fp\+\_\+ variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ss} & is a String\+Stream Object containing metadata \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_movie_indexer_a05be20f1dfeef59432c4310c633b41ec}\label{class_movie_indexer_a05be20f1dfeef59432c4310c633b41ec}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!tokenize\+\_\+summary@{tokenize\+\_\+summary}}
+\index{tokenize\+\_\+summary@{tokenize\+\_\+summary}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{tokenize\+\_\+summary()}{tokenize\_summary()}}
+{\footnotesize\ttfamily void Movie\+Indexer\+::tokenize\+\_\+summary (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Void Member Function. 
+
+Process and Tokenize summary data using the summary\+\_\+fp\+\_\+ variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ss} & is a String\+Stream Object containing movie summary data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_movie_indexer_a3caddb617dd3324b6535a22aff8ea987}\label{class_movie_indexer_a3caddb617dd3324b6535a22aff8ea987}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!weight@{weight}}
+\index{weight@{weight}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{weight()}{weight()}}
+{\footnotesize\ttfamily double Movie\+Indexer\+::weight (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Member Double Function. 
+
+Weight = (1 + Log (term frequency)) $\ast$ Log ( \# of Documents / \hyperlink{class_document}{Document} Frequency). Refers to \hyperlink{class_document_indexer}{Document\+Indexer} method of same name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a String token \\
+\hline
+{\em i} & is a Integer index of \hyperlink{class_document}{Document} in Map in \hyperlink{class_document_indexer}{Document\+Indexer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value corresponding to the weight of a token in a \hyperlink{class_document}{Document} at index in \hyperlink{class_document_indexer}{Document\+Indexer} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_indexer_a8301fcbdf40afd926ab71d4767575d32}{Indexer}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_movie_indexer_ac341c6cedb7cda66713cf4bdd0fb8d72}\label{class_movie_indexer_ac341c6cedb7cda66713cf4bdd0fb8d72}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_movie_indexer}{Movie\+Indexer} \&}]{mi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload operator$<$$<$. 
+
+Print to an Output Stream Object all relevant information from the \hyperlink{class_movie_indexer}{Movie\+Indexer} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream object \\
+\hline
+{\em mi} & is a \hyperlink{class_movie_indexer}{Movie\+Indexer} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output Stream object os whose buffer contains data retrieved from \hyperlink{class_movie_indexer}{Movie\+Indexer} mi 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_movie_indexer_ae7694a6ed8890793145c43a6d66817b3}\label{class_movie_indexer_ae7694a6ed8890793145c43a6d66817b3}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!data\+\_\+fp\+\_\+@{data\+\_\+fp\+\_\+}}
+\index{data\+\_\+fp\+\_\+@{data\+\_\+fp\+\_\+}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{data\+\_\+fp\+\_\+}{data\_fp\_}}
+{\footnotesize\ttfamily std\+::string Movie\+Indexer\+::data\+\_\+fp\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member String Variable. 
+
+Contains filepath of the metadata \mbox{\Hypertarget{class_movie_indexer_ae931ceafb1dac1d376c85d37d89a1e8f}\label{class_movie_indexer_ae931ceafb1dac1d376c85d37d89a1e8f}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!docs@{docs}}
+\index{docs@{docs}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{docs}{docs}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_document}{Document}$>$ Movie\+Indexer\+::docs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member Vector \hyperlink{class_document}{Document} Variable. 
+
+Contains Vector of \hyperlink{class_document}{Document} that are parsed through the \hyperlink{class_document_indexer}{Document\+Indexer} \mbox{\Hypertarget{class_movie_indexer_a65c1c95748e5aabd897f13addd1de8a1}\label{class_movie_indexer_a65c1c95748e5aabd897f13addd1de8a1}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!index@{index}}
+\index{index@{index}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, vec\+\_\+pair$>$ Movie\+Indexer\+::index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Token Unordered\+Map Container. 
+
+This map contains all the tokens derived from the documents.
+
+It\textquotesingle{}s Key represents tokens as String objects. It\textquotesingle{}s Value corresponds to a vector pair $<$int, double$>$ where the integer value designates the document index from where the token exist, while the double value represents its weight in respects to the designated document index. \mbox{\Hypertarget{class_movie_indexer_aabec6af7722fa0f54eb9153bef799db7}\label{class_movie_indexer_aabec6af7722fa0f54eb9153bef799db7}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!movies@{movies}}
+\index{movies@{movies}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{movies}{movies}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_movie}{Movie}$>$ Movie\+Indexer\+::movies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member Vector \hyperlink{class_movie}{Movie} Variable. 
+
+Contains Vector of \hyperlink{class_movie}{Movie} that are parsed through the \hyperlink{class_indexer}{Indexer} \mbox{\Hypertarget{class_movie_indexer_a0d98a6556c32ebe752e886f7c73ef790}\label{class_movie_indexer_a0d98a6556c32ebe752e886f7c73ef790}} 
+\index{Movie\+Indexer@{Movie\+Indexer}!summary\+\_\+fp\+\_\+@{summary\+\_\+fp\+\_\+}}
+\index{summary\+\_\+fp\+\_\+@{summary\+\_\+fp\+\_\+}!Movie\+Indexer@{Movie\+Indexer}}
+\subsubsection{\texorpdfstring{summary\+\_\+fp\+\_\+}{summary\_fp\_}}
+{\footnotesize\ttfamily std\+::string Movie\+Indexer\+::summary\+\_\+fp\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Member String Variable. 
+
+Contains filepath of the movie summary 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/movie\+\_\+indexer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/movie\+\_\+indexer.\+cpp\end{DoxyCompactItemize}

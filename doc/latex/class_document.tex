@@ -14,6 +14,9 @@ Inheritance diagram for Document\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Empty Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_document_a4399bbc9420b5e5c269e9d38be5d4810}{Document} (const std\+::string \&doc\+\_\+fp)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_document_a76e11b87c4631a4f2f8a95fd90b5756e}\label{class_document_a76e11b87c4631a4f2f8a95fd90b5756e}} 
+{\bfseries Document} (const std\+::string \&\hyperlink{class_document_a68936706468433f1bbba813797e32bd5}{name}, const std\+::string \&\hyperlink{class_index_item_a2b5b4451bcb2fd50328bdc5b470d6296}{content})
+\item 
 bool \hyperlink{class_document_a68e12b27c40699cd3c2fff66a6161473}{contains} (const std\+::string \&s) const override
 \begin{DoxyCompactList}\small\item\em Token Verification Method. \end{DoxyCompactList}\item 
 bool \hyperlink{class_document_a44b8141f08f57f9122b3dba4a59bf7e4}{operator()} (const std\+::string \&s) const override
@@ -23,8 +26,11 @@ const std\+::string \& \hyperlink{class_document_a68936706468433f1bbba813797e32b
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_document_a67e7f9b8c668a723b6f7173ae52e5c99}\label{class_document_a67e7f9b8c668a723b6f7173ae52e5c99}} 
-void {\bfseries init} ()
+\mbox{\Hypertarget{class_document_aa5467ea8ec3ac3c819cd9e738a37f2e0}\label{class_document_aa5467ea8ec3ac3c819cd9e738a37f2e0}} 
+void {\bfseries init\+\_\+from\+\_\+file} ()
+\item 
+\mbox{\Hypertarget{class_document_a5db69770f765708861aa53b931ea3dcd}\label{class_document_a5db69770f765708861aa53b931ea3dcd}} 
+void {\bfseries init\+\_\+from\+\_\+content} (const std\+::string \&\hyperlink{class_document_a68936706468433f1bbba813797e32bd5}{name}, const std\+::string \&\hyperlink{class_index_item_a2b5b4451bcb2fd50328bdc5b470d6296}{content})
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -40,6 +46,12 @@ size\+\_\+t \hyperlink{class_document_ac0be9d01e5e7c2478f3857b0665789c7}{longest
 \item 
 \mbox{\Hypertarget{class_document_a449b7563be6606a689d4417c940b3b39}\label{class_document_a449b7563be6606a689d4417c940b3b39}} 
 class {\bfseries Document\+Indexer}
+\item 
+\mbox{\Hypertarget{class_document_a6847efd2a0acea36866b464988df451a}\label{class_document_a6847efd2a0acea36866b464988df451a}} 
+class {\bfseries Movie}
+\item 
+\mbox{\Hypertarget{class_document_a0675564ad66cfa7f2eff3b44c1f1b2cc}\label{class_document_a0675564ad66cfa7f2eff3b44c1f1b2cc}} 
+class {\bfseries Movie\+Indexer}
 \item 
 \hyperlink{class_document}{Document} \& \hyperlink{class_document_ab4b587c28bf3ed83ad2cb6e9052a5a58}{operator$<$$<$} (\hyperlink{class_document}{Document} \&d, const std\+::string \&s)
 \begin{DoxyCompactList}\small\item\em Overload operator$<$$<$. \end{DoxyCompactList}\item 
@@ -201,5 +213,5 @@ Ouput Stream object once data has been pushed to stream.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/document.\+h\item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/document.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/document.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/document.\+cpp\end{DoxyCompactItemize}

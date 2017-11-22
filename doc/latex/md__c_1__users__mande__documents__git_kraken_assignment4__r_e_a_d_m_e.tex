@@ -1,0 +1,39 @@
+\subsection*{Important\+: MS Windows}
+
+If you want to run the project in Windows (be it in Visual Studio or Eclipse), you will have to do one of the following\+:
+
+
+\begin{DoxyItemize}
+\item Comment out function {\ttfamily main()} in {\ttfamily gindexer.\+cpp}, in {\ttfamily googler.\+cpp}, and in {\ttfamily recommender.\+cpp} (to run {\ttfamily summarizer}), or
+\item Comment out function {\ttfamily main()} in {\ttfamily googler.\+cpp}, in {\ttfamily summarizer.\+cpp}, and in {\ttfamily recommender.\+cpp} (to run {\ttfamily indexing}), or
+\item Comment out function {\ttfamily main()} in {\ttfamily gindexer.\+cpp}, in {\ttfamily summarizer.\+cpp}, and in {\ttfamily recommender.\+cpp} (to run {\ttfamily googler})
+\item Comment out function {\ttfamily main()} in {\ttfamily gindexer.\+cpp}, in {\ttfamily googler.\+cpp}, and in {\ttfamily summarizer.\+cpp} (to run {\ttfamily recommender})
+\end{DoxyItemize}
+
+Because Windows I\+D\+Es don\textquotesingle{}t allow the creation of multiple executables within the same project, and because it\textquotesingle{}s a pain to link another project with one, let alone two different I\+D\+Es, I\textquotesingle{}ve opted to allow to swap between four {\ttfamily main()} programs by commenting the other one out.
+
+\subsection*{Speed Considerations}
+
+The algorithm used for index normalization in the {\ttfamily \hyperlink{class_movie_indexer}{Movie\+Indexer}} class is extremely slow\+: it takes over an hour to normalize $\sim$1000 sample summaries. Use the provided {\ttfamily plot\+\_\+summaries\+\_\+small.\+txt} file in the {\ttfamily linux/} folder for a quick run (with {\ttfamily Taxi Blues} and {\ttfamily The Good Life} as tested inputs).
+
+\subsection*{Linux}
+
+When testing the program under Linux, use the file structure located in the {\ttfamily linux/} folder, navigate to the root folder, and call {\ttfamily make}. Then, to run either executable, call the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily googler/exe/googler}, or
+\item {\ttfamily indexing/exe/indexing}, or
+\item {\ttfamily summarizer/exe/summarizer}, or
+\item {\ttfamily recommender/exe/recommender}
+\end{DoxyItemize}
+
+If you need to rebuild the project, call {\ttfamily make clean} in the root directory, followed by another {\ttfamily make}.
+
+\subsection*{Description}
+
+This repository holds the source files and resources for the fourth assignment in C\+O\+MP 345.
+
+\subsection*{Branches}
+
+To contribute to the project, please use the {\ttfamily dev} branch. Do N\+OT commit to the {\ttfamily master} branch without checking that files will properly merge between the two branches. 

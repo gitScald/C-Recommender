@@ -30,8 +30,8 @@ typedef std\+::pair$<$ int, double $>$ {\bfseries query\+\_\+pair}
 \mbox{\Hypertarget{class_indexer_a0fd33d8c08067e6042d189fdf343af01}\label{class_indexer_a0fd33d8c08067e6042d189fdf343af01}} 
 virtual \hyperlink{class_indexer_a0fd33d8c08067e6042d189fdf343af01}{$\sim$\+Indexer} ()
 \begin{DoxyCompactList}\small\item\em Virtual Deconstructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_indexer_a3396f2205b557f583d0dfc756942244e}\label{class_indexer_a3396f2205b557f583d0dfc756942244e}} 
-virtual const \hyperlink{class_index_item}{Index\+Item} $\ast$ {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const =0
+\mbox{\Hypertarget{class_indexer_ae99a41e5b92853e98befbf82706cfc55}\label{class_indexer_ae99a41e5b92853e98befbf82706cfc55}} 
+virtual const \hyperlink{class_index_item}{Index\+Item} $\ast$ {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const =0
 \item 
 virtual bool \hyperlink{class_indexer_aa2be6d79e0425aafd10b98118fcbb4ee}{operator()} (const std\+::string \&s) const
 \begin{DoxyCompactList}\small\item\em Override operator() \end{DoxyCompactList}\item 
@@ -83,6 +83,8 @@ bool \hyperlink{class_indexer_a1345c9d490613f7b3a823ade15d7f68c}{normalized} \{ 
 \item 
 \mbox{\Hypertarget{class_indexer_a0ddf1224851353fc92bfbff6f499fa97}\label{class_indexer_a0ddf1224851353fc92bfbff6f499fa97}} 
 int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+std\+::ostream \& \hyperlink{class_indexer_a09373f25959741150437b95f15ae11e2}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_document_indexer}{Document\+Indexer} \&i)
 \end{DoxyCompactItemize}
 
 
@@ -104,7 +106,7 @@ Boolean Function Contains.
 
 Pure Virtual Function. Return true if dictionary contains string input parameter 
 
-Implemented in \hyperlink{class_document_indexer_a4bd5fd7be55de9932933dd6f7bfa7d9f}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_document_indexer_a4bd5fd7be55de9932933dd6f7bfa7d9f}{Document\+Indexer}, \hyperlink{class_movie_indexer_a94c19bb7518b7d219cc88bab1a507030}{Movie\+Indexer}, and \hyperlink{class_sentence_indexer_af3299500d89ff36586472f81eb8efae8}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}\label{class_indexer_a52bcf307b7fea4f3c6e7b440bc60d2fe}} 
 \index{Indexer@{Indexer}!cos\+\_\+similarity@{cos\+\_\+similarity}}
@@ -118,7 +120,7 @@ Calculate the Cosine Similarity.
 
 Pure Virtual. Create a vector of \hyperlink{class_query_result}{Query\+Result} through which the cosine similarity is calculated. Returns the vector of \hyperlink{class_query_result}{Query\+Result} containing the match score of each document to the search query. 
 
-Implemented in \hyperlink{class_document_indexer_a8738997048b5bfd336f48bade7715cc6}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a913914f26a73e00f293308baff97e23f}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a2e09c1755d3d5b0fa6f238352d1850a7}{Movie\+Indexer}, \hyperlink{class_document_indexer_a8738997048b5bfd336f48bade7715cc6}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a913914f26a73e00f293308baff97e23f}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_adee34c99c25edcfd4a2b2ae6fe06c3cc}\label{class_indexer_adee34c99c25edcfd4a2b2ae6fe06c3cc}} 
 \index{Indexer@{Indexer}!h\+\_\+separator@{h\+\_\+separator}}
@@ -146,7 +148,7 @@ Member Integer Function.
 
 Pure Virtual. Item Frequency; Used in calculation of Weight. 
 
-Implemented in \hyperlink{class_document_indexer_a302fed9a2c33a60bc7d9d7bcb03902fa}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a892b5cc701450698a04de74a3661928e}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_ac19449df057ce8f16490bc42adab2b3c}{Movie\+Indexer}, \hyperlink{class_document_indexer_a302fed9a2c33a60bc7d9d7bcb03902fa}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a892b5cc701450698a04de74a3661928e}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_af71c69a4267217969f21cba44822f263}\label{class_indexer_af71c69a4267217969f21cba44822f263}} 
 \index{Indexer@{Indexer}!norm\+\_\+idf@{norm\+\_\+idf}}
@@ -160,7 +162,7 @@ Member Double Function.
 
 Pure Virtual. Normalized \hyperlink{class_document}{Document} Frequency; Used in calculation of Weight. 
 
-Implemented in \hyperlink{class_document_indexer_a1c366e241572edc6e1d256db906cac43}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a646014181566f20140cee5dbd16f52fa}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a488c038d7aa0b60d5e8192c12f19c33e}{Movie\+Indexer}, \hyperlink{class_document_indexer_a1c366e241572edc6e1d256db906cac43}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a646014181566f20140cee5dbd16f52fa}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_aadcdca40938d27c465e564ac8852f02d}\label{class_indexer_aadcdca40938d27c465e564ac8852f02d}} 
 \index{Indexer@{Indexer}!norm\+\_\+tf@{norm\+\_\+tf}}
@@ -174,7 +176,7 @@ Member Double Function.
 
 Pure Virtual. Normalized Term Frequency; Used in calculation of Weight. 
 
-Implemented in \hyperlink{class_document_indexer_a91cbacd5c82134b2ba6ab79e06fa4a60}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ada837ec334535e133c9ec511b369abfa}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a1ea55cde00e7a8be06eedcff56021de2}{Movie\+Indexer}, \hyperlink{class_document_indexer_a91cbacd5c82134b2ba6ab79e06fa4a60}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ada837ec334535e133c9ec511b369abfa}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}\label{class_indexer_a84f50c7bac96cd5a8daa18899a39bb5d}} 
 \index{Indexer@{Indexer}!normalize@{normalize}}
@@ -188,7 +190,7 @@ Compute Weights.
 
 Pure Virtual Function. This method utilizes the method \hyperlink{class_indexer_a8301fcbdf40afd926ab71d4767575d32}{weight()} to calculate and store the weight of each token. 
 
-Implemented in \hyperlink{class_document_indexer_a5e0aeb92576847e9462670693cb0737c}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ae038d36081439a5107821ac48a318d66}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_document_indexer_a5e0aeb92576847e9462670693cb0737c}{Document\+Indexer}, \hyperlink{class_movie_indexer_a87d8a0a6c117e3cbc9f5872889b9ed6d}{Movie\+Indexer}, and \hyperlink{class_sentence_indexer_ae038d36081439a5107821ac48a318d66}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_aa2be6d79e0425aafd10b98118fcbb4ee}\label{class_indexer_aa2be6d79e0425aafd10b98118fcbb4ee}} 
 \index{Indexer@{Indexer}!operator()@{operator()}}
@@ -212,7 +214,7 @@ Search and Process Query.
 
 Virtual Function. If the data has been normalized, a search query specified by the user (String s) is tokenized using Tokenizer object and stored in a string vector. Using this vector, the method calculates the term frequencies, followed by the its weight in regards to the document weight, and stores the results in a \hyperlink{class_query_result}{Query\+Result} vector. (See \hyperlink{class_query_result}{Query\+Result} class for more details). Depending on the input parameter i (default 10), this method returns the top i results. 
 
-Implemented in \hyperlink{class_document_indexer_af14be24c72be4b3eb165da9c504ec7d1}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_acc4165c39f2193050d207861936927a7}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_document_indexer_af14be24c72be4b3eb165da9c504ec7d1}{Document\+Indexer}, \hyperlink{class_movie_indexer_a06225f4ac31f12e8ed253d0d2682d07a}{Movie\+Indexer}, and \hyperlink{class_sentence_indexer_acc4165c39f2193050d207861936927a7}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_a0587f6a4d61620219473bf583ecdbad5}\label{class_indexer_a0587f6a4d61620219473bf583ecdbad5}} 
 \index{Indexer@{Indexer}!query\+\_\+freqs@{query\+\_\+freqs}}
@@ -226,7 +228,7 @@ Query Term Frequency.
 
 Pure Virtual. Get Query Term Frequencies and update the frequency if the token is already pressent in the map q. Otherwise, create an new key entry. 
 
-Implemented in \hyperlink{class_document_indexer_a48d441022f2f6ea3437f5a67b318e06e}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_af059ce5526fad2995f5595ace00e51a3}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a982d10037e8307649ee62eda078ae531}{Movie\+Indexer}, \hyperlink{class_document_indexer_a48d441022f2f6ea3437f5a67b318e06e}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_af059ce5526fad2995f5595ace00e51a3}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_a74819336b6d9883483c09349ebdf43b8}\label{class_indexer_a74819336b6d9883483c09349ebdf43b8}} 
 \index{Indexer@{Indexer}!query\+\_\+weights@{query\+\_\+weights}}
@@ -240,7 +242,7 @@ Query and \hyperlink{class_document}{Document} Weights.
 
 Pure Virtual. Update the Query and \hyperlink{class_document}{Document} weights by iterating through both map parameters. 
 
-Implemented in \hyperlink{class_document_indexer_ad9a1b17fec1c999e98b58e3433727f05}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ad3835aaf2ff4a59fff85d596dfc95d5c}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a7a01d72125aa96e5d286a2bd0cb13ab8}{Movie\+Indexer}, \hyperlink{class_document_indexer_ad9a1b17fec1c999e98b58e3433727f05}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ad3835aaf2ff4a59fff85d596dfc95d5c}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}\label{class_indexer_ab8b3e17bbf16d54e1e773a1630abb138}} 
 \index{Indexer@{Indexer}!size@{size}}
@@ -254,7 +256,7 @@ Accessor Method.
 
 Pure Virtual Function. Returns size of a data member. 
 
-Implemented in \hyperlink{class_document_indexer_a0c5ab06e1506acc9bbc950e5c563e278}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a47409c62e1607ae3919a77080fe240a0}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_document_indexer_a0c5ab06e1506acc9bbc950e5c563e278}{Document\+Indexer}, \hyperlink{class_movie_indexer_a16a32702b061de5e38110801f80a7bc9}{Movie\+Indexer}, and \hyperlink{class_sentence_indexer_a47409c62e1607ae3919a77080fe240a0}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}\label{class_indexer_a96e17172c76abb679e7cd2ff4606ce4a}} 
 \index{Indexer@{Indexer}!term\+\_\+freq@{term\+\_\+freq}}
@@ -268,7 +270,7 @@ Member Integer Function.
 
 Pure Virtual. Term Frequency; Used in calculation of Weight. 
 
-Implemented in \hyperlink{class_document_indexer_aba9275a0648629cab3772e75519938e8}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a54f8bbbce9e37c355fe435b26c16f1ac}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a4bba45f6f42bbbfb88a5f7d6aa56d0b3}{Movie\+Indexer}, \hyperlink{class_document_indexer_aba9275a0648629cab3772e75519938e8}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_a54f8bbbce9e37c355fe435b26c16f1ac}{Sentence\+Indexer}.
 
 \mbox{\Hypertarget{class_indexer_ab8eadc78458b58c256a70208ea927d55}\label{class_indexer_ab8eadc78458b58c256a70208ea927d55}} 
 \index{Indexer@{Indexer}!v\+\_\+separator@{v\+\_\+separator}}
@@ -296,8 +298,27 @@ Member Double Function.
 
 Pure Virtual. Weight = (1 + Log (term frequency)) $\ast$ Log ( \# of Documents / \hyperlink{class_document}{Document} Frequency) 
 
-Implemented in \hyperlink{class_document_indexer_aa637e8bce87c52d0d78bfebe8af02f13}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}{Sentence\+Indexer}.
+Implemented in \hyperlink{class_movie_indexer_a3caddb617dd3324b6535a22aff8ea987}{Movie\+Indexer}, \hyperlink{class_document_indexer_aa637e8bce87c52d0d78bfebe8af02f13}{Document\+Indexer}, and \hyperlink{class_sentence_indexer_ad436ab76195615090de457b50aabfe7b}{Sentence\+Indexer}.
 
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_indexer_a09373f25959741150437b95f15ae11e2}\label{class_indexer_a09373f25959741150437b95f15ae11e2}} 
+\index{Indexer@{Indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Indexer@{Indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_document_indexer}{Document\+Indexer} \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & is a Output Stream object \\
+\hline
+{\em i} & is a \hyperlink{class_indexer}{Indexer} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output Stream object os (parameter) 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}
@@ -335,5 +356,5 @@ Contains list of stopwords that shouldn\textquotesingle{}t be included in \hyper
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/indexer.\+h\item 
-C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment3/indexer.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/indexer.\+h\item 
+C\+:/\+Users/\+Mande/\+Documents/\+Git\+Kraken/assignment4/indexer.\+cpp\end{DoxyCompactItemize}

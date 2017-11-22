@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Essay Generator: IndexItem Class Reference</title>
+<title>Recommender: IndexItem Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Essay Generator
+   <div id="projectname">Recommender
+   &#160;<span id="projectnumber">v4.0</span>
    </div>
-   <div id="projectbrief">COMP345 - Assignment 3</div>
+   <div id="projectbrief">COMP 345 - Assignment 4 (Fall 2017)</div>
   </td>
  </tr>
  </tbody>
@@ -68,11 +69,6 @@ $(function() {
 <div class="title">IndexItem Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> class.  
- <a href="class_index_item.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="index__item_8h_source.html">index_item.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IndexItem:</div>
 <div class="dyncontent">
@@ -80,7 +76,8 @@ Inheritance diagram for IndexItem:</div>
   <img src="class_index_item.png" usemap="#IndexItem_map" alt=""/>
   <map id="IndexItem_map" name="IndexItem_map">
 <area href="class_document.html" alt="Document" shape="rect" coords="0,56,68,80"/>
-<area href="class_sentence.html" title="Sentence class. " alt="Sentence" shape="rect" coords="78,56,146,80"/>
+<area href="class_movie.html" title="Movie class. " alt="Movie" shape="rect" coords="78,56,146,80"/>
+<area href="class_sentence.html" title="Sentence class. " alt="Sentence" shape="rect" coords="156,56,224,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -90,7 +87,7 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#aa37a5377a9cdd5993b09baad3d842a6f">IndexItem</a> ()</td></tr>
 <tr class="memdesc:aa37a5377a9cdd5993b09baad3d842a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty Constructor. <br /></td></tr>
 <tr class="separator:aa37a5377a9cdd5993b09baad3d842a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fcaaa46fb93a873ad73dc1ebdec8163"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a9fcaaa46fb93a873ad73dc1ebdec8163">IndexItem</a> (const std::string &amp;<a class="el" href="class_index_item.html#a059cbae312c51ae7d02050f8f325bf93">name</a>, const std::string &amp;<a class="el" href="class_index_item.html#aab7965cbd4a573ebf120ee6bad9a7fbf">content</a>=std::string())</td></tr>
+<tr class="memitem:a9fcaaa46fb93a873ad73dc1ebdec8163"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a9fcaaa46fb93a873ad73dc1ebdec8163">IndexItem</a> (const std::string &amp;<a class="el" href="class_index_item.html#a059cbae312c51ae7d02050f8f325bf93">name</a>, const std::string &amp;<a class="el" href="class_index_item.html#a2b5b4451bcb2fd50328bdc5b470d6296">content</a>=std::string())</td></tr>
 <tr class="memdesc:a9fcaaa46fb93a873ad73dc1ebdec8163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit Constructor.  <a href="#a9fcaaa46fb93a873ad73dc1ebdec8163">More...</a><br /></td></tr>
 <tr class="separator:a9fcaaa46fb93a873ad73dc1ebdec8163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38ee85d9f855b56d7bc591e3b3555f4c"><td class="memItemLeft" align="right" valign="top"><a id="a38ee85d9f855b56d7bc591e3b3555f4c"></a>
@@ -103,15 +100,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a534d96bf041a485ed124663b9cded2fb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a534d96bf041a485ed124663b9cded2fb">contains</a> (const std::string &amp;s) const =0</td></tr>
 <tr class="memdesc:a534d96bf041a485ed124663b9cded2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains Method.  <a href="#a534d96bf041a485ed124663b9cded2fb">More...</a><br /></td></tr>
 <tr class="separator:a534d96bf041a485ed124663b9cded2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab7965cbd4a573ebf120ee6bad9a7fbf"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#aab7965cbd4a573ebf120ee6bad9a7fbf">content</a> () const</td></tr>
-<tr class="memdesc:aab7965cbd4a573ebf120ee6bad9a7fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains Method.  <a href="#aab7965cbd4a573ebf120ee6bad9a7fbf">More...</a><br /></td></tr>
-<tr class="separator:aab7965cbd4a573ebf120ee6bad9a7fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b5b4451bcb2fd50328bdc5b470d6296"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a2b5b4451bcb2fd50328bdc5b470d6296">content</a> () const</td></tr>
+<tr class="memdesc:a2b5b4451bcb2fd50328bdc5b470d6296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains Method.  <a href="#a2b5b4451bcb2fd50328bdc5b470d6296">More...</a><br /></td></tr>
+<tr class="separator:a2b5b4451bcb2fd50328bdc5b470d6296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a059cbae312c51ae7d02050f8f325bf93"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a059cbae312c51ae7d02050f8f325bf93">name</a> () const</td></tr>
 <tr class="memdesc:a059cbae312c51ae7d02050f8f325bf93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor Method.  <a href="#a059cbae312c51ae7d02050f8f325bf93">More...</a><br /></td></tr>
 <tr class="separator:a059cbae312c51ae7d02050f8f325bf93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55afe0a327fe0497bf24acf6215acd34"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a55afe0a327fe0497bf24acf6215acd34">size</a> () const</td></tr>
-<tr class="memdesc:a55afe0a327fe0497bf24acf6215acd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor Method.  <a href="#a55afe0a327fe0497bf24acf6215acd34">More...</a><br /></td></tr>
-<tr class="separator:a55afe0a327fe0497bf24acf6215acd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa910a42ef4f6d7087297ac7fb8cf4a6c"><td class="memItemLeft" align="right" valign="top">virtual const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#aa910a42ef4f6d7087297ac7fb8cf4a6c">size</a> () const</td></tr>
+<tr class="memdesc:aa910a42ef4f6d7087297ac7fb8cf4a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor Method.  <a href="#aa910a42ef4f6d7087297ac7fb8cf4a6c">More...</a><br /></td></tr>
+<tr class="separator:aa910a42ef4f6d7087297ac7fb8cf4a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -127,19 +124,10 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a449b7563be6606a689d4417c940b3b39"><td class="memItemLeft" align="right" valign="top"><a id="a449b7563be6606a689d4417c940b3b39"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>DocumentIndexer</b></td></tr>
-<tr class="separator:a449b7563be6606a689d4417c940b3b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf4e586c2270fcc2c7ef8253a33d6a8f"><td class="memItemLeft" align="right" valign="top"><a id="abf4e586c2270fcc2c7ef8253a33d6a8f"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b></td></tr>
-<tr class="separator:abf4e586c2270fcc2c7ef8253a33d6a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09373f25959741150437b95f15ae11e2"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_item.html#a09373f25959741150437b95f15ae11e2">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_document_indexer.html">DocumentIndexer</a> &amp;i)</td></tr>
 <tr class="separator:a09373f25959741150437b95f15ae11e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> class. </p>
-<p>[BASE CLASS] <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> class corresponds to container object that contains data derived from documents, which are tokenized. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9fcaaa46fb93a873ad73dc1ebdec8163"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9fcaaa46fb93a873ad73dc1ebdec8163">&#9670;&nbsp;</a></span>IndexItem()</h2>
 
@@ -175,7 +163,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
 </div><div class="memdoc">
 
 <p>Explicit Constructor. </p>
-<p>Specify <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> data to be stored within container object. name_ = name of document, content_ = content of Item </p>
+<p>Specify <a class="el" href="class_index_item.html">IndexItem</a> data to be stored within container object. name_ = name of document, content_ = content of Item </p>
 
 </div>
 </div>
@@ -207,12 +195,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
 <p>Contains Method. </p>
 <p>Pure Virtual Function. Return true if dictionary contains string input string parameter </p>
 
-<p>Implemented in <a class="el" href="class_sentence.html#a867c17dbf3ef55c8708faa120ffad162">Sentence</a>, and <a class="el" href="class_document.html#a68e12b27c40699cd3c2fff66a6161473">Document</a>.</p>
+<p>Implemented in <a class="el" href="class_sentence.html#a867c17dbf3ef55c8708faa120ffad162">Sentence</a>, <a class="el" href="class_document.html#a68e12b27c40699cd3c2fff66a6161473">Document</a>, and <a class="el" href="class_movie.html#ad6ee4833582077b9a6543ba574343005">Movie</a>.</p>
 
 </div>
 </div>
-<a id="aab7965cbd4a573ebf120ee6bad9a7fbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab7965cbd4a573ebf120ee6bad9a7fbf">&#9670;&nbsp;</a></span>content()</h2>
+<a id="a2b5b4451bcb2fd50328bdc5b470d6296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5b4451bcb2fd50328bdc5b470d6296">&#9670;&nbsp;</a></span>content()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +209,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string&amp; IndexItem::content </td>
+          <td class="memname">virtual const std::string&amp; IndexItem::content </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -229,7 +217,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -296,12 +284,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
 <p>Override Operator() </p>
 <p>Virtual Function. Override operator operator(). Return value from member function <a class="el" href="class_index_item.html#a534d96bf041a485ed124663b9cded2fb" title="Contains Method. ">contains()</a> </p>
 
-<p>Reimplemented in <a class="el" href="class_document.html#a44b8141f08f57f9122b3dba4a59bf7e4">Document</a>, and <a class="el" href="class_sentence.html#aacbd8da0eeadd6a544f00c7ea4169c79">Sentence</a>.</p>
+<p>Reimplemented in <a class="el" href="class_document.html#a44b8141f08f57f9122b3dba4a59bf7e4">Document</a>, <a class="el" href="class_sentence.html#aacbd8da0eeadd6a544f00c7ea4169c79">Sentence</a>, and <a class="el" href="class_movie.html#a2ccd49265baa8fe6c51f8f4953f20bca">Movie</a>.</p>
 
 </div>
 </div>
-<a id="a55afe0a327fe0497bf24acf6215acd34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55afe0a327fe0497bf24acf6215acd34">&#9670;&nbsp;</a></span>size()</h2>
+<a id="aa910a42ef4f6d7087297ac7fb8cf4a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa910a42ef4f6d7087297ac7fb8cf4a6c">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +298,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const size_t IndexItem::size </td>
+          <td class="memname">virtual const size_t IndexItem::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -318,13 +306,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Accessor Method. </p>
 <p>Returns member variable content_ </p>
+
+<p>Reimplemented in <a class="el" href="class_sentence.html#a98d70a10b7573aa295814d1326ed1164">Sentence</a>, and <a class="el" href="class_movie.html#ad396ecf97c83fb48c09d2ea6138b430a">Movie</a>.</p>
 
 </div>
 </div>
@@ -395,7 +385,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
 </div><div class="memdoc">
 
 <p>String Member Variable. </p>
-<p>Corressponding to content of <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a> </p>
+<p>Corressponding to content of <a class="el" href="class_index_item.html">IndexItem</a> </p>
 
 </div>
 </div>
@@ -420,7 +410,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
 </div><div class="memdoc">
 
 <p>Map Member Variable. </p>
-<p>Corresponding to map containing String values as key, which represent the content of <a class="el" href="class_index_item.html" title="IndexItem class. ">IndexItem</a>. </p>
+<p>Corresponding to map containing String values as key, which represent the content of <a class="el" href="class_index_item.html">IndexItem</a>. </p>
 
 </div>
 </div>
@@ -450,7 +440,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>SentenceIndexer</b><
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Mande/Documents/GitKraken/assignment3/<a class="el" href="index__item_8h_source.html">index_item.h</a></li>
+<li>C:/Users/Mande/Documents/GitKraken/assignment4/<a class="el" href="index__item_8h_source.html">index_item.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

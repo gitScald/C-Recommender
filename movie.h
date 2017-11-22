@@ -47,6 +47,10 @@ public:
     Override function contains from base class. Return true if Document contains string input string parameter
     */
     bool contains(const std::string& s) const override { return doc.contains(s); }
+    //!Accessor Method
+    /*!
+    Return size of summary
+    */
     const size_t size() const override { return doc.size(); };
     //!Accessor Method
     const std::string& id() const { return id_; };
